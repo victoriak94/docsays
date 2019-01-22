@@ -20,16 +20,16 @@ class MealPlanController < ApplicationController
   end
 
   def edit
-    @mealplan.name = params[:mealplans][:name]
-
   end
 
   def update
-
+    @mealplan.name = params[:mealplans][:name]
   end
 
   def destroy
-
+    @mealplan.destroy
+    redirect_to patient_path(@patient)
+    flash[:notice] = "Meal plan deleted"
   end
 
 end
