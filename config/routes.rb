@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
 
-
   devise_for :doctors
-  devise_for(:patients)
+  devise_for :patients
 
   get('home/index')
   root('home#index')
