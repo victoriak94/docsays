@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authentication_patients!
-  
+
+  before_action(:authenticate_patient!)
+
 end
