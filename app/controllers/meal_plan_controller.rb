@@ -25,6 +25,12 @@ class MealPlanController < ApplicationController
 
   def update
     @mealplan.name = params[:mealplans][:name]
+    if @mealplan.save
+      redirect_to patient_path(@patient)
+      flash[:notice] = "Meal plan updated!"
+    else
+      render :new
+      flash[:notice] = "Meal Plan not updated."
   end
 
   def destroy
