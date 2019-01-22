@@ -11,7 +11,8 @@ class MealPlanController < ApplicationController
   def create
     @mealplan = MealPlan.new
     @mealplan.name = params[:mealplans][:name]
-         if @mealplan.save
+
+    if @mealplan.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Meal Plan Added!"
     else
