@@ -12,7 +12,8 @@ class DoctorController < ApplicationController
     @doctor = Doctor.new
     @doctor.name = params[:doctors][:name]
     @doctor.specialization = params[:doctors][:specialization]
-     if @restaurant.save
+
+     if @doctor.save
       redirect_to doctors_path(@doctor)
       flash[:notice] = "We added you!"
     else
@@ -20,20 +21,26 @@ class DoctorController < ApplicationController
       flash[:notice] = "We could not add you"
     end
 
-
-  end
-
-  def edit
-    @doctor.name = params[:doctors][:name]
-    @doctor.address = params[:doctors][:address]
   end
 
   def update
+    @doctor.name = params[:doctors][:name]
+    @doctor.specialization = params[:doctors][:specialization]
 
+    if @doctor.save
+      redirect_to doctors_path(@doctor)
+      flash[:notice] = "We added you!"
+    else
+      render :new
+      flash[:notice] = "We added you!"
+    end
   end
 
-  def destroy
 
+  def destroy
+    @doctor.destroy
+    redirect_to "/root"
+    flash[:notice] = "You deleted"
   end
 
 end
