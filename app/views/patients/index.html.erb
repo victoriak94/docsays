@@ -1,0 +1,12 @@
+
+<h1>Patients</h1>
+
+<p>
+<%= link_to 'Add New Patient', new_patient_path %></p>
+
+<div class = "tile-container">
+  <% @patients.each do |restaurant| %>
+
+<%= render 'single_patient', patient: patient %>
+<%end%>
+</div>
