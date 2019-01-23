@@ -1,0 +1,2 @@
+module VerifyDoctorOrPatientHelper
+end

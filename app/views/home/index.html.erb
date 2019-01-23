@@ -1,11 +1,7 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<h1>DocSays!</h1>
 
-<% if patient_signed_in? %>
-  Logged in as <strong><%= current_patient.email %></strong>.
-  <%= link_to 'Edit profile', edit_patient_registration_path %> |
-  <%= link_to "Logout", destroy_patient_session_path, method: :delete %>
-<% else %>
-  <%= link_to "Sign up", new_patient_registration_path %> |
-  <%= link_to "Login", new_patient_session_path %>
-<% end %>
+<h3>Are you a Doctor or a Patient?</h3>
+
+<p><%= link_to 'Doctor', new_doctor_session_path %> | <%= link_to 'Patient', new_patient_session_path %></p>
+
+<p><%= link_to "Sign up", new_doctor_registration_path %></p>
