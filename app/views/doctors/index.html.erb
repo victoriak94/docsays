@@ -6,6 +6,5 @@
 <div class = "tile-container">
   <% @patients.each do |patient| %>
 
-<%= render 'single_patient', patient: patient %>
-<%end%>
+<%= render 'All Patients', patient_path(@patient)%><%end%>
 </div>
