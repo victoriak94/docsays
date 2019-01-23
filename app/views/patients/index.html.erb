@@ -5,8 +5,11 @@
 <%= link_to 'Add New Patient', new_patient_path %></p>
 
 <div class = "tile-container">
-  <% @patients.each do |restaurant| %>
+  <% @patients.each do |patient| %>
 
-<%= render 'single_patient', patient: patient %>
+<%= render 'patients', patient: patient %>
+<p> <button type ="button"><%= link_to 'Edit', edit_patient_review_path(@patient) %> </button>
+    <button type ="button" <%= link_to 'Delete', patient_review_path(@patient, review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+</p>
 <%end%>
 </div>

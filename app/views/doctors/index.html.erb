@@ -1,0 +1,11 @@
+<h1>Doctor Homepage</h1>
+
+<p>
+<%= link_to 'Add New Patient', new_patient_path %></p>
+
+<div class = "tile-container">
+  <% @patients.each do |patient| %>
+
+<%= render 'single_patient', patient: patient %>
+<%end%>
+</div>
