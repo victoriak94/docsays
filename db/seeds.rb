@@ -38,7 +38,7 @@
 
   Patient.all.each do |patient|
     Diagnosis.create!({
-        name: ["IBS", "ADHD", "cirrhosis", "plauge"].sample,
+        name: ["IBS", "ADHD", "cirrhosis", "plague"].sample,
         patient_id: patient.id,
         doctor_id: Doctor.all.sample.id
       })

@@ -4,6 +4,7 @@ class PatientsController < ApplicationController
   end
 
   def show
+    @patient = Patient.search(params[:search])
     @patient = Patient.find(params[:id])
     # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
     # @patient.meal_plan = MealPlan.find(params[:patient_id])
@@ -59,4 +60,7 @@ class PatientsController < ApplicationController
     flash[:notice] = "Patient deleted"
   end
 
+  def patient_params
+    params.require(:name).permit(:name, :age, :sex, :search)
+  end
 end
