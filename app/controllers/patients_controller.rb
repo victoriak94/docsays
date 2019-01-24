@@ -1,11 +1,14 @@
 class PatientsController < ApplicationController
 
   def index
+    @patients = Patient.all
   end
 
   def show
+    @patients = Patient.all
     @patient = Patient.search(params[:search])
     @patient = Patient.find(params[:id])
+    # @patient.name = params[:patient][:name]
     # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
     # @patient.meal_plan = MealPlan.find(params[:patient_id])
     @mealplan = MealPlan.all
