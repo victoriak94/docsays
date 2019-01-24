@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Doctors::SessionsController < Devise::SessionsController
+class Patients::SessionsController < Devise::SessionsController
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -24,9 +24,8 @@ class Doctors::SessionsController < Devise::SessionsController
   # def configure_sign_in_params
   #   devise_parameter_sanitizer.permit(:sign_in, keys: [:attribute])
   # end
-
-  def after_sign_in_path_for(doctor)
-    doctor_path(doctor)
+  def after_sign_in_path_for(patient)
+    patient_path(patient)
   end
   
 end
