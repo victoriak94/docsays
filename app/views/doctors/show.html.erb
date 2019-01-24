@@ -1,3 +1,23 @@
-<h1>Current doctor</h1>
+<h1>Doctor</h1>
+
+<h4>Search a Patient's Name:</h4>
+<%= form_tag(patient_path, method: :get) do %>
+<%= text_field_tag(:search, params[:search]) %>
+<%= submit_tag ("Search") %>
+<% end %>
+
+<% @patients.each do |patient| %>
+<ul>
+  <li><%= link_to patient.name, patient_path(patient) %></li><br>
+  </ul>
+  <% end %>
+<p>
+<%= link_to 'Add New Patient', new_patient_path %></p>
+
+<div class = "tile-container">
+  <% @patients.each do |patient| %>
+  <p><%= @patient.name %></p>
+  <%end%>
+</div>
 
 <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
