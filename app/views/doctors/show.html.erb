@@ -1,5 +1,7 @@
 <h1>Doctor</h1>
 
+<%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>
+
 <h4>Search a Patient's Name:</h4>
 <%= form_tag(patient_path, method: :get) do %>
 <%= text_field_tag(:search, params[:search]) %>
