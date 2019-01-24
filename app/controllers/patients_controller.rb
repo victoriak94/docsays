@@ -5,8 +5,15 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.search(params[:search])
-    @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    @patient.meal_plan = MealPlan.find(params[:patient_id])
+    @patient = Patient.find(params[:id])
+    # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
+    # @patient.meal_plan = MealPlan.find(params[:patient_id])
+    @mealplan = MealPlan.all
+      if params[:search]
+        @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
+      else
+        @mealplan = MealPlan.all.order('created_at DESC')
+      end
   end
 
   def new
@@ -18,8 +25,6 @@ class PatientsController < ApplicationController
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
     @patient.age = params[:patient][:age]
-    @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    @patient.meal_plan = MealPlan.find(params[:patient_id])
 
     if @patient.save
       redirect_to patient_path(@patient)
@@ -37,8 +42,8 @@ class PatientsController < ApplicationController
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
     @patient.age = params[:patient][:age]
-    @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    @patient.meal_plan = MealPlan.find(params[:patient_id])
+    # @patient.diagnosis = Diagnosis.find(params[:patient_id])
+    # @patient.meal_plan = MealPlan.find(params[:patient_id])
 
     if @patient.save
       redirect_to patient_path(@patient)
