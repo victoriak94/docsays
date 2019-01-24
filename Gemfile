@@ -66,3 +66,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise',           '~> 4.2'
 gem 'devise_invitable', '~> 1.7.0'
+gem 'httparty', '~> 0.16.3'

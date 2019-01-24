@@ -14,7 +14,6 @@
 
   <p><%= link_to 'All Patients', doctor_path %> </p>
 
-  <h1>Search for new recipes, recipes API </h1>
   <% end %>
 
   <% if current_patient %>
@@ -28,8 +27,39 @@
   <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
   <%= submit_tag "Search" %>
+
+<h1>Search for new recipes, recipes API </h1>
+
+<% @response["hits"].each do |item| %>
+
+  <h3> <%= item["recipe"]["label"] %> </h3>
+    <p> Cal: <%= item["recipe"]["calories"] %> </p>
+    <%= image_tag (item["recipe"]["image"])%>
+
+    <p>Read full recipe: </p>
+    <%= link_to("Here you go",item["recipe"]["url"])%>
+
+    <p>Ingredients: </p>
+    <% item["recipe"]["ingredientLines"].each do |list|%>
+      <li> <%= list %></li>
+    <% end %>
+
+    <p>Total Nutrients:</p>
+      <%item["recipe"]["totalNutrients"].each do |nutrient|%>
+          <% nutrient.each do |staff|%>
+            <%= staff["label"] %>
+            <%= staff["quantity"] %>
+            <%= staff["unit"] %>
+          </br>
+      <% end %>
   <% end %>
-  <% end %>
+<% end %>
+
+
+ <% end %>
+
 
 <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
 </div>
+
+<%end%>
