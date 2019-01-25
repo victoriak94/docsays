@@ -1,4 +1,5 @@
 class MealPlanController < ApplicationController
+  before_action :ensure_logged_in
 
   def show
     @mealplan = MealPlan.find(params[:id])

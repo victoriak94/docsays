@@ -1,17 +1,35 @@
 class PatientsController < ApplicationController
+  before_action :ensure_logged_in
+  before_action :load_patients, only: [:index, :show]
+  before_action :load_patient, only: [:show, :destroy]
+  before_action :load_new_patient, only: [:new, :create]
+  before_action :load_patient_update_and_create_params, only: [:create, :update]
 
-  def index
+  def load_patients
     @patients = Patient.all
   end
 
-  def show
-    @patients = Patient.all
-    @patient = Patient.search(params[:search])
+  def load_new_patient
+    @patient = Patient.new
+  end
+
+  def load_patient
     @patient = Patient.find(params[:id])
-    # @patient.name = params[:patient][:name]
-    # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
-    # @patient.meal_plan = MealPlan.find(params[:patient_id])
-    @mealplan = MealPlan.all
+  end
+
+  def load_patient_update_and_create_params
+    @patient.email = params[:patient][:email]
+    @patient.name = params[:patient][:name]
+    @patient.sex = params[:patient][:sex]
+    @patient.age = params[:patient][:age]
+  end
+
+  def index
+  end
+
+  def show
+    @patient = Patient.search(params[:search])
+    @mealplan = MealPlan.all #idk if this works
       if params[:search]
         @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
       else
@@ -20,21 +38,15 @@ class PatientsController < ApplicationController
   end
 
   def new
-    @patient = Patient.new
   end
 
   def create
-    @patient = Patient.new
-    @patient.name = params[:patient][:name]
-    @patient.sex = params[:patient][:sex]
-    @patient.age = params[:patient][:age]
-
     if @patient.save
       redirect_to patient_path(@patient)
-      flash[:notice] = "You have added your patient!"
+      flash[:notice] = "Patient added!"
     else
       render :new
-      flash[:notice] = "We could not add your patient"
+      flash[:notice] = "Could not add your patient"
     end
   end
 
@@ -42,18 +54,13 @@ class PatientsController < ApplicationController
   end
 
   def update
-    @patient.name = params[:patient][:name]
-    @patient.sex = params[:patient][:sex]
-    @patient.age = params[:patient][:age]
-    # @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    # @patient.meal_plan = MealPlan.find(params[:patient_id])
-
+    # @patient.mealplan = MealPlan.find(params[:patient_id])
     if @patient.save
       redirect_to patient_path(@patient)
-      flash[:notice] = "You have added your patient!"
+      flash[:notice] = "Patient has been updated!"
     else
       render :new
-      flash[:notice] = "We could not add your patient"
+      flash[:notice] = "Could not update patient"
     end
   end
 

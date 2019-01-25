@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Doctors::SessionsController < Devise::SessionsController
+  before_action :ensure_doctor_logged_out, except: [:destroy]
+  before_action :ensure_patient_logged_out
   # before_action :configure_sign_in_params, only: [:create]
 
   # GET /resource/sign_in
@@ -28,5 +30,5 @@ class Doctors::SessionsController < Devise::SessionsController
   def after_sign_in_path_for(doctor)
     doctor_path(doctor)
   end
-  
+
 end
