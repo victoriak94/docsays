@@ -11,12 +11,12 @@ class PatientsController < ApplicationController
     # @patient.name = params[:patient][:name]
     # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
     # @patient.meal_plan = MealPlan.find(params[:patient_id])
-    @mealplan = MealPlan.all
-      if params[:search]
-        @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
-      else
-        @mealplan = MealPlan.all.order('created_at DESC')
-      end
+    # @mealplan = MealPlan.all
+    #   if params[:search]
+    #     @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
+    #   else
+    #     @mealplan = MealPlan.all.order('created_at DESC')
+    #   end
   end
 
   def new
@@ -39,6 +39,12 @@ class PatientsController < ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @diets = Diet.search_by_term(params[:query])
+
+    render json: @diets
   end
 
   def update

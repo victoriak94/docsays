@@ -1,6 +1,20 @@
 <h1>Patient</h1>
 <div class = "tile-container">
+  <head>
+    <meta charset="utf-8">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+
+
+     <%= form_for Patient.new do |form| %>
+  <%= form.text_field :name %>
+  <%= form.submit %>
+<% end %>
+
+
+
+
+</head>
 <%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %>
 
   <% @patients.each do |patient| %>
@@ -19,19 +33,7 @@
     <h1>Search for new recipes, recipes API </h1>
   <% end %>
 
-  <% if current_patient %>
 
-  <% if @mealplan.present? %>
-    <%= render @mealplan %>
-  <% else %>
-    <p>There are no meal plans containing the term(s) <%= params[:search] %>.</p>
-  <% end %>
-
-  <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  <%= submit_tag "Search" %>
-  <% end %>
-  <% end %>
 
 <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
 </div>
