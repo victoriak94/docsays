@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_195259) do
+ActiveRecord::Schema.define(version: 2019_01_26_215713) do
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_195259) do
     t.string "invited_by_type"
     t.integer "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "img"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["invitation_token"], name: "index_doctors_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_doctors_on_invitations_count"
@@ -80,6 +81,7 @@ ActiveRecord::Schema.define(version: 2019_01_22_195259) do
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"
+    t.string "img"
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["invitation_token"], name: "index_patients_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_patients_on_invitations_count"
