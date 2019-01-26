@@ -1,0 +1,20 @@
+.recipe-box img {
+  width: 100px;
+}
+
+.get-recipes {
+  position: absolute;
+  left: 3px;
+  top: 3px;
+  background: #f0cc88;
+  border-image: none;
+  border: 1px solid #843720;
+  color: #843720;
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+.get-recipes:hover {
+  background-color: rgba(240,204,136, 0.6);
+}
