@@ -25,6 +25,7 @@ class MealPlansController < ApplicationController
       flash[:notice] = "Meal Plan Not Added."
     end
   end
+end
 
   def edit
   end

@@ -29,7 +29,7 @@ class PatientsController < ApplicationController
 
   def show
     @patient = Patient.search(params[:search])
-    @mealplan = MealPlan.all #idk if this works
+    @mealplans = MealPlan.all #idk if this works
       if params[:search]
         @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
       else
@@ -51,6 +51,12 @@ class PatientsController < ApplicationController
   end
 
   def edit
+  end
+
+  def search
+    @diets = Diet.search_by_term(params[:query])
+
+    render json: @diets
   end
 
   def update
