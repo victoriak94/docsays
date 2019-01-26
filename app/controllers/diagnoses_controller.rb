@@ -1,4 +1,4 @@
-class DiagnosisController < ApplicationController
+class DiagnosesController < ApplicationController
   before_action :ensure_logged_in
   before_action :load_doctor
   before_action :load_patient
@@ -47,5 +47,4 @@ class DiagnosisController < ApplicationController
     redirect_to patient_path(@patient)
     flash[:notice] = "Diagnosis deleted"
   end
-
 end
