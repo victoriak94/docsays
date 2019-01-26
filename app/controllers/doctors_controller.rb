@@ -1,4 +1,22 @@
 class DoctorsController < ApplicationController
+  before_action :authenticate_doctor!
+  before_action :load_doctor, only: [:show, :destroy]
+  before_action :load_new_doctor, only: [:new, :create]
+  before_action :load_doctor_create_and_update_params, only: [:create, :update]
+
+  def load_doctor
+    @doctor = Doctor.find(params[:id])
+  end
+
+  def load_new_doctor
+    @doctor = Doctor.new
+  end
+
+  def load_doctor_create_and_update_params
+    @doctor.email = params[:doctor][:email]
+    @doctor.name = params[:doctor][:name]
+    @doctor.specialization = params[:doctor][:specialization]
+  end
 
   def index
     @doctors = Doctor.all
@@ -7,27 +25,38 @@ class DoctorsController < ApplicationController
   def show
     @patients = Patient.all
     @patient = Patient.find(params[:id])
-    @doctor = Doctor.find(params[:id])
   end
 
-  def update
-    @doctor.name = params[:doctors][:name]
-    @doctor.specialization = params[:doctors][:specialization]
+  def new
+  end
 
+  def create
     if @doctor.save
-      redirect_to doctors_path(@doctor)
-      flash[:notice] = "We added you!"
+      redirect_to doctor_path(@doctor)
+      flash[:notice] = "Doctor account created!"
     else
       render :new
-      flash[:notice] = "We added you!"
+      flash[:notice] = "Account could not be created"
     end
   end
 
+  def edit
+  end
+
+  def update
+    if @doctor.save
+      redirect_to doctors_path(@doctor)
+      flash[:notice] = "Account updated!"
+    else
+      render :new
+      flash[:notice] = "Account could not be updated"
+    end
+  end
 
   def destroy
     @doctor.destroy
     redirect_to "/root"
-    flash[:notice] = "You deleted"
+    flash[:notice] = "Account deleted"
   end
 
 end
