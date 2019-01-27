@@ -5,7 +5,7 @@
 <%= link_to 'Add New Patient', new_patient_path %></p>
 
 <div class = "tile-container">
-  <% @patients.each do |patient| %>
+
 
 <%= render 'patients', patient: patient %>
 <p> <button type ="button"><%= link_to 'Edit', edit_patient_review_path(@patient) %> </button>
