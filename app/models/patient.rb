@@ -7,5 +7,6 @@ class Patient < ApplicationRecord
 
   has_many :diagnoses
   has_one :meal_plan
+  has_one_attached :avatar
   extend Devise::Models
 end

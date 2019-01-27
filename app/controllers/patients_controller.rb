@@ -4,6 +4,12 @@ class PatientsController < ApplicationController
   before_action :load_patient, only: [:show, :destroy]
   before_action :load_new_patient, only: [:new, :create]
   before_action :load_patient_update_and_create_params, only: [:create, :update]
+  before_action :configure_permitted_parameters, if: :devise_controller?
+
+ def configure_permitted_parameters
+   devise_parameter_sanitizer.permit(:sign_up, key: [:name])
+   devise_parameter_sanitizer.permit(:account_update, key: [:name, :avatar])
+end
 
   def load_patients
     @patients = Patient.all

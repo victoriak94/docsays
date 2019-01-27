@@ -6,10 +6,8 @@
 
 <div class = "tile-container">
 
-
-<%= render 'patients', patient: patient %>
-<p> <button type ="button"><%= link_to 'Edit', edit_patient_review_path(@patient) %> </button>
-    <button type ="button" <%= link_to 'Delete', patient_review_path(@patient, review), method: :delete, data: {confirm: "Are you sure?" } %> </button>
+<p> <button type ="button"><%= link_to 'Edit', patient_session_path(current_patient) %> </button>
+    <button type ="button" <%= link_to 'Delete', patient_session_path(@patient), method: :delete, data: {confirm: "Are you sure?" } %> </button>
 </p>
-<%end%>
+
 </div>

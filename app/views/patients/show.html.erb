@@ -12,12 +12,12 @@
 
 </head>
 <%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %>
-
+  <%= @patient.avatar%>
   <%= @patient.name %>
   <%= @patient.age %>
   <%= @patient.sex %>
   <%= @patient.email %>
-  
+
 
 
   <% if current_doctor %>
