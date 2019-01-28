@@ -10,6 +10,11 @@ class PatientsController < ApplicationController
 
   def load_patient
     @patient = Patient.find(params[:id])
+<<<<<<< HEAD
+    # @patient.name = params[:patient][:name]
+    # @patient.diagnosis = Diagnosis.find(params[:id]) Need to define this in diagnosis controller create method
+    # @patient.meal_plan = MealPlan.find(params[:patient_id])
+=======
   end
 
   def load_patient_update_and_create_params
@@ -32,6 +37,7 @@ class PatientsController < ApplicationController
       else
         @mealplan = MealPlan.all.order('created_at DESC')
       end
+>>>>>>> e9927993562bb95ded0c18c71b19a151caec42e3
   end
 
   def new
