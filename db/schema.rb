@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-
 ActiveRecord::Schema.define(version: 2019_01_28_205407) do
-
-  
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
