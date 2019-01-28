@@ -1,12 +1,9 @@
-class MealPlansController < ApplicationController
-  before_action :ensure_logged_in
-  before_action :load_meal_plan, only: [:show, :edit, :update, :destroy]
+class MealPlanController < ApplicationController
 
-  def load_meal_plan
-    @mealplan = MealPlan.find(params[:id])
-  end
 
   def show
+    @mealplan = MealPlan.find(params[:id])
+
   end
 
   def new
@@ -23,7 +20,6 @@ class MealPlansController < ApplicationController
     else
       render :new
       flash[:notice] = "Meal Plan Not Added."
-    end
   end
 end
 
@@ -45,4 +41,5 @@ end
     redirect_to patient_path(@patient)
     flash[:notice] = "Meal plan deleted"
   end
+
 end
