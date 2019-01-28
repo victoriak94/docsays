@@ -12,9 +12,14 @@ Rails.application.routes.draw do
   get('home/index')
   root('home#index')
 
-  resources :patients
   resources :doctors
+
+  resources :patients do
+    resources :diagnoses
+  end
+
   resource :mealplan
+  resources :diets
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

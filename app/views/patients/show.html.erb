@@ -1,62 +1,23 @@
 <h1>Patient</h1>
-<div class = "tile-container">
-  <head>
-    <meta charset="utf-8">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
-    <%= form_for Patient.new do |form| %>
-      <%= form.text_field :name %>
-      <%= form.submit %>
-    <% end %>
 
-  </head>
-<%= link_to 'Edit Account', edit_patient_registration_path(@patient) %>
 
-<% @patients.each do |patient| %>
-  <%= @patient.name %>
-  <%= @patient.age %>
-  <%= @patient.sex %>
-<% end %>
 
-<% if current_doctor %>
-  <%= link_to 'Edit', edit_patient_registration_path(@patient) %> | <%= link_to 'Delete', patient_registration_path(@patient), method: :delete, data: {confirm: 'Are you sure you want to delete this patient?'} %>
+<% if current_patient %>
+  <%= link_to 'Edit Account', edit_patient_registration_path(@patient) %>
+  <%# <%= link_to 'Diagnosis and Diet', diagnosis_path(@patient.diagnosis) %> %>
 
-  <p><%= link_to 'All Patients', patients_path %> </p>
-<% end %>
+<h1>Search for new recipes</h1>
 
   <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
   <%= submit_tag "Search" %>
-
-<h1>Search for new recipes, recipes API</h1>
-
-<%if !@response.empty?%>
-<% @response["hits"].each do |item| %>
-
-  <h3><%= item["recipe"]["label"] %></h3>
-    <p>Cal: <%= item["recipe"]["calories"] %></p>
-    <%= image_tag (item["recipe"]["image"])%>
-
-    <p>Read full recipe: </p>
-    <%= link_to("Here you go", item["recipe"]["url"])%>
-
-    <p>Ingredients: </p>
-    <% item["recipe"]["ingredientLines"].each do |list|%>
-      <li> <%= list %></li>
-    <% end %>
-
-    <p>Total Nutrients:</p>
-      <%item["recipe"]["totalNutrients"].each do |nutrient|%>
-        <% nutrient.each do |staff|%>
-          <%= staff["label"] %>
-          <%= staff["quantity"] %>
-          <%= staff["unit"] %>
-        <% end %>
-      <% end %>
-<% end %>
-<% end %>
-
+  <% end %>
 <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
-</div>
+<% end %>
 
-<%end%>
+<% if current_doctor %>
+  <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
+  <p><%= link_to 'Back', doctor_path(current_doctor) %></p>
+  <p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>
+<% end %>

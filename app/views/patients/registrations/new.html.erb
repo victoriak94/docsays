@@ -31,5 +31,12 @@
   </div>
 <% end %>
 
-<%= render "patients/shared/links" %>
-<%= link_to 'Back', doctor_path(current_doctor) %>
+<% if current_patient %>
+<%= render “patients/shared/links” %>
+<%= link_to ‘Back’, patient_path(current_patient) %>
+<% end %>
+
+<% if current_doctor %>
+<%= render “doctors/shared/links” %>
+<%= link_to ‘Back’, doctor_path(current_doctor) %>
+<% end %>

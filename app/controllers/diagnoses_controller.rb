@@ -1,11 +1,11 @@
 class DiagnosesController < ApplicationController
   before_action :ensure_logged_in
-  before_action :load_doctor
+  before_action :load_doctor, only: [:new, :create]
   before_action :load_patient
   before_action :load_diagnosis, only: [:show, :destroy]
 
   def load_doctor
-    @doctor = Doctor.find(params[:doctor_id])
+    @doctor = current_doctor
   end
 
   def load_patient
@@ -17,7 +17,7 @@ class DiagnosesController < ApplicationController
   end
 
   def index
-    @diagnoses = @patient.diagnoses # idk if this works
+    @diagnoses = @patient.diagnoses
   end
 
   def new
@@ -25,17 +25,17 @@ class DiagnosesController < ApplicationController
   end
 
   def create
-    @diagnosis = @patient.diagnosis.new(diagnosis_params) # idk if this works
+    @diagnosis = @patient.diagnoses.new(diagnosis_params)
     @diagnosis.name = params[:diagnosis][:name]
-    @diagnosis.patient_id = params[:diagnosis][:patient_id] # idk if this works
+    @diagnosis.patient_id = params[:diagnosis][:patient_id]
     @diagnosis.doctor_id = current_doctor.id
 
     if @diagnosis.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Diagnosis added"
     else
-      render :new
-      flash[:notice] = "Diagnosis not added"
+      redirect_to new_patient_diagnosis_path
+      flash[:notice] = "Diagnosis could not be added"
     end
   end
 
@@ -46,5 +46,9 @@ class DiagnosesController < ApplicationController
     @diagnosis.destroy
     redirect_to patient_path(@patient)
     flash[:notice] = "Diagnosis deleted"
+  end
+
+  def diagnosis_params
+    params.require(:diagnosis).permit(:name, :doctor_id, :patient_id)
   end
 end
