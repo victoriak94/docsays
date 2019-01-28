@@ -1,7 +1,9 @@
-class MealPlansController < ApplicationController
+class MealPlanController < ApplicationController
+
 
   def show
     @mealplan = MealPlan.find(params[:id])
+
   end
 
   def new
@@ -39,5 +41,5 @@ end
     redirect_to patient_path(@patient)
     flash[:notice] = "Meal plan deleted"
   end
-  
+
 end
