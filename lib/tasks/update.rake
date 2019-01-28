@@ -12,7 +12,11 @@ namespace :update do
 			@mealplan.name = meal["label"]
 			@mealplan.image = meal["image"]
  			@mealplan.uri = meal["uri"]
+<<<<<<< HEAD
 			@mealplan.healthlabels = meal["healthLabels"]
+=======
+			@mealplan.healthlabel = meal["healthLabels"]
+>>>>>>> cd10a796140295e6b8847fb2be6861371616a33c
 			@mealplan.ingredients = meal["ingredients"]
 			@mealplan.ingredientlines = meal["ingredientLiness"]
 			@mealplan.save
