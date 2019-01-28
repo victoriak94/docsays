@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_22_195259) do
+ActiveRecord::Schema.define(version: 2019_01_28_205407) do
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -59,6 +59,11 @@ ActiveRecord::Schema.define(version: 2019_01_22_195259) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "patient_id"
+    t.string "image"
+    t.string "uri"
+    t.string "healthlabel"
+    t.text "ingredients"
+    t.text "ingredientlines"
   end
 
   create_table "patients", force: :cascade do |t|
