@@ -46,7 +46,7 @@ class DoctorsController < ApplicationController
         redirect_to doctors_path(@doctor)
         flash[:notice] = "Account updated!"
       else
-        render :new
+        render doctors_path(@doctor)
         flash[:notice] = "Account could not be updated"
       end
     end

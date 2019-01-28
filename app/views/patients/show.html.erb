@@ -1,6 +1,5 @@
 <h1>Patient</h1>
 
-
 </head>
 <%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %>
   <%= image_tag @patient.image.url(:thumb) %>
@@ -9,27 +8,17 @@
   <%= @patient.sex %>
   <%= @patient.email %>
 
-
-
 <% if current_patient %>
   <%= link_to 'Edit Account', edit_patient_registration_path(@patient) %>
   <%# <%= link_to 'Diagnosis and Diet', diagnosis_path(@patient.diagnosis) %> %>
 
-<h1>Search for new recipes</h1>
-
-  <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
-  <%= submit_tag "Search" %>
-
-
+  <h1>Search for new recipes</h1>
+    <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
+    <%= submit_tag "Search" %>
     <% end %>
 
-<h1>Search for new recipes, recipes API </h1>
-
-
-
-
-<%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
+  <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
 <% end %>
 
 <% if current_doctor %>
