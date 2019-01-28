@@ -18,6 +18,7 @@ class PatientsController < ApplicationController
   end
 
   def load_patient_update_and_create_params
+    @patient.image = params[:patient][:image]
     @patient.email = params[:patient][:email]
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
@@ -43,7 +44,11 @@ class PatientsController < ApplicationController
   end
 
   def create
+    Rails.logger.info("..............................#{patient_params}")
+    @patient = Patient.create(patient_params)
     @patient.invite!(current_doctor)
+
+    
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "You have added your patient!"
@@ -85,6 +90,6 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:name).permit(:name, :age, :sex, :search)
+    params.require(:name).permit(:name, :age, :sex, :search, :image)
   end
 end
