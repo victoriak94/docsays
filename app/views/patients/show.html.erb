@@ -1,14 +1,5 @@
 <h1>Patient</h1>
-<div class = "tile-container">
-  <head>
-    <meta charset="utf-8">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-  <% if current_doctor %>
-     <%= form_for Patient.new do |form| %>
-  <%= form.text_field :name %>
-  <%= form.submit %>
-<% end %>
-<% end %>
+
 
 </head>
 <%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %>
@@ -19,18 +10,30 @@
   <%= @patient.email %>
 
 
-  <% if current_doctor %>
-    <%= link_to 'Edit', edit_patient_path(@patient) %> | <%= link_to 'Delete', patient_path(@patient), method: :delete, data: {confirm: 'Are you sure you want to delete this patient?'} %>
-    <p><%= link_to 'All Patients', patients_path %> </p>
-  <% end %>
+
+<% if current_patient %>
+  <%= link_to 'Edit Account', edit_patient_registration_path(@patient) %>
+  <%# <%= link_to 'Diagnosis and Diet', diagnosis_path(@patient.diagnosis) %> %>
+
+<h1>Search for new recipes</h1>
 
   <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Search Posts" %>
   <%= submit_tag "Search" %>
+
+
     <% end %>
 
 <h1>Search for new recipes, recipes API </h1>
 
 
+
+
 <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
-</div>
+<% end %>
+
+<% if current_doctor %>
+  <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
+  <p><%= link_to 'Back', doctor_path(current_doctor) %></p>
+  <p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>
+<% end %>

@@ -10,4 +10,5 @@ class Diet < ApplicationRecord
     }
   }
 
+  validates :name, presence: true
 end
