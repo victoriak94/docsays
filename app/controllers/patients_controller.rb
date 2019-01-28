@@ -2,15 +2,10 @@ class PatientsController < ApplicationController
   before_action :ensure_logged_in
   before_action :load_patients, only: [:index, :show]
   before_action :load_patient, only: [:show, :destroy]
-  # before_action :load_new_patient, only: [:new, :create]
   before_action :load_patient_update_and_create_params, only: [:create, :update]
 
   def load_patients
     @patients = Patient.all
-  end
-
-  def load_new_patient
-    @patient = Patient.new
   end
 
   def load_patient
@@ -58,7 +53,6 @@ class PatientsController < ApplicationController
 
   def search
     @diets = Diet.search_by_term(params[:query])
-
     render json: @diets
   end
 
