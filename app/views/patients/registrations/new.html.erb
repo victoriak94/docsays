@@ -1,6 +1,6 @@
 <h2>Sign up</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+<%= simple_form_for(resource, as: resource_name, url: new_patient_invitation_path do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
@@ -31,4 +31,12 @@
   </div>
 <% end %>
 
-<%= render "patients/shared/links" %>
+<% if current_patient %>
+<%= render “patients/shared/links” %>
+<%= link_to ‘Back’, patient_path(current_patient) %>
+<% end %>
+
+<% if current_doctor %>
+<%= render “doctors/shared/links” %>
+<%= link_to ‘Back’, doctor_path(current_doctor) %>
+<% end %>

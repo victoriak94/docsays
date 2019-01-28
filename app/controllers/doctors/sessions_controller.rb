@@ -13,9 +13,10 @@ class Doctors::SessionsController < Devise::SessionsController
   #   super
   # end
 
-  # DELETE /resource/sign_out
+  #DELETE /resource/sign_out
   # def destroy
   #   super
+  #   redirect_to root_url
   # end
 
   # protected
