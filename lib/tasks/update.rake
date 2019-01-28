@@ -6,9 +6,17 @@ namespace :update do
   task add_recipe: :environment do
 		require 'httparty'
     response = HTTParty.get("https://api.edamam.com/search?q=health&app_id=1a5ac459&app_key=263e9d8bf34384b63230ee6f193da30b")
+    recipe_list_name  = response["hits"]
+		recipe_list_name.each do |meal|
+			@mealplan = MealPlan.new
+			@mealplan.name = meal["label"]
+			@mealplan.image = meal["image"]
+ 			@mealplan.uri = meal["uri"]
+			@mealplan.healthlabels = meal["healthLabels"]
+			@mealplan.ingredients = meal["ingredients"]
+			@mealplan.ingredientlines = meal["ingredientLiness"]
+			@mealplan.save
+		end
 
-		recipes = MealPlan.create{
-			
-		}
   end
 end

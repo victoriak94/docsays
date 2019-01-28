@@ -2,7 +2,7 @@
 <div class = "tile-container">
   <head>
     <meta charset="utf-8">
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <!-- <script src="https://unpkg.com/axios/dist/axios.min.js"></script> -->
 
 
 
@@ -17,7 +17,7 @@
 </head>
 <h1>Search for new recipes, recipes API </h1>
 
-<% @response[“hits”].each do |item| %>
+<% @response[“recipes”].each do |item| %>
 
  <h3> <%= item[“recipe”][“label”] %> </h3>
    <p> Cal: <%= item[“recipe”][“calories”] %> </p>
@@ -90,7 +90,7 @@
             <%= staff["label"] %>
             <%= staff["quantity"] %>
             <%= staff["unit"] %>
-          </br>
+          <br>
       <% end %>
   <% end %>
 <% end %>
