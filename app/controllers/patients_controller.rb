@@ -4,12 +4,6 @@ class PatientsController < ApplicationController
   before_action :load_patient, only: [:show, :destroy]
   before_action :load_new_patient, only: [:new, :create]
   before_action :load_patient_update_and_create_params, only: [:create, :update]
-  before_action :configure_permitted_parameters, if: :devise_controller?
-
- def configure_permitted_parameters
-   devise_parameter_sanitizer.permit(:sign_up, key: [:name])
-   devise_parameter_sanitizer.permit(:account_update, key: [:name, :avatar])
-end
 
   def load_patients
     @patients = Patient.all
@@ -24,6 +18,7 @@ end
   end
 
   def load_patient_update_and_create_params
+    @patient.image = params[:patient][:image]
     @patient.email = params[:patient][:email]
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
@@ -41,6 +36,8 @@ end
   end
 
   def create
+    Rails.logger.info("..............................#{patient_params}")
+    @patient = Patient.create(patient_params)
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Patient added!"
@@ -77,6 +74,6 @@ end
   end
 
   def patient_params
-    params.require(:name).permit(:name, :age, :sex, :search)
+    params.require(:name).permit(:name, :age, :sex, :search, :image)
   end
 end

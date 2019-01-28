@@ -12,12 +12,11 @@
 
 </head>
 <%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %>
-  <%= @patient.avatar%>
+  <%= image_tag @patient.image.url(:thumb) %>
   <%= @patient.name %>
   <%= @patient.age %>
   <%= @patient.sex %>
   <%= @patient.email %>
-
 
 
   <% if current_doctor %>
@@ -31,7 +30,6 @@
     <% end %>
 
 <h1>Search for new recipes, recipes API </h1>
-
 
 
 <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
