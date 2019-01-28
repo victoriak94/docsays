@@ -2,7 +2,7 @@ class PatientsController < ApplicationController
   before_action :ensure_logged_in
   before_action :load_patients, only: [:index, :show]
   before_action :load_patient, only: [:show, :destroy]
-  before_action :load_new_patient, only: [:new, :create]
+  # before_action :load_new_patient, only: [:new, :create]
   before_action :load_patient_update_and_create_params, only: [:create, :update]
 
   def load_patients
@@ -41,6 +41,7 @@ class PatientsController < ApplicationController
   end
 
   def create
+    @patient.invite!(current_doctor)
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Patient added!"

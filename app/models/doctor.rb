@@ -6,4 +6,7 @@ class Doctor < ApplicationRecord
   has_many :diagnoses
   has_many :patients, :through => :diagnoses
 
+  validates :email, presence: true
+  validates :name, presence: true
+  validates :specialization, presence: true
 end
