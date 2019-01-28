@@ -2,7 +2,7 @@ class DoctorsController < ApplicationController
 
   def index
     @doctors = Doctor.all
-  end
+  end 
 
   def show
     @patients = Patient.all
