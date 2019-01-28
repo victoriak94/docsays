@@ -7,8 +7,16 @@ namespace :update do
 		require 'httparty'
     response = HTTParty.get("https://api.edamam.com/search?q=health&app_id=1a5ac459&app_key=263e9d8bf34384b63230ee6f193da30b")
 
-		recipes = MealPlan.create{
-			
-		}
+		response = MealPlan.create{
+			response[“hits”].each do |item|
+				recipe: ,
+				label: ,
+				calories: ,
+				image: ,
+  			url: ,
+				ingredientLines:
+				totalNutrients:
+			end
+			}
   end
 end
