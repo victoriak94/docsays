@@ -34,7 +34,6 @@ class MealPlansController < ApplicationController
       flash[:notice] = "Meal Plan not updated."
     end
   end
-
   def destroy
     @mealplan.destroy
     redirect_to patient_path(@patient)
