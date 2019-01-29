@@ -39,5 +39,5 @@ end
     redirect_to patient_path(@patient)
     flash[:notice] = "Meal plan deleted"
   end
-  
+
 end

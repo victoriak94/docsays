@@ -1,4 +1,4 @@
-<h1>Doctor</h1>
+<h1><%= @doctor.name %></h1>
 
 <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>
 
@@ -9,17 +9,10 @@
 <% end %>
 
 <% @patients.each do |patient| %>
-<ul>
-  <li><%= link_to patient.name, patient_path(patient) %></li><br>
+  <ul>
+    <li><%= link_to patient.name, patient_path(patient) %></li>
   </ul>
-  <% end %>
-<p>
-<%= link_to 'Add New Patient', new_patient_path %></p>
+<% end %>
 
-<div class = "tile-container">
-  <% @patients.each do |patient| %>
-  <p><%= @patient.name %></p>
-  <%end%>
-</div>
-
- <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
+<p><%= link_to 'Add New Patient', new_patient_registration_path %></p>
+<p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>

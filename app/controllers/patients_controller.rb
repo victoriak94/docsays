@@ -2,15 +2,10 @@ class PatientsController < ApplicationController
   before_action :ensure_logged_in
   before_action :load_patients, only: [:index, :show]
   before_action :load_patient, only: [:show, :destroy]
-  # before_action :load_new_patient, only: [:new, :create]
   before_action :load_patient_update_and_create_params, only: [:create, :update]
 
   def load_patients
     @patients = Patient.all
-  end
-
-  def load_new_patient
-    @patient = Patient.new
   end
 
   def load_patient
@@ -18,6 +13,7 @@ class PatientsController < ApplicationController
   end
 
   def load_patient_update_and_create_params
+    @patient.image = params[:patient][:image]
     @patient.email = params[:patient][:email]
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
@@ -43,7 +39,9 @@ class PatientsController < ApplicationController
   end
 
   def create
+    @patient = Patient.create(patient_params)
     @patient.invite!(current_doctor)
+
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "You have added your patient!"
@@ -58,7 +56,6 @@ class PatientsController < ApplicationController
 
   def search
     @diets = Diet.search_by_term(params[:query])
-
     render json: @diets
   end
 
@@ -85,6 +82,6 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:name).permit(:name, :age, :sex, :search)
+    params.require(:name).permit(:name, :age, :sex, :search, :image)
   end
 end

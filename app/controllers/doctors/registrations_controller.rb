@@ -3,7 +3,9 @@
 class Doctors::RegistrationsController < Devise::RegistrationsController
   before_action :configure_sign_up_params, only: [:create]
   before_action :configure_account_update_params, only: [:update]
-
+  before_action :ensure_doctor_logged_out, except: [:edit, :update, :destroy]
+  before_action :ensure_patient_logged_out
+  
   # GET /resource/sign_up
   # def new
   #   super
@@ -42,12 +44,12 @@ class Doctors::RegistrationsController < Devise::RegistrationsController
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_sign_up_params
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :specialization])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:name, :specialization, :image])
   end
 
   # If you have extra params to permit, append them to the sanitizer.
   def configure_account_update_params
-    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :specialization])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:name, :specialization, :image])
   end
 
   # The path used after sign up.
