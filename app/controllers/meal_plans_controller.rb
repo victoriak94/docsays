@@ -18,8 +18,8 @@ class MealPlansController < ApplicationController
     else
       render :new
       flash[:notice] = "Meal Plan Not Added."
+    end
   end
-end
 
   def edit
   end
@@ -32,6 +32,7 @@ end
     else
       render :new
       flash[:notice] = "Meal Plan not updated."
+    end
   end
 
   def destroy
