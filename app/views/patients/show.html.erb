@@ -1,9 +1,6 @@
-<h1>Patient</h1>
+<h1><%= @patient.name %></h1>
 
   <%= image_tag @patient.image.url(:thumb) %>
-  <%= @patient.name %>
-  <%= @patient.age %>
-  <%= @patient.sex %>
   <%= @patient.email %>
 
 <% if current_patient %>
