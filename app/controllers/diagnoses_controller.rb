@@ -17,7 +17,8 @@ class DiagnosesController < ApplicationController
   end
 
   def index
-    @diagnoses = @patient.diagnoses
+      @diagnoses= Diagnosis.all
+      @diagnosis = @patient.diagnoses
   end
 
   def new
@@ -40,6 +41,7 @@ class DiagnosesController < ApplicationController
   end
 
   def show
+
   end
 
   def destroy

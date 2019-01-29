@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_28_205407) do
+ActiveRecord::Schema.define(version: 2019_01_29_011144) do
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,10 @@ ActiveRecord::Schema.define(version: 2019_01_28_205407) do
     t.string "invited_by_type"
     t.integer "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "image_file_name"
+    t.string "image_content_type"
+    t.bigint "image_file_size"
+    t.datetime "image_updated_at"
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["invitation_token"], name: "index_doctors_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_doctors_on_invitations_count"

@@ -1,3 +1,6 @@
+
+<%= image_tag @doctor.image.url(:thumb) %>
+
 <h1><%= @doctor.name %></h1>
 
 <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>

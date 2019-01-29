@@ -13,6 +13,7 @@ class DoctorsController < ApplicationController
     end
 
     def load_doctor_create_and_update_params
+      @doctor.image = params[:doctor][:image]
       @doctor.email = params[:doctor][:email]
       @doctor.name = params[:doctor][:name]
       @doctor.specialization = params[:doctor][:specialization]
