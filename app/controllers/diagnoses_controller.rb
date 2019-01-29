@@ -17,18 +17,18 @@ class DiagnosesController < ApplicationController
   end
 
   def index
-      @diagnoses= Diagnosis.all
-      @diagnosis = @patient.diagnoses
+    @diagnoses = @patient.diagnoses
+    puts ".........................#{@diagnoses.inspect}"
   end
 
   def new
-    @diagnosis = Diagnosis.new
+    @diagnoses = Diagnosis.new
   end
 
   def create
     @diagnosis = @patient.diagnoses.new(diagnosis_params)
     @diagnosis.name = params[:diagnosis][:name]
-    @diagnosis.patient_id = params[:diagnosis][:patient_id]
+    @diagnosis.patient_id = params[:patient_id]
     @diagnosis.doctor_id = current_doctor.id
 
     if @diagnosis.save
@@ -51,6 +51,6 @@ class DiagnosesController < ApplicationController
   end
 
   def diagnosis_params
-    params.require(:diagnosis).permit(:name, :doctor_id, :patient_id)
+    params.require(:diagnosis).permit
   end
 end
