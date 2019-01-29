@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_015723) do
+ActiveRecord::Schema.define(version: 2019_01_29_165044) do
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -100,6 +100,18 @@ ActiveRecord::Schema.define(version: 2019_01_29_015723) do
     t.index ["invited_by_id"], name: "index_patients_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_patients_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.integer "patient_id"
+    t.string "image"
+    t.string "uri"
+    t.string "health_label"
+    t.string "ingredients"
+    t.string "ingredient_lines"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end

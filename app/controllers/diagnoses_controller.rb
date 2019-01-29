@@ -41,7 +41,6 @@ class DiagnosesController < ApplicationController
   end
 
   def show
-
   end
 
   def destroy

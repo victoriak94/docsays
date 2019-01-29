@@ -15,11 +15,12 @@ Rails.application.routes.draw do
   resources :doctors
 
   resources :patients do
-    resources :diagnoses
+    resources :diagnoses do
+      resources :diets
+    end
   end
 
-  resource :mealplan
-  resources :diets
+  resources :meal_plans
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
