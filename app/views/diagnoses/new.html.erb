@@ -8,23 +8,3 @@
 
 <%= f.submit %>
 <% end %>
-
-<h2>Add Diet Suggestions</h2>
-<%= form_for(@diet, url: patient_diagnosis_diet_path) do |f| %>
-  <div class = "field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-  <div class = "field">
-    <%= f.label :avoid %>
-    <%= f.text_field :avoid %>
-  </div>
-
-  <div class = "field">
-    <%= f.label :eat %>
-    <%= f.text_field :eat %>
-  </div>
-
-<%= f.submit %>
-<% end %>
