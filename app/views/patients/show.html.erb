@@ -7,8 +7,8 @@
   <%= @patient.email %>
 
 <% if current_patient %>
-  <%= link_to 'Edit Account', edit_patient_registration_path(@patient) %>
-  <%# <%= link_to 'Diagnosis and Diet', diagnosis_path(@patient.diagnosis) %> %>
+  <p><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></p>
+  <p><%= link_to 'Diagnosis & Diet', patient_diagnoses_path(@patient) %></p>
 
   <h1>Search for new recipes</h1>
     <%= form_tag(mealplan_path, :method => "get", id: "search-form") do %>
