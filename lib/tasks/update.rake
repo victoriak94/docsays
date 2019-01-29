@@ -11,14 +11,15 @@ namespace :update do
 		puts "recipe list name"
 		recipe_list_name.each do |meal|
 			puts "ingesting meal"
-			@mealplan = MealPlan.new
-			@mealplan.name = meal["label"]
-			@mealplan.image = meal["image"]
- 			@mealplan.uri = meal["uri"]
-			@mealplan.healthlabel = meal["healthLabels"]
-			@mealplan.ingredients = meal["ingredients"]
-			@mealplan.ingredientlines = meal["ingredientLiness"]
-			@mealplan.save
+			@recipe = Recipe.create
+			puts ".....................................#{meal}"
+			@recipe.name = meal["recipe"]["label"]
+			@recipe.image = meal["recipe"]["image"]
+ 			@recipe.uri = meal["recipe"]["uri"]
+			@recipe.health_label = meal["recipe"]["healthLabels"]
+			@recipe.ingredients = meal["recipe"]["ingredients"]
+			@recipe.ingredient_lines = meal["recipe"]["ingredientLines"]
+			@recipe.save
 		end
 
   end

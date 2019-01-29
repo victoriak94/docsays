@@ -26,11 +26,11 @@ class PatientsController < ApplicationController
 
   def show
     #@patient = Patient.search(params[:search])
-    @mealplans = MealPlan.all #idk if this works
+    @recipes = Recipe.all #idk if this works
       if params[:search]
-        @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
+        @recipe = Recipe.search(params[:search]).order("created_at DESC")
       else
-        @mealplan = MealPlan.all.order('created_at DESC')
+        @recipe = Recipe.all.order('created_at DESC')
       end
   end
 

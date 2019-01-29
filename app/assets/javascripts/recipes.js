@@ -13,9 +13,8 @@ document.addEventListener("DOMContentLoaded", function() {
     function test(e) {
       e.preventDefault()
         const request = axios({
-            url: 'https://api.edamam.com/api/nutrition-data?app_id=1a5ac459&app_key=263e9d8bf34384b63230ee6f193da30b&ingr=1%20large%20apple',
-
-            method: 'GET',
+            url: '/search',
+            method: 'POST',
             responseType: 'JSON',
             mode: 'no-cors',
             headers: {
