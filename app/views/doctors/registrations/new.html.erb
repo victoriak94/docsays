@@ -10,16 +10,19 @@
             <div class="form-group">
             <%= f.label :name, :required => false %>
             <%= f.text_field :name, autofocus: true, autocomplete: 'full name', class: 'form-control' %>
-            </div>
+           <small class="form-text text-muted"> <%= resource.errors[:name].first if resource.errors[:name].present?%>
+            </div> </small>
 
             <div class="form-group">
               <%= f.label :email ,:required => false%>
               <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
-            </div>
+               <small class="form-text text-muted">  <%= resource.errors[:email].first if resource.errors[:email].present?%> </small>
+               </div>
 
             <div class="form-group">
-              <%= f.label :specialization ,:required => false%>
+               <%= f.label :specialization ,:required => false%>
               <%= f.text_field :specialization, autofocus: true, autocomplete: 'specialization', class: 'form-control' %>
+              <small class="form-text text-muted"> <%= resource.errors[:specialization].first if resource.errors[:specialization].present?%> </small>
             </div>
 
             <div class="form-group">
@@ -28,18 +31,30 @@
 
               <% if @minimum_password_length %>
                 <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+
+                <small class="form-text text-muted"><%= resource.errors[:password].first if resource.errors[:password].present?%> </small>
+
               <% end %>
+
+
             </div>
 
             <div class="form-group">
               <%= f.label :password_confirmation, :require => true %>
               <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
-            </div>
+
+              <small class="form-text text-muted" style="color: red;"> <%= resource.errors[:password_confirmation].first if resource.errors[:password_confirmation].present?%> </small>
+              </div>
+
 
             <div class="form-group">
             <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
             </div>
           <% end %>
+
+
+
+
 <div class="form-group">
 <%= link_to 'Back', root_path, class: 'btn btn-primary'%>
 </div>
