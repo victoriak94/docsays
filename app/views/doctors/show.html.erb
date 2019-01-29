@@ -9,12 +9,12 @@
 <% end %>
 
 <% @patients.each do |patient| %>
-<ul>
-  <li><%= link_to patient.name, patient_path(patient) %></li><br>
+  <ul>
+    <li><%= link_to patient.name, patient_path(patient) %></li>
   </ul>
-  <% end %>
-<p>
-<%= link_to 'Add New Patient', new_patient_path %></p>
+<% end %>
+
+<%= link_to 'Add New Patient', new_patient_registration_path %>
 
 <div class = "tile-container">
   <% @patients.each do |patient| %>
