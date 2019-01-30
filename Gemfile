@@ -6,7 +6,7 @@ gem 'axios_rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.2'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+# gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
 # Use SCSS for stylesheets
@@ -71,3 +71,12 @@ gem 'devise_invitable', '~> 1.7.0'
 gem 'httparty', '~> 0.16.3'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'paperclip', '~> 6.1'
+
+
+gem 'pg'
+
+gem 'figaro'
+
+gem 'bootstrap-sass'
+gem 'devise-bootstrap-views', '~> 1.0'
+

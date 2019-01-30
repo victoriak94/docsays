@@ -5,7 +5,7 @@ class Doctors::RegistrationsController < Devise::RegistrationsController
   before_action :configure_account_update_params, only: [:update]
   before_action :ensure_doctor_logged_out, except: [:edit, :update, :destroy]
   before_action :ensure_patient_logged_out
-  
+
   # GET /resource/sign_up
   # def new
   #   super
@@ -53,7 +53,9 @@ class Doctors::RegistrationsController < Devise::RegistrationsController
   end
 
   # The path used after sign up.
-
+  def after_update_path_for(doctors)
+   doctor_path(current_doctor)
+ end
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)

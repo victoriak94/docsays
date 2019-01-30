@@ -1,0 +1,2 @@
+
+Figaro.require_keys("SENDMAIL_PASSWORD", "SENDMAIL_USERNAME", "MAIL_HOST")

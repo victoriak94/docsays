@@ -1,6 +1,7 @@
 class DietsController < ApplicationController
   before_action :load_diagnosis
-  before_action :load_diet, only: [:show, :destroy]
+  before_action :load_diet, only: [:show, :edit, :update, :destroy]
+  before_action :load_diet_create_and_update_params, only: [:create, :update]
 
   def load_diagnosis
     @diagnosis = Diagnosis.find(params[:diagnosis_id])
@@ -10,8 +11,15 @@ class DietsController < ApplicationController
     @diet = Diet.find(params[:id])
   end
 
+  def load_diet_create_and_update_params
+    @diet.name = params[:diet][:name]
+    @diet.avoid = params[:diet][:avoid]
+    @diet.eat = params[:diet][:eat]
+    @diet.diagnosis_id = params[:diagnosis_id]
+  end
+
   def index
-    @diets = @diagnosis.diets #idk if works
+    @diets = @diagnosis.diets
   end
 
   def new
@@ -19,11 +27,7 @@ class DietsController < ApplicationController
   end
 
   def create
-    @diet = @diagnosis.diet.new(diet_params) #idk if works
-    @diet.name = params[:diet][:name]
-    @diet.avoid = params[:diet][:avoid]
-    @diet.eat = params[:diet][:eat]
-    @diet.diagnosis_id = params[:diagnosis_id]
+    @diet = @diagnosis.diet.new(diet_params)
 
     if @diet.save
       redirect_to patient_diagnoses_path(@patient)
@@ -41,6 +45,13 @@ class DietsController < ApplicationController
   end
 
   def update
+    if @diet.save
+      redirect_to patient_diagnoses_path(@patient)
+      flash[:notice] = "Diet updated!"
+    else
+      redirect_to new_patient_diagnosis_path
+      flash[:notice] = "Diet could not be updated"
+    end
   end
 
   def destroy
@@ -50,7 +61,7 @@ class DietsController < ApplicationController
   end
 
   def diet_params
-    params.require(:diet).permit
+    params.require(:diet).permit(:name, :avoid, :eat)
   end
 
 end

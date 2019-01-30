@@ -2,12 +2,6 @@
 
 <% @diagnoses.each do |diagnosis| %>
   <ul>
-    <li><%= diagnosis.name %></li>
+    <li><%= link_to diagnosis.name, patient_diagnosis_path(@diagnosis) %></li>
   </ul>
 <% end %>
-
-<h3>Please consider the following Diet Suggestions</h3>
-<h4>Doc Says...</h4>
-<p>Avoid these foods:</p>
-
-<p>And eat these:</p>

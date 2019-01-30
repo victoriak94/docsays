@@ -50,6 +50,6 @@ class DiagnosesController < ApplicationController
   end
 
   def diagnosis_params
-    params.require(:diagnosis).permit
+    params.require(:diagnosis).permit(:name)
   end
 end
