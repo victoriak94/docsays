@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_165044) do
+ActiveRecord::Schema.define(version: 2019_01_30_181931) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -45,12 +48,17 @@ ActiveRecord::Schema.define(version: 2019_01_29_165044) do
     t.datetime "invitation_accepted_at"
     t.integer "invitation_limit"
     t.string "invited_by_type"
-    t.integer "invited_by_id"
+    t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "image_file_name"
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_doctors_on_confirmation_token", unique: true
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["invitation_token"], name: "index_doctors_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_doctors_on_invitations_count"
@@ -83,7 +91,7 @@ ActiveRecord::Schema.define(version: 2019_01_29_165044) do
     t.datetime "invitation_accepted_at"
     t.integer "invitation_limit"
     t.string "invited_by_type"
-    t.integer "invited_by_id"
+    t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,6 +102,11 @@ ActiveRecord::Schema.define(version: 2019_01_29_165044) do
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_patients_on_confirmation_token", unique: true
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["invitation_token"], name: "index_patients_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_patients_on_invitations_count"
