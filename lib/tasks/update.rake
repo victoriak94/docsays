@@ -1,4 +1,4 @@
-require File.dirname(__FILE__) + "/../../config/environment"
+
 
 namespace :update do
 
