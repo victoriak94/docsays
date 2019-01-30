@@ -1,43 +1,74 @@
-<h2>Sign up</h2>
+<h1><%= t('.Add_Patient') %></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
-    <%= f.input :image, as: :file %>
-    <%= f.input :name,
-                required: true,
-                input_html: { autocomplete: "full-name"}%>
-    <%= f.input :age,
-                required: true,
-                input_html: { autocomplete: "age"}%>
-    <%= f.input :sex,
-                required: true,
-                input_html: { autocomplete: "sex"}%>
-    <%= f.input :email,
-                required: true,
-                autofocus: true ,
-                input_html: { autocomplete: "email" }%>
-    <%= f.input :password,
-                required: true,
-                hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
-                input_html: { autocomplete: "new-password" } %>
-    <%= f.input :password_confirmation,
-                required: true,
-                input_html: { autocomplete: "new-password" } %>
-  </div>
+  <div class="custom-file">
+      <%= f.input :image, as: :file, :class=> "custom-file-input", :id=> "customFile"%>
 
-  <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
-  </div>
-<% end %>
+           </div>
+
+      <div class="form-group">
+        <%= f.label :name, :required => false %>
+        <%= f.text_field :name, autofocus: true, autocomplete: 'full name', class: 'form-control' %>
+
+        <small class="form-text text-muted"> <%= resource.errors[:name].first if resource.errors[:name].present?%></small>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :age ,:required => false%>
+        <%= f.email_field :age, autofocus: true, autocomplete: 'age', class: 'form-control' %>
+
+         <small class="form-text text-muted">
+           <%= resource.errors[:age].first if resource.errors[:age].present?%>
+         </small>
+
+      </div>
+
+      <div class="form-group">
+        <%= f.label :sex ,:required => false%>
+        <%= f.email_field :sex, autofocus: true, autocomplete: 'sex', class: 'form-control' %>
+
+          <small class="form-text text-muted">
+            <%= resource.errors[:sex].first if resource.errors[:sex].present?%>
+          </small>
+      </div>
+
+      <div class="form-group">
+        <%= f.label :email ,:required => false%>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+
+         <small class="form-text text-muted">
+           <%= resource.errors[:email].first if resource.errors[:email].present?%>
+         </small>
+
+      </div>
+      <div class="form-group">
+        <%= f.label :password, :require => true%>
+        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+
+        <% if @minimum_password_length %>
+          <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+
+          <small class="form-text text-muted"><%= resource.errors[:password].first if resource.errors[:password].present?%> </small>
+
+        <% end %>
 
 
-<% if current_patient %>
-  <%= render “patients/shared/links” %>
-  <%= link_to ‘Back’, patient_path(current_patient) %>
-<% end %>
+      </div>
 
-<% if current_doctor %>
-  <%= link_to 'Back', doctor_path(current_doctor) %>
-<% end %>
+      <div class="form-group">
+        <%= f.label :password_confirmation, :require => true %>
+        <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+
+        <small class="form-text text-muted" style="color: red;"> <%= resource.errors[:password_confirmation].first if resource.errors[:password_confirmation].present?%> </small>
+        </div>
+
+        <div class="form-group">
+        <%= f.button :submit, "Sign up", class: 'btn btn-primary' %>
+        </div>
+      <% end %>
+
+      <div class="form-group">
+      <%= link_to 'Back', doctor_path(current_doctor), class: 'btn btn-primary'%>
+      </div>

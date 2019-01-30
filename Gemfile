@@ -72,6 +72,11 @@ gem 'httparty', '~> 0.16.3'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'paperclip', '~> 6.1'
 
+
 gem 'pg'
 
 gem 'figaro'
+
+gem 'bootstrap-sass'
+gem 'devise-bootstrap-views', '~> 1.0'
+
