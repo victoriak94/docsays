@@ -2,7 +2,8 @@ class Doctor < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :validatable
+         :recoverable, :rememberable, :validatable, :confirmable
+
   has_many :diagnoses
   has_many :patients, :through => :diagnoses
 
