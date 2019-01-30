@@ -73,3 +73,5 @@ gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
 gem 'paperclip', '~> 6.1'
 
 gem 'pg'
+
+gem 'figaro'
