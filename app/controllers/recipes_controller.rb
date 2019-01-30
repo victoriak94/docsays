@@ -6,7 +6,7 @@ class RecipesController < ApplicationController
   def show
     @recipe = Recipe.all
     if params[:search]
-    @myList = Recipe.where('name LIKE ?', "#{params[:search]}")
+    @myList = Recipe.where('name LIKE ? OR last_name LIKE ?', "#{params[:search]}" "#{params[:search]}")
   else
    @myList =  Recipe.all
   end
