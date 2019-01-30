@@ -12,4 +12,4 @@
 
 SENDMAIL_PASSWORD: teaTree1354
 SENDMAIL_USERNAME: vkamila6@gmail.com
-MAIL_HOST: localhost:3000
+MAIL_HOST: https://project-docsays.herokuapp.com/
