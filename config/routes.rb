@@ -20,7 +20,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :meal_plans
+  resources :recipes
+  post '/search' => 'recipes#search'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

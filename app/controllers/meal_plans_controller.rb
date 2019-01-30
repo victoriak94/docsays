@@ -1,18 +1,28 @@
 class MealPlansController < ApplicationController
+  def index
+    @recipes = Recipe.search(params[:search])
+  end
 
   def show
-    @mealplan = MealPlan.find(params[:id])
+    @recipe = Recipe.all
   end
 
   def new
-    @mealplan = MealPlan.new
+    @recipe = Recipe.new
   end
 
   def create
-    @mealplan = MealPlan.new
-    @mealplan.name = params[:mealplans][:name]
+    @recipe = Recipe.new
+    @recipe.name = params[:meal_plan][:name]
+    @recipe.image = params[:meal_plan][:image]
+    @recipe.uri = params[:meal_plan][:uri]
+    @recipe.health_label = params[:meal_plan][:health_label]
+    @recipe.ingredients = params[:meal_plan][:ingredients]
+    @recipe.ingredient_lines = params[:meal_plan][:ingredient_lines]
 
-    if @mealplan.save
+
+
+    if @recipe.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Meal Plan Added!"
     else
@@ -21,12 +31,20 @@ class MealPlansController < ApplicationController
     end
   end
 
+  def search
+    @recipes = if params[:search]
+    Recipe.where('name LIKE ?', "#{params[:search]}")
+  else
+    Recipe.all
+  end
+end
+
   def edit
   end
 
   def update
-    @mealplan.name = params[:mealplans][:name]
-    if @mealplan.save
+    @recipe.name = params[:meal_plans][:name]
+    if @recipe.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Meal plan updated!"
     else
@@ -36,7 +54,7 @@ class MealPlansController < ApplicationController
   end
 
   def destroy
-    @mealplan.destroy
+    @recipe.destroy
     redirect_to patient_path(@patient)
     flash[:notice] = "Meal plan deleted"
   end
