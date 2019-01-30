@@ -18,7 +18,6 @@ class DiagnosesController < ApplicationController
 
   def index
     @diagnoses = @patient.diagnoses
-    puts ".........................#{@diagnoses.inspect}"
   end
 
   def new
@@ -35,7 +34,7 @@ class DiagnosesController < ApplicationController
       redirect_to patient_path(@patient)
       flash[:notice] = "Diagnosis added"
     else
-      redirect_to new_patient_diagnosis_path
+      redirect_to :new
       flash[:notice] = "Diagnosis could not be added"
     end
   end

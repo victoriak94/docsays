@@ -1,7 +1,6 @@
 class DietsController < ApplicationController
   before_action :load_diagnosis
   before_action :load_diet, only: [:show, :edit, :update, :destroy]
-  before_action :load_diet_create_and_update_params, only: [:create, :update]
 
   def load_diagnosis
     @diagnosis = Diagnosis.find(params[:diagnosis_id])
@@ -11,15 +10,8 @@ class DietsController < ApplicationController
     @diet = Diet.find(params[:id])
   end
 
-  def load_diet_create_and_update_params
-    @diet.name = params[:diet][:name]
-    @diet.avoid = params[:diet][:avoid]
-    @diet.eat = params[:diet][:eat]
-    @diet.diagnosis_id = params[:diagnosis_id]
-  end
-
   def index
-    @diets = @diagnosis.diets
+    @diet = @diagnosis.diet
   end
 
   def new
@@ -28,6 +20,10 @@ class DietsController < ApplicationController
 
   def create
     @diet = @diagnosis.diet.new(diet_params)
+    @diet.name = params[:diet][:name]
+    @diet.diagnosis_id = params[:diagnosis_id]
+    @diet.avoid = params[:diet][:avoid]
+    @diet.eat = params[:diet][:eat]
 
     if @diet.save
       redirect_to patient_diagnoses_path(@patient)
@@ -61,7 +57,7 @@ class DietsController < ApplicationController
   end
 
   def diet_params
-    params.require(:diet).permit(:name, :avoid, :eat)
+    params.require(:diet).permit
   end
 
 end

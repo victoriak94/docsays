@@ -1,18 +1,6 @@
 <h1>Your Diagnosis</h1>
 
-<h3><%= @patient.diagnosis %></h3>
+<h2><%= @diagnosis.name %></h2>
+<h4><%= link_to 'Add Diet', new_patient_diagnosis_diet_path(diagnosis_id: @diagnosis.id) %></h4>
 
-<h4>Doc Says...</h4>
-<p>Avoid these:</p>
-  <% @diagnosis.diet.avoid.each do |avoid| %>
-    <ul>
-      <li><%= avoid %></li>
-    </ul>
-  <% end %>
-
-<p>And eat these:</p>
-  <% @diagnosis.diet.eat.each do |eat| %>
-    <ul>
-      <li><%= eat %></li>
-    </ul>
-  <% end %>
+<h3>Doc Says...</h3>
