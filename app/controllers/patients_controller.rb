@@ -61,7 +61,7 @@ class PatientsController < ApplicationController
     respond_to do |format|
 
           format.html do
-            puts ".............response format as html"
+            puts ".............response format as html #{@patients.length}"
             render partial: 'doctors/patientList', locals:{patients: @patients}
           end
     end
