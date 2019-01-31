@@ -1,5 +1,6 @@
-  <%= image_tag @patient.image.url(:thumb) %>
-  <h1><%= @patient.name %></h1>
+<%= image_tag @patient.image.url(:thumb) %>
+<h1><%= @patient.name %></h1>
+
 
 <% if current_patient %>
   <p><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></p>
@@ -15,14 +16,6 @@
 <% end %>
 
 <% if current_doctor %>
-<h2> Add a diagnosis to a patient:</h2>
-<%= simple_form_for @patient do |f| %>
-  <p> Patient Name:</p>
-  <%= f.input :patient %>
-  <p> Diagnosis:</p>
-  <%= f.input :diagnosis %>
-  <%= f.button :submit %>
-<% end %>
 
   <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
   <p><%= link_to 'Back', doctor_path(current_doctor) %></p>

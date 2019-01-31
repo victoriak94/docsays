@@ -9,7 +9,7 @@ class PatientsController < ApplicationController
   end
 
   def load_patient
-    @patient = Patient.find(params[:id])
+      @patients = Patient.search(params[:search])
   end
 
   def load_patient_update_and_create_params
@@ -25,12 +25,11 @@ class PatientsController < ApplicationController
   end
 
   def show
-    #@patient = Patient.search(params[:search])
-    @recipes = Recipe.all #idk if this works
-      if params[:search]
-        @recipe = Recipe.search(params[:search]).order("created_at DESC")
-      else
-        @recipe = Recipe.all.order('created_at DESC')
+    # @recipes = Recipe.all #idk if this works
+    #   if params[:search]
+    #     @recipe = Recipe.search(params[:search]).order("created_at DESC")
+    #   else
+    #     @recipe = Recipe.all.order('created_at DESC')
       end
   end
 
@@ -84,4 +83,3 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:name).permit(:name, :age, :sex, :search, :image)
   end
-end
