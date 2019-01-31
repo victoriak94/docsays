@@ -26,6 +26,7 @@ class DietsController < ApplicationController
     @diet.eat = params[:diet][:eat]
     @diet.diagnosis_id = params[:diagnosis_id]
     @diagnosis = Diagnosis.find(params[:diagnosis_id])
+
     if @diet.save
       redirect_to patient_diagnosis_diet_path(id: @diet.id)
       flash[:notice] = "Diet added!"

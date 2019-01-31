@@ -15,13 +15,6 @@ class RecipesController < ApplicationController
 
   def show
     @recipe = Recipe.find(params[:id])
-    # # @recipe.name = params[:recipe][:name]
-    # # @recipe.image = params[:recipe][:image]
-    # @recipe.url = params[:recipe][:url]
-    # @recipe.health_label = params[:recipe][:health_label]
-    # @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
-    # @recipe.calories = params[:recipe][:calories]
-    # @recipe.total_nutrients = params[:recipe][:total_nutrients]
   end
 
   def new
