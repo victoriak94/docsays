@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded',function(){
         //  // newItem.innerText = response.data.content;
         myDiv.insertAdjacentHTML('afterbegin', response.data);
       //  myDiv.appendChild(response.data);
+        console.log(myForm.elements[3]);
+        myForm.elements[3].disabled = false;
+
      });
 
  })
