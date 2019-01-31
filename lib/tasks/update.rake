@@ -15,10 +15,12 @@ namespace :update do
 			puts ".....................................#{meal}"
 			@recipe.name = meal["recipe"]["label"]
 			@recipe.image = meal["recipe"]["image"]
- 			@recipe.uri = meal["recipe"]["uri"]
+ 			@recipe.url = meal["recipe"]["url"]
 			@recipe.health_label = meal["recipe"]["healthLabels"]
-			@recipe.ingredients = meal["recipe"]["ingredients"]
 			@recipe.ingredient_lines = meal["recipe"]["ingredientLines"]
+			@recipe.calories = meal["recipe"]["calories"]
+			@recipe.total_nutrients = meal["recipe"]["totalNutrients"]
+
 			@recipe.save
 		end
 

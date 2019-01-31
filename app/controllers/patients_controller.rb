@@ -2,7 +2,6 @@ class PatientsController < ApplicationController
   before_action :ensure_logged_in
   before_action :load_patients, only: [:index, :show]
   before_action :load_patient, only: [:show, :destroy]
-  before_action :load_patient_update_and_create_params, only: [:create, :update]
 
   def load_patients
     @patients = Patient.all
@@ -12,21 +11,13 @@ class PatientsController < ApplicationController
       @patients = Patient.search(params[:search])
   end
 
-  def load_patient_update_and_create_params
-    @patient.image = params[:patient][:image]
-    @patient.email = params[:patient][:email]
-    @patient.name = params[:patient][:name]
-    @patient.sex = params[:patient][:sex]
-    @patient.age = params[:patient][:age]
-  end
-
   def index
     @patients = Patient.all
   end
 
   def show
-    @patient = Patient.find((params)[:id])
-    @recipes = Recipe.all #idk if this works
+    @recipes = Recipe.all
+    @patient = Patient.find(params[:id])
       if params[:search]
         @recipe = Recipe.search(params[:search]).order("created_at DESC")
       else
@@ -87,6 +78,6 @@ class PatientsController < ApplicationController
   end
 
   def patient_params
-    params.require(:name).permit(:name, :age, :sex, :search, :image)
+    params.require(:name).permit(:email, :image, :name, :age, :sex, :search, :image)
   end
 end

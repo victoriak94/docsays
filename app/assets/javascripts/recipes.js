@@ -26,6 +26,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
             // this is pretty much bullshit at this point - we need to figure out the
             // API and then render it accordingly
+            console.log(myForm.elements[3]);
+       myForm.elements[3].disabled = false;
+
         }).then(function(response) {
               console.log(response.data)
             recipeDivs.forEach(function(box, index) {
@@ -39,6 +42,8 @@ document.addEventListener("DOMContentLoaded", function() {
                 recipeBook.appendChild(recipeEntry);
                 console.log(box)
             })
+
+
 
             console.log(response.recipes)
             console.log(response)
