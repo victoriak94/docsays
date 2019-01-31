@@ -1,9 +1,7 @@
-
-<%= image_tag @doctor.image.url(:thumb) %>
+<div class ="picture">
+<%= image_tag @doctor.image.url(:thumb), :class => 'avatar' %>
 
 <h1><%= @doctor.name %></h1>
-
-<%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>
 
 <h4>Search a Patient's Name:</h4>
 <%= form_tag(patient_path, method: :get) do %>
@@ -11,11 +9,18 @@
 <%= submit_tag ("Search") %>
 <% end %>
 
+</div>
+<div class="patient-list">
 <% @patients.each do |patient| %>
-  <ul>
-    <li><%= link_to patient.name, patient_path(patient) %></li>
+  <ul class= "box">
+    <li><%= image_tag patient.image.url(:thumb), :class => 'avatar-1'%></li>
+    <li><%= link_to patient.name, patient_path(patient), :class => 'patient-1' %></li>
+    
   </ul>
 <% end %>
+</div>
+
+<%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>
 
 <p><%= link_to 'Add New Patient', new_patient_registration_path %></p>
 <p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>

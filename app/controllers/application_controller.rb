@@ -19,4 +19,7 @@ class ApplicationController < ActionController::Base
       redirect_to patient_path(current_patient)
     end
   end
+
+  
+
 end
