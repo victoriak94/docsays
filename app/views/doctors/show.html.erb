@@ -11,9 +11,10 @@
   <%= f.button :submit,data: {disable_with: false} %>
 <% end %>
 
-<%= render partial: 'patientList'%>
+<div>
+<%= render partial: 'patientList' %>
 
-
+</div>
 
 
 <p><%= link_to 'Add New Patient', new_patient_registration_path %></p>
