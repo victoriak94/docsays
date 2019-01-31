@@ -9,7 +9,7 @@ class PatientsController < ApplicationController
   end
 
   def load_patient
-    @patient = Patient.find(params[:id])
+      @patients = Patient.search(params[:search])
   end
 
   def load_patient_update_and_create_params
@@ -25,12 +25,12 @@ class PatientsController < ApplicationController
   end
 
   def show
-    #@patient = Patient.search(params[:search])
-    @mealplans = MealPlan.all #idk if this works
+    @patient = Patient.find((params)[:id])
+    @recipes = Recipe.all #idk if this works
       if params[:search]
-        @mealplan = MealPlan.search(params[:search]).order("created_at DESC")
+        @recipe = Recipe.search(params[:search]).order("created_at DESC")
       else
-        @mealplan = MealPlan.all.order('created_at DESC')
+        @recipe = Recipe.all.order('created_at DESC')
       end
   end
 
@@ -39,8 +39,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.create(patient_params)
-    @patient.invite!(current_doctor)
+    @patient = Patient.new(patient_params)
 
     if @patient.save
       redirect_to patient_path(@patient)
@@ -55,17 +54,23 @@ class PatientsController < ApplicationController
   end
 
   def search
-    @diets = Diet.search_by_term(params[:query])
-    render json: @diets
+    @patients = []
+    puts " .........................#{Patient.find_by_name(params[:patient][:name]).inspect}"
+    @patients <<  Patient.find_by_name(params[:patient][:name])
+
+    respond_to do |format|
+
+          format.html do
+            puts ".............response format as html"
+            render partial: 'doctors/patientList', locals:{patients: @patients}
+          end
+    end
   end
 
   def update
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
     @patient.age = params[:patient][:age]
-    # @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    # @patient.meal_plan = MealPlan.find(params[:patient_id])
-
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "You have added your patient!"

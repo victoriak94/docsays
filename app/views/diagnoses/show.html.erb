@@ -1,8 +1,6 @@
 <h1>Your Diagnosis</h1>
 
-<h2><%= @patient.diagnosis %></h2>
+<h3><%= @diagnosis.name %></h3>
+<p><%= link_to "Add Diet", new_patient_diagnosis_diet_path(diagnosis_id: @diagnosis.id) %></p>
 
-<h3>Please consider the following Diet Suggestions</h3>
-
-
-<% render "/diets/show.html.erb" %>
+<h2>Doc Says...</h2>

@@ -56,6 +56,10 @@ class Patients::RegistrationsController < Devise::RegistrationsController
     redirect_to doctor_path(current_doctor)
   end
 
+  def after_update_path_for(patients)
+    patient_path(current_patient)
+  end
+
   # The path used after sign up for inactive accounts.
   # def after_inactive_sign_up_path_for(resource)
   #   super(resource)

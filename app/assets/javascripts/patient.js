@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded',function(){
+
  axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 const myForm = document.querySelector('.patient-search');

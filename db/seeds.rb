@@ -19,27 +19,3 @@
 # cirrhosis = Diagnosis.create(name: "cirrhosis", doctor_id: doctor_evil.id, patient_id: jim_beam.id)
 # cirrhosis = Diagnosis.create(name: "cirrhosis", doctor_id: doctor_evil.id, patient_id: johnny_walker.id)
 #  stroke = Diagnosis.create(name: "stroke", doctor_id: doctor_strange.id, patient_id: jim_beam.id)
-
-
-  5.times do
-    Doctor.create!({
-        name: FFaker::Name.name,
-        specialization: ["cyberneticist", "General Practitioner", "Heart Surgeon"].sample
-      })
-  end
-
-  5.times do
-    Patient.create!({
-        name: FFaker::Name.name,
-        age: rand(75),
-        sex: ["Male", "Female"].sample
-      })
-  end
-
-  Patient.all.each do |patient|
-    Diagnosis.create!({
-        name: ["IBS", "ADHD", "cirrhosis", "plague"].sample,
-        patient_id: patient.id,
-        doctor_id: Doctor.all.sample.id
-      })
-  end

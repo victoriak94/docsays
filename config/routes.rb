@@ -16,15 +16,13 @@ Rails.application.routes.draw do
 
   resources :patients do
     resources :diagnoses do
-     resources :diets
-   end
- end
-
- resources :recipes
- post ('/search') => ('recipes#search')
- post ('/searchpatient') => ('patients#search')
+      resources :diets
+    end
   end
 
+  resources :recipes
+  post '/search' => 'recipes#search'
+  post '/searchpatient' => 'patients#search' 
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

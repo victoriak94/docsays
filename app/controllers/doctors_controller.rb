@@ -1,6 +1,6 @@
 class DoctorsController < ApplicationController
     before_action :authenticate_doctor!
-    before_action :load_doctor, only: [:show, :destroy]
+    before_action :load_doctor, only: [:create, :show, :destroy]
     before_action :load_new_doctor, only: [:new, :create]
     before_action :load_doctor_create_and_update_params, only: [:create, :update]
 

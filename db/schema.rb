@@ -10,7 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_29_015723) do
+ActiveRecord::Schema.define(version: 2019_01_30_181931) do
+
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
 
   create_table "diagnoses", force: :cascade do |t|
     t.string "name"
@@ -45,30 +48,23 @@ ActiveRecord::Schema.define(version: 2019_01_29_015723) do
     t.datetime "invitation_accepted_at"
     t.integer "invitation_limit"
     t.string "invited_by_type"
-    t.integer "invited_by_id"
+    t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "image_file_name"
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_doctors_on_confirmation_token", unique: true
     t.index ["email"], name: "index_doctors_on_email", unique: true
     t.index ["invitation_token"], name: "index_doctors_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_doctors_on_invitations_count"
     t.index ["invited_by_id"], name: "index_doctors_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_doctors_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_doctors_on_reset_password_token", unique: true
-  end
-
-  create_table "meal_plans", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "patient_id"
-    t.string "image"
-    t.string "uri"
-    t.string "healthlabel"
-    t.text "ingredients"
-    t.text "ingredientlines"
   end
 
   create_table "patients", force: :cascade do |t|
@@ -83,7 +79,7 @@ ActiveRecord::Schema.define(version: 2019_01_29_015723) do
     t.datetime "invitation_accepted_at"
     t.integer "invitation_limit"
     t.string "invited_by_type"
-    t.integer "invited_by_id"
+    t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -94,12 +90,29 @@ ActiveRecord::Schema.define(version: 2019_01_29_015723) do
     t.string "image_content_type"
     t.bigint "image_file_size"
     t.datetime "image_updated_at"
+    t.string "confirmation_token"
+    t.datetime "confirmed_at"
+    t.datetime "confirmation_sent_at"
+    t.string "unconfirmed_email"
+    t.index ["confirmation_token"], name: "index_patients_on_confirmation_token", unique: true
     t.index ["email"], name: "index_patients_on_email", unique: true
     t.index ["invitation_token"], name: "index_patients_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_patients_on_invitations_count"
     t.index ["invited_by_id"], name: "index_patients_on_invited_by_id"
     t.index ["invited_by_type", "invited_by_id"], name: "index_patients_on_invited_by_type_and_invited_by_id"
     t.index ["reset_password_token"], name: "index_patients_on_reset_password_token", unique: true
+  end
+
+  create_table "recipes", force: :cascade do |t|
+    t.string "name"
+    t.integer "patient_id"
+    t.string "image"
+    t.string "uri"
+    t.string "health_label"
+    t.string "ingredients"
+    t.string "ingredient_lines"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
