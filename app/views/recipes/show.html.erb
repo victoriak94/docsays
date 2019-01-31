@@ -1,5 +1,20 @@
 <%= image_tag @recipe.image %>
 <h1><%= link_to @recipe.name, @recipe.url %></h1>
-  <p>Ingredients: <% @recipe.ingredient_lines %></p>
-  </p>
-  <p>Calories: <%= @recipe.calories %></p>
+
+<ul>
+  <li>Ingredients:
+    <ul>
+      <% @recipe.ingredient_lines.each do |ingredient| %>
+        <li><%= ingredient %></li>
+      <% end %>
+    </ul>
+  </li>
+  <li>Calories: <%= @recipe.calories %></li>
+  <li>Nutrients:
+    <ul>
+      <% @recipe.total_nutrients.each do |nutrient| %>
+        <li><%= nutrient %></li>
+      <% end %>
+    </ul>
+  </li>
+</ul>

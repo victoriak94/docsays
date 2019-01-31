@@ -41,6 +41,7 @@ class DiagnosesController < ApplicationController
   end
 
   def show
+    redirect_to patient_diagnosis_diet_path(@patient, @diagnosis)
   end
 
   def destroy
