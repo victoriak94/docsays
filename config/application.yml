@@ -13,4 +13,4 @@
 SENDMAIL_PASSWORD: sltpjxghyiiifbvk
 SENDMAIL_USERNAME: vkamila6@gmail.com
 MAIL_HOST: gmail.com
-APP_HOST: https://project-docsays.herokuapp.com
+APP_HOST: localhost:3000

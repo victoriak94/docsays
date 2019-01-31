@@ -39,8 +39,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.create(patient_params)
-    @patient.invite!(current_doctor)
+    @patient = Patient.new(patient_params)
 
     if @patient.save
       redirect_to patient_path(@patient)

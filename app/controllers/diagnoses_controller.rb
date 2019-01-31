@@ -32,7 +32,7 @@ class DiagnosesController < ApplicationController
     @diagnosis.doctor_id = current_doctor.id
 
     if @diagnosis.save
-      redirect_to patient_path(@patient)
+      redirect_to new_patient_diagnosis_diet_path(diagnosis_id: @diagnosis.id)
       flash[:notice] = "Diagnosis added"
     else
       redirect_to new_patient_diagnosis_path
