@@ -1,7 +1,7 @@
 class DietsController < ApplicationController
   before_action :load_diagnosis
   before_action :load_diet, only: [:show, :edit, :update, :destroy]
-  before_action :load_diet_create_and_update_params, only: [:create, :update]
+  # before_action :load_diet_create_and_update_params, only: [:create, :update]
 
   def load_diagnosis
     @diagnosis = Diagnosis.find(params[:diagnosis_id])
@@ -11,24 +11,24 @@ class DietsController < ApplicationController
     @diet = Diet.find(params[:id])
   end
 
-  def load_diet_create_and_update_params
-    @diet.name = params[:diet][:name]
-    @diet.avoid = params[:diet][:avoid]
-    @diet.eat = params[:diet][:eat]
-    @diet.diagnosis_id = params[:diagnosis_id]
-  end
+  # def load_diet_create_and_update_params
+  #
+  # end
 
   def index
     @diets = @diagnosis.diets
   end
 
   def new
-    @diet = Diet.new
+    @diets = Diet.new
   end
 
   def create
-    @diet = @diagnosis.diet.new(diet_params)
-
+    @diet = @diagnosis.diets.new(diet_params)
+    @diet.name = params[:diet][:name]
+    @diet.avoid = params[:diet][:avoid]
+    @diet.eat = params[:diet][:eat]
+    @diet.diagnosis_id = params[:diagnosis_id]
     if @diet.save
       redirect_to patient_diagnoses_path(@patient)
       flash[:notice] = "Diet added!"
