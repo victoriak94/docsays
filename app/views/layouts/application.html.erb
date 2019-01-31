@@ -4,12 +4,33 @@
     <title>Doc</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-  
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
+    <body>
 
-  <body>
+  <% if current_doctor || current_patient%>
+
+  <div class="pos-f-t">
+    <div class="collapse" id="navbarToggleExternalContent">
+      <div class="bg-dark p-4">
+        <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor), :class => 'nav-links' %>
+        <span class="text-muted"></span>
+        <%= link_to 'Add New Patient', new_patient_registration_path, :class => 'nav-links' %>
+        <span class="text-muted"></span>
+         <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'},:class => 'nav-links-1' %>
+      </div>
+    </div>
+    <nav class="navbar navbar-dark bg-dark">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </nav>
+  </div>
+
+  <% end %>
+
     <div class="container">
       <% flash.each do |key, value| %>
         <div class="alert alert-<%= key %>">
