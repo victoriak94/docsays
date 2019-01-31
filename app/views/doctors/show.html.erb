@@ -5,11 +5,12 @@
 
 <h4>Search a Patient's Name:</h4>
 <%= simple_form_for Patient.new, :url => searchpatient_path, html: { class: 'patient-search' } do |f| %>
- <%= f.input :name , html: {class: 'search-name'} %>
- <%= f.submit ( f.object.new_record? ? "Search" : "Update"), class: "btn" %>
 
+  <div class="form-group klass">
+    <%= f.input :name, :required =>false, html: {class: 'search-name'}, class: 'form-control'  %>
+    </div>
+   <%= f.button :submit , data: {disable_with: false}, class: 'btn btn-primary' %>
 <% end %>
-
 
 <div id='searchResult'>
 <%= render partial: 'patientList' %>

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded',function(){
-
  axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 const myForm = document.querySelector('.patient-search');
@@ -25,10 +24,10 @@ myForm.addEventListener('submit', function(e){
        //
        //  // const newItem = document.createElement('li');
        //  // newItem.innerText = response.data.content;
-       myDiv.insertAdjacentHTML('afterbegin', response.data);
-     //  myDiv.appendChild(response.data);
-     console.log(myForm.elements[3]);
-       myForm.elements[3].disabled = false;
+       myDiv.innerHTML = '';
+       myDiv.insertAdjacentHTML('afterbegin',response.data);
+      //myDiv.appendChild(response.data);
+
 
     });
 
