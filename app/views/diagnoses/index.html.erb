@@ -2,6 +2,6 @@
 
 <% @diagnoses.each do |diagnosis| %>
   <ul>
-    <li><%= link_to diagnosis.name, patient_diagnosis_path(@diagnosis) %></li>
+    <li><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id) %></li>
   </ul>
 <% end %>
