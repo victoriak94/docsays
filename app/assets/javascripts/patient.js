@@ -19,13 +19,13 @@ document.addEventListener('DOMContentLoaded',function(){
      }).then(function(response){
 
          console.log("Success"+response.data);
-         document.querySelector('#search-name').value = '';
-        //  const myList = document.querySelector('#myList');
+         document.querySelector('#patient_name').value = '';
+        const myDiv = document.querySelector('#searchResult');
         //
         //  // const newItem = document.createElement('li');
         //  // newItem.innerText = response.data.content;
-        // myList.insertAdjacentHTML('beforeend', response.data);
-       // myList.appendChild(response.data);
+        myDiv.insertAdjacentHTML('afterbegin', response.data);
+      //  myDiv.appendChild(response.data);
      });
 
  })

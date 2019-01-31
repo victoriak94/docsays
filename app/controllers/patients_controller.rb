@@ -54,8 +54,17 @@ class PatientsController < ApplicationController
   end
 
   def search
-    puts " .........................#{Patient.find_by_name(params[:patient][:name])}"
-    @patients = Patient.find_by_name(params[:patient][:name])
+    @patients = []
+    puts " .........................#{Patient.find_by_name(params[:patient][:name]).inspect}"
+    @patients <<  Patient.find_by_name(params[:patient][:name])
+
+    respond_to do |format|
+
+          format.html do
+            puts ".............response format as html"
+            render partial: 'doctors/patientList', locals:{patients: @patients}
+          end
+    end
   end
 
   def update
