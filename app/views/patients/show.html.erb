@@ -15,6 +15,15 @@
 <% end %>
 
 <% if current_doctor %>
+<h2> Add a diagnosis to a patient:</h2>
+<%= simple_form_for @patient do |f| %>
+  <p> Patient Name:</p>
+  <%= f.input :patient %>
+  <p> Diagnosis:</p>
+  <%= f.input :diagnosis %>
+  <%= f.button :submit %>
+<% end %>
+
   <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
   <p><%= link_to 'Back', doctor_path(current_doctor) %></p>
   <p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>
