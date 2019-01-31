@@ -1,7 +1,6 @@
 <%= image_tag @patient.image.url(:thumb) %>
 <h1><%= @patient.name %></h1>
 
-
 <% if current_patient %>
   <p><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></p>
   <p><%= link_to 'Diagnosis & Diet', patient_diagnoses_path(@patient) %></p>

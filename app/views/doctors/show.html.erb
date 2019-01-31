@@ -6,17 +6,12 @@
 <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %>
 
 <h4>Search a Patient's Name:</h4>
-  <%= form_tag(patient_path, :method => "get", id: "search-form") do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Search Patients" %>
-<%= submit_tag ("Search") %>
+<%= simple_form_for Patient.new, :url => searchpatient_path, html: { class: 'patient-search' } do |f| %>
+  <%= f.input :name , html: {class: 'search-name'} %>
+  <%= f.button :submit,data: {disable_with: false} %>
 <% end %>
 
-<% @patients.each do |patient| %>
-  <ul>
-    <li><%= link_to patient.name, patient_path(patient) %></li>
-  </ul>
-<% end %>
-
+<%= render partial: 'patientList'%>
 
 
 <p><%= link_to 'Add New Patient', new_patient_registration_path %></p>

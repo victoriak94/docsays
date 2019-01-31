@@ -25,11 +25,12 @@ class PatientsController < ApplicationController
   end
 
   def show
-    # @recipes = Recipe.all #idk if this works
-    #   if params[:search]
-    #     @recipe = Recipe.search(params[:search]).order("created_at DESC")
-    #   else
-    #     @recipe = Recipe.all.order('created_at DESC')
+    @patient = Patient.find((params)[:id])
+    @recipes = Recipe.all #idk if this works
+      if params[:search]
+        @recipe = Recipe.search(params[:search]).order("created_at DESC")
+      else
+        @recipe = Recipe.all.order('created_at DESC')
       end
   end
 
@@ -54,8 +55,8 @@ class PatientsController < ApplicationController
   end
 
   def search
-    @diets = Diet.search_by_term(params[:query])
-    render json: @diets
+    puts " .........................#{Patient.find_by_name(params[:patient][:name])}"
+    @patients = Patient.find_by_name(params[:patient][:name])
   end
 
   def update
@@ -83,3 +84,4 @@ class PatientsController < ApplicationController
   def patient_params
     params.require(:name).permit(:name, :age, :sex, :search, :image)
   end
+end
