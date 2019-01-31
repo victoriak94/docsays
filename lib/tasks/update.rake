@@ -18,7 +18,7 @@ namespace :update do
  			@recipe.url = meal["recipe"]["url"]
 			@recipe.health_label = meal["recipe"]["healthLabels"]
 			@recipe.ingredient_lines = meal["recipe"]["ingredientLines"]
-			@recipe.calories = meal["recipe"]["caloriess"]
+			@recipe.calories = meal["recipe"]["calories"]
 
 			@recipe.save
 		end

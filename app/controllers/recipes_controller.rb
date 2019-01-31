@@ -1,30 +1,36 @@
 class RecipesController < ApplicationController
-  def index
-    @recipes = Recipe.all
-    @recipes = Recipe.search(params[:search])
-    if params[:search]
-      @recipes = Recipe.where(nil)
-      @recipes = @recipes.name(params[:name]) if params[:name].present?
-      @recipes = @recipes.url(params[:url]) if params[:url].present?
-      @recipes = @recipes.health_label(params[:health_label]) if params[:health_label].present?
-      @recipes = @recipes.ingredient_lines(params[:ingredient_lines]) if params[:ingredient_lines].present?
-      @recipes = @recipes.calories(params[:calories]) if params[:calories].present?
-    else
-      @recipes =  Recipe.all
-    end
-  end
 
-  def show
+  def index
+    @recipe = Recipe.all
     if params[:search]
-      @myList = Recipe.where('name LIKE ? OR ingredients LIKE ', "#{params[:search]}" "#{params[:search]}")
+      @myList = Recipe.where('name LIKE ? ', "#{params[:search]}")
+      @myList = Recipe.where('health_label LIKE ? ', "#{params[:search]}")
+      @myList = Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
+      @myList = Recipe.where('calories LIKE ? ', "#{params[:search]}")
     else
       @myList =  Recipe.all
     end
+      @myList =  Recipe.all
+    p ".............................#{@myList.inspect}"
+  end
+
+  def show
+    @recipe = Recipe.all
+    if params[:search]
+      @myList = []
+      @myList << Recipe.where('name LIKE ? ', "#{params[:search]}")
+      @myList << Recipe.where('health_label LIKE ? ', "#{params[:search]}")
+      @myList << Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
+      @myList << Recipe.where('calories LIKE ? ', "#{params[:search]}")
+    else
+      @myList =  Recipe.all
+    end
+      @myList =  Recipe.all
     p ".............................#{@myList.inspect}"
   end
 
   def new
-    @recipes = Recipe.new
+    @recipe = Recipe.new
   end
 
   def create
@@ -34,46 +40,48 @@ class RecipesController < ApplicationController
     @recipe.url = params[:recipe][:url]
     @recipe.health_label = params[:recipe][:health_label]
     @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
+    @recipe.calories = params[:recipe][:calories]
 
     if @recipe.save
       redirect_to patient_path(@patient)
-      flash[:notice] = "Meal Plan Added!"
+      flash[:notice] = "Recipe added!"
     else
       render :new
-      flash[:notice] = "Meal Plan Not Added."
+      flash[:notice] = "Recipe not added."
     end
-  end
-
-  def search
-    @recipes = if params[:search]
-      @myList = Recipe.where('name LIKE ?', "#{params[:search]}")
-    else
-      @myList =  Recipe.all
-    end
-    puts ".............................#{myList}"
   end
 
   def edit
   end
 
   def update
-    @recipe.name = params[:recipe][:name]
-    @recipe.image = params[:recipe][:image]
-    @recipe.uri = params[:recipe][:uri]
-    @recipe.health_label = params[:recipe][:health_label]
-    @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
-    if @recipe.save
-      redirect_to patient_path(@patient)
-      flash[:notice] = "Meal plan updated!"
+   @recipe.name = params[:recipe][:name]
+   @recipe.image = params[:recipe][:image]
+   @recipe.url = params[:recipe][:url]
+   @recipe.health_label = params[:recipe][:health_label]
+   @recipe.ingredients = params[:recipe][:ingredients]
+   @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
+   @recipe.calories = params[:recipe][:calories]
+
+   if @recipe.save
+     redirect_to patient_path(@patient)
+     flash[:notice] = "Recipe updated!"
+   else
+     render :new
+     flash[:notice] = "Recipe not updated."
+   end
+ end
+
+  def search
+    @recipes = if params[:search]
+      @myList = Recipe.where('name LIKE ?', "#{params[:search]}")
+      @myList = Recipe.where('health_label LIKE ? ', "#{params[:search]}")
+      @myList = Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
+      @myList = Recipe.where('calories LIKE ? ', "#{params[:search]}")
     else
-      render :new
-      flash[:notice] = "Meal Plan not updated."
+      @myList =  Recipe.all
     end
+    puts ".............................#{myList}"
   end
 
-  def destroy
-    @recipe.destroy
-    redirect_to patient_path(@patient)
-    flash[:notice] = "Meal plan deleted"
-  end
 end
