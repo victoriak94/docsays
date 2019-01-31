@@ -39,8 +39,7 @@ class PatientsController < ApplicationController
   end
 
   def create
-    @patient = Patient.create(patient_params)
-    @patient.invite!(current_doctor)
+    @patient = Patient.new(patient_params)
 
     if @patient.save
       redirect_to patient_path(@patient)
@@ -63,9 +62,6 @@ class PatientsController < ApplicationController
     @patient.name = params[:patient][:name]
     @patient.sex = params[:patient][:sex]
     @patient.age = params[:patient][:age]
-    # @patient.diagnosis = Diagnosis.find(params[:patient_id])
-    # @patient.meal_plan = MealPlan.find(params[:patient_id])
-
     if @patient.save
       redirect_to patient_path(@patient)
       flash[:notice] = "You have added your patient!"

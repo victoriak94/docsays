@@ -1,5 +1,5 @@
 <h2>Add Diet Suggestions</h2>
-<%= form_for(@diets, url: patient_diagnosis_diets_path do |f| %>
+<%= form_for(@diets, url: patient_diagnosis_diets_path) do |f| %>
   <div class = "field">
     <%= f.label :name %>
     <%= f.text_field :name %>
