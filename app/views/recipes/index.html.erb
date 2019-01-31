@@ -1,0 +1,11 @@
+<h1>Recipes!</h1>
+<ul>
+<% @myList.each do |recipe| %>
+<% if recipe != nil %>
+<div>
+  <li><%= image_tag recipe.image %></li>
+  <li><%= link_to recipe.name, recipe.url %></li>
+</div>
+<% end %>
+<%end%>
+</ul>
