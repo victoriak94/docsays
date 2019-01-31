@@ -11,10 +11,6 @@ class DietsController < ApplicationController
     @diet = Diet.find(params[:id])
   end
 
-  # def load_diet_create_and_update_params
-  #
-  # end
-
   def index
     @diets = @diagnosis.diets
   end
@@ -24,10 +20,7 @@ class DietsController < ApplicationController
   end
 
   def create
-    @diet = @diagnosis.diets.new(diet_params)
-    @diet.name = params[:diet][:name]
-    @diet.avoid = params[:diet][:avoid]
-    @diet.eat = params[:diet][:eat]
+    @diet = Diet.new(diet_params)
     @diet.diagnosis_id = params[:diagnosis_id]
     if @diet.save
       redirect_to patient_diagnoses_path(@patient)

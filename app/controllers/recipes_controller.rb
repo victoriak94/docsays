@@ -1,32 +1,20 @@
 class RecipesController < ApplicationController
 
   def index
-    @recipe = Recipe.all
+    @recipes = Recipe.all
     if params[:search]
-      @myList = Recipe.where('name LIKE ? ', "#{params[:search]}")
-      @myList = Recipe.where('health_label LIKE ? ', "#{params[:search]}")
-      @myList = Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
-      @myList = Recipe.where('calories LIKE ? ', "#{params[:search]}")
+      @myList = []
+      (@myList << Recipe.where('name LIKE ? ', "%#{params[:search]}%")).flatten!
+      (@myList << Recipe.where('health_label LIKE ? ', "%#{params[:search]}%")).flatten!
+      (@myList << Recipe.where('ingredient_lines LIKE ? ', "%#{params[:search]}%")).flatten!
     else
-      @myList =  Recipe.all
+      (@myList << Recipe.all).flatten!
     end
-      @myList =  Recipe.all
     p ".............................#{@myList.inspect}"
   end
 
   def show
-    @recipe = Recipe.all
-    if params[:search]
-      @myList = []
-      @myList << Recipe.where('name LIKE ? ', "#{params[:search]}")
-      @myList << Recipe.where('health_label LIKE ? ', "#{params[:search]}")
-      @myList << Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
-      @myList << Recipe.where('calories LIKE ? ', "#{params[:search]}")
-    else
-      @myList =  Recipe.all
-    end
-      @myList =  Recipe.all
-    p ".............................#{@myList.inspect}"
+    @recipe = Recipe.find(params[:id])
   end
 
   def new
@@ -34,14 +22,7 @@ class RecipesController < ApplicationController
   end
 
   def create
-    @recipe = Recipe.new
-    @recipe.name = params[:recipe][:name]
-    @recipe.image = params[:recipe][:image]
-    @recipe.url = params[:recipe][:url]
-    @recipe.health_label = params[:recipe][:health_label]
-    @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
-    @recipe.calories = params[:recipe][:calories]
-
+    @recipe = Recipe.new(recipe_params)
     if @recipe.save
       redirect_to patient_path(@patient)
       flash[:notice] = "Recipe added!"
@@ -59,9 +40,9 @@ class RecipesController < ApplicationController
    @recipe.image = params[:recipe][:image]
    @recipe.url = params[:recipe][:url]
    @recipe.health_label = params[:recipe][:health_label]
-   @recipe.ingredients = params[:recipe][:ingredients]
    @recipe.ingredient_lines = params[:recipe][:ingredient_lines]
    @recipe.calories = params[:recipe][:calories]
+   @recipe.total_nutrients = params[:recipe][:total_nutrients]
 
    if @recipe.save
      redirect_to patient_path(@patient)
@@ -74,14 +55,19 @@ class RecipesController < ApplicationController
 
   def search
     @recipes = if params[:search]
-      @myList = Recipe.where('name LIKE ?', "#{params[:search]}")
-      @myList = Recipe.where('health_label LIKE ? ', "#{params[:search]}")
-      @myList = Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
-      @myList = Recipe.where('calories LIKE ? ', "#{params[:search]}")
+      @myList = []
+      @myList << Recipe.where('name LIKE ?', "#{params[:name]}")
+      @myList << Recipe.where('health_label LIKE ? ', "#{params[:search]}")
+      @myList << Recipe.where('ingredient_lines LIKE ? ', "#{params[:search]}")
+      @myList << Recipe.where('calories LIKE ? ', "#{params[:search]}")
     else
-      @myList =  Recipe.all
+      @myList <<  Recipe.all
     end
     puts ".............................#{myList}"
+  end
+
+  def recipe_params
+    params.require(:recipes).permit(:name, :image, :url, :health_label, :ingredient_lines, :calories, :total_nutrients)
   end
 
 end

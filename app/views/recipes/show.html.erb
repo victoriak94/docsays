@@ -1,7 +1,5 @@
-<h1> This is the recipe show page!</h1>
-
-<ul>
-<%@myList.each do |item|%>
-<li><%=item.name%></li>
-<%end%>
-</ul>
+<%= image_tag @recipe.image %>
+<h1><%= link_to @recipe.name, @recipe.url %></h1>
+  <p>Ingredients: <% @recipe.ingredient_lines %></p>
+  </p>
+  <p>Calories: <%= @recipe.calories %></p>
