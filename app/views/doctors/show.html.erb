@@ -5,8 +5,8 @@
 
 <h4>Search a Patient's Name:</h4>
 <%= simple_form_for Patient.new, :url => searchpatient_path, html: { class: 'patient-search' } do |f| %>
-  <%= f.input :name , html: {class: 'search-name'} %>
-  <%= f.button :submit,data: {disable_with: false} %>
+ <%= f.input :name , html: {class: 'search-name'} %>
+ <%= f.button :submit,data: {disable_with: false} %>
 <% end %>
 
 <div id='searchResult'>
