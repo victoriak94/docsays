@@ -25,13 +25,24 @@ class PatientsController < ApplicationController
   end
 
   def show
-    #@patient = Patient.search(params[:search])
-    @recipes = Recipe.all #idk if this works
-      if params[:search]
-        @recipe = Recipe.search(params[:search]).order("created_at DESC")
-      else
-        @recipe = Recipe.all.order('created_at DESC')
-      end
+    @recipes = Recipe.all
+    @recipes = Recipe.search(params[:search])
+    if params[:search]
+      @recipes = Recipe.where(nil)
+      @recipes = @recipes.name(params[:name]) if params[:name].present?
+      @recipes = @recipes.url(params[:url]) if params[:url].present?
+      @recipes = @recipes.health_label(params[:health_label]) if params[:health_label].present?
+      @recipes = @recipes.ingredient_lines(params[:ingredient_lines]) if params[:ingredient_lines].present?
+      @recipes = @recipes.calories(params[:calories]) if params[:calories].present?
+    else
+      @recipes =  Recipe.all
+    end
+    # @recipes = Recipe.all #idk if this works
+    #   if params[:search]
+    #     @recipe = Recipe.search(params[:search]).order("created_at DESC")
+    #   else
+    #     @recipe = Recipe.all.order('created_at DESC')
+    #   end
   end
 
   def new
