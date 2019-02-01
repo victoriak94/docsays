@@ -1,14 +1,13 @@
 <div class='users-show'>
-<%= image_tag @doctor.image.url(:thumb), :class => 'avatar' %>
+  <%= image_tag @doctor.image.url(:thumb), :class => 'avatar' %>
 
-<h1 class='user-name-header'><%= @doctor.name %></h1>
-<h3 class='doctor-specialization'><%= @doctor.specialization %></h3>
+  <h1 class='user-name-header'><%= @doctor.name %></h1>
+  <h3 class='doctor-specialization'><%= @doctor.specialization %></h3>
 
-<div class='patients-container'>
-  <%= image_tag @patient.image.url(:thumb), :class => 'avatar-1' %>
-      <% @patients.each do |patient| %>
-        <li class='patient-name'><%= link_to patient.name, patient_path(patient) %></li>
-      <% end %>
-</div>
-
+  <div class='patients-container'>
+        <% @patients.each do |patient| %>
+          <%= image_tag patient.image.url(:thumb), :class => 'avatar-1' %>
+          <li class='patient-name'><%= link_to patient.name, patient_path(patient) %></li>
+        <% end %>
+  </div>
 </div>
