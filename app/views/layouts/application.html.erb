@@ -25,9 +25,16 @@
      <div class="bg-dark p-4">
        <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor), :class => 'nav-links' %>
        <span class="text-muted"></span>
+       <% if current_doctor %>
        <%= link_to 'Add New Patient', new_patient_registration_path, :class => 'nav-links' %>
        <span class="text-muted"></span>
+       <%= link_to 'Dashboard', doctor_path(current_doctor), :class => 'nav-links' %>
         <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' }, :class => 'nav-links-1' %>
+        <% end %>
+        <% if current_patient %>
+        <%= link_to 'Dashboard', patient_path(current_patient), :class => 'nav-links' %>
+        <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' }, :class => 'nav-links-1' %>
+        <% end %>
      </div>
    </div>
    <nav class="navbar navbar-dark bg-dark">

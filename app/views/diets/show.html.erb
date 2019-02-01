@@ -9,3 +9,11 @@
 <ul>
 <li><%= @diet.eat %></li>
 </ul>
+
+<% if current_doctor %>
+  <p><%= link_to 'Back to dashboard', doctor_path(current_doctor) %></p>
+<% end %>
+
+<% if current_patient %>
+  <p><%= link_to 'Back to dashboard', patient_path(current_patient) %></p>
+<% end %>
