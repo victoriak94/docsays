@@ -1,9 +1,9 @@
 <ul>
-<% @patients.each do |patient| %>
+  <%= image_tag @patient.image.url(:thumb), :class => 'avatar-1' %>
 
-
-  <li><%= link_to patient.name, patient_path(patient) %></li>
-
+  <div class="patient-list">
+      <% @patients.each do |patient| %>
+        <li><%= link_to patient.name, patient_path(patient) %></li>
 
 <% end %>
 </ul>
