@@ -2,24 +2,19 @@
 <h1><%= @patient.name %></h1>
 
 <% if current_patient %>
-  <p><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></p>
   <p><%= link_to 'Diagnosis & Diet', patient_diagnoses_path(@patient) %></p>
 
   <h1>Search for new recipes</h1>
   <div class="form-group klass">
     <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search recipes", class: 'form-control' %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search recipes", class: 'form-control bar' %>
   </div>
     <%= submit_tag "Search", class: 'btn btn-primary' %>
     <% end %>
-
-
-  <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %>
 <% end %>
 
 <% if current_doctor %>
 
   <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
   <p><%= link_to 'Back', doctor_path(current_doctor) %></p>
-  <p><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></p>
 <% end %>
