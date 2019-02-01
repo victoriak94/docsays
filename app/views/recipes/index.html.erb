@@ -1,13 +1,11 @@
-<h1>Recipes!</h1>
-<ul>
-<% @myList.each do |recipe| %>
-<% if recipe != nil %>
-<div>
-  <li><%= image_tag recipe.image %></li>
-  <li><%= link_to recipe.name, recipe.url %></li>
-</div>
-<% end %>
-<%end%>
-</ul>
+<h1 class='recipes-header'>Recipes!</h1>
 
-<%= link_to 'Back to Dashboard', patient_path(current_patient) %>
+  <div class='recipe-container'>
+    <% @myList.each do |recipe| %>
+      <% if recipe != nil %>
+        <ul>
+          <li class='recipe'><%= image_tag recipe.image, class: 'recipe-image' %> <%= link_to recipe.name, recipe.url, class: 'recipe-name' %></li>
+        </ul>
+      <% end %>
+    <% end %>
+  </div>

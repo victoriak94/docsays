@@ -12,6 +12,135 @@
  */
  @import "bootstrap";
 
+.patients-show{
+  padding: 100px;
+  text-align: center;
+}
+
+.patient-name-header{
+  padding: 10px;
+}
+
+#form-control-bar{
+  align: center;
+  width: 150px;
+  font-size: 13px;
+}
+
+.diagnosis-diet-link{
+  font-size: 18px;
+}
+
+#search-submit-button{
+  width: 60px;
+  font-size: 13px;
+}
+
+.diagnosis-index-container{
+  text-align: center;
+}
+
+.diagnoses-header{
+  font-size: 35px;
+}
+
+.ul-diagnoses-list{
+  text-align: center;
+}
+
+.diagnoses-list{
+  padding-top: 10px;
+  padding-left: 473px;
+  font-size: 20px;
+  width: 100px;
+}
+
+.diagnoses-list-index{
+  font-size: 20px;
+}
+
+.diet-header{
+  font-size: 35px;
+  text-align: center;
+}
+
+.doc-says-header{
+  text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.doc-says-container{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 200px 200px;
+  grid-template-rows: 50px 50px;
+  padding-top: 5px;
+}
+
+.diet-avoid{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.diet-eat{
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  grid-column-start: 2;
+  grid-row-start: 1;
+  align-self: center;
+}
+
+.ul-diet-avoid{
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  align-self: center;
+}
+
+.ul-diet-eat{
+  font-size: 18px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  align-self: center;
+}
+
+.recipes-header{
+  font-size: 35px;
+  text-align: center;
+  padding-bottom: 13px;
+}
+
+.recipe-container{
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 500px;
+}
+
+.recipe-image{
+  height: 100px;
+  width: 100px;
+}
+
+.recipe{
+  display: flex;
+  justify-content: left;
+  grid-column-start: 1;
+  border: 2px solid #999999;
+}
+
+.recipe-name {
+  font-size: 20px;
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+
 .b-1{
   font-size: 10px;
 }

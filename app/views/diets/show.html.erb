@@ -1,19 +1,15 @@
-<h1><%= @diet.name %></h1>
 
-<h2>Doc Says...</h2>
-<p>Avoid these foods:</p>
-<ul>
-<li><%= @diet.avoid %></li>
-</ul>
-<p>And eat these:</p>
-<ul>
-<li><%= @diet.eat %></li>
-</ul>
+<h1 class='diet-header'><%= @diet.name %></h1>
 
-<% if current_doctor %>
-  <p><%= link_to 'Back to dashboard', doctor_path(current_doctor) %></p>
-<% end %>
+<h2 class='doc-says-header'>Doc Says...</h2>
+  <div class='doc-says-container'>
+    <p class='diet-avoid'>Avoid these foods:</p>
+      <ul class='ul-diet-avoid'>
+        <li><%= @diet.avoid %></li>
+      </ul>
 
-<% if current_patient %>
-  <p><%= link_to 'Back to dashboard', patient_path(current_patient) %></p>
-<% end %>
+    <p class='diet-eat'>And eat these:</p>
+      <ul class='ul-diet-eat'>
+        <li><%= @diet.eat %></li>
+      </ul>
+  </div>
