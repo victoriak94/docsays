@@ -3,9 +3,7 @@
 <h1 class='diagnoses-header'>Diagnoses</h1>
 
 <% @diagnoses.each do |diagnosis| %>
-  <ul class='ul-diagnoses-list'>
-    <li class='diagnoses-list'><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id, class: 'diagnoses-list-index') %></li>
-  </ul>
+    <p class='diagnoses-list'><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id) %></p>
 <% end %>
 
 </div>

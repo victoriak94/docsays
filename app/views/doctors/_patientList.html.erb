@@ -4,6 +4,5 @@
   <div class="patient-list">
       <% @patients.each do |patient| %>
         <li><%= link_to patient.name, patient_path(patient) %></li>
-
-<% end %>
+      <% end %>
 </ul>

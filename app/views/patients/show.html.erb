@@ -1,22 +1,22 @@
-<div class="patients-show">
+<div class="users-show">
 
 <%= image_tag @patient.image.url(:thumb), :class => 'avatar' %>
-<h1 class='patient-name-header'><%= @patient.name %></h1>
+<h1 class='user-name-header'><%= @patient.name %></h1>
 
 <% if current_patient %>
   <p><%= link_to 'Diagnosis & Diet', patient_diagnoses_path(@patient), class: 'diagnosis-diet-link' %></p>
 
-  <h1>Search for new recipes</h1>
-  <div class="form-group klass">
-    <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-    <%= text_field_tag :search, params[:search], placeholder: "Search recipes", id: 'form-control-bar' %>  <%= submit_tag "Search", id: 'search-submit-button' %>
-  </div>
-    <% end %>
+  <h1 class='recipe-search-header'>Search for new recipes</h1>
+    <div class="form-group klass">
+      <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search recipes", id: 'form-control-bar' %>  <%= submit_tag "Search", id: 'search-submit-button' %>
+    </div>
+      <% end %>
 <% end %>
 
 <% if current_doctor %>
-
-  <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %> | <%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
-  <p><%= link_to 'Back', doctor_path(current_doctor) %></p>
+  <p class='patient-diagnosis'><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %></p>
+  <p class='patient-diagnosis'><%= link_to 'Add Diagnosis & Diet', new_patient_diagnosis_path(@patient) %></p>
 <% end %>
+
 </div>

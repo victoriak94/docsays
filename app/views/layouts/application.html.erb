@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Archivo+Narrow|Barlow|Major+Mono+Display" rel="stylesheet">
+
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -30,7 +32,7 @@
           <span class="text-muted"></span>
            <%= link_to 'Dashboard', doctor_path(current_doctor), :class => 'nav-links' %>
            <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'},:class => 'nav-links-1' %>
-         <% end %>
+        <% end %>
         <% if current_patient %>
           <%= link_to 'Edit My Account', edit_patient_registration_path(@patient),:class => 'nav-links' %>
           <span class="text-muted"></span>
@@ -49,9 +51,9 @@
 
   <% end %>
 
-    <div class="container">
+    <div class="alert-container">
       <% flash.each do |key, value| %>
-        <div class="alert alert-<%= key %>">
+        <div class="alert alert-info-<%= key %>">
 
           <%= value %>
         </div>
