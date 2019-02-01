@@ -52,11 +52,12 @@
 
      <div class="form-group">
 
-       <%= f.button :submit, "Done!",class: 'btn btn-primary' %>
+       <%= f.button :submit, "Done!", class: 'btn btn-primary' %>
      </div>
    <% end %>
-
-   <%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure')},class: 'btn btn-warning', method: :delete %></p>
+  <div class="form-group">
+     <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: 'Are you sure?' }, class: 'btn btn-warning', method: :delete %>
+  </div>
 
   <div class="form-group">
   <%= link_to 'Back', patient_path(current_patient), class: 'btn btn-primary'%>
