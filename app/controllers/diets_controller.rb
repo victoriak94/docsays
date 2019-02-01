@@ -11,10 +11,6 @@ class DietsController < ApplicationController
     @diet = Diet.find(params[:id])
   end
 
-  # def load_diet_create_and_update_params
-  #
-  # end
-
   def index
     @diets = @diagnosis.diets
   end
@@ -24,11 +20,15 @@ class DietsController < ApplicationController
   end
 
   def create
-    @diet = Diet.new(diet_params)
-    @diet.diagnosis_id = params[:diagnosis_id]
     @patient = Patient.find(params[:patient_id])
+    @diet = Diet.new(diet_params)
+    @diet.avoid = params[:diet][:avoid]
+    @diet.eat = params[:diet][:eat]
+    @diet.diagnosis_id = params[:diagnosis_id]
+    @diagnosis = Diagnosis.find(params[:diagnosis_id])
+
     if @diet.save
-      redirect_to patient_diagnoses_path(@patient)
+      redirect_to patient_diagnosis_diet_path(id: @diet.id)
       flash[:notice] = "Diet added!"
     else
       redirect_to new_patient_diagnosis_path
@@ -37,19 +37,6 @@ class DietsController < ApplicationController
   end
 
   def show
-  end
-
-  def edit
-  end
-
-  def update
-    if @diet.save
-      redirect_to patient_diagnoses_path(@patient)
-      flash[:notice] = "Diet updated!"
-    else
-      redirect_to new_patient_diagnosis_path
-      flash[:notice] = "Diet could not be updated"
-    end
   end
 
   def destroy

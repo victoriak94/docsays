@@ -27,6 +27,8 @@ myForm.addEventListener('submit', function(e){
        myDiv.innerHTML = '';
        myDiv.insertAdjacentHTML('afterbegin',response.data);
       //myDiv.appendChild(response.data);
+
+
     });
 
 })
