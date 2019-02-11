@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Doc</title>
+    <title>DocSays!</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -16,40 +16,35 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
   </head>
-    <body>
-
-  <% if current_doctor || current_patient%>
-
-  <div class="pos-f-t">
-    <div class="collapse" id="navbarToggleExternalContent">
-      <div class="bg-dark p-4">
-        <% if current_doctor %>
-          <%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor),:class => 'nav-links' %>
-          <span class="text-muted"></span>
-          <%= link_to 'Add New Patient', new_patient_registration_path, :class => 'nav-links' %>
-          <span class="text-muted"></span>
-           <%= link_to 'Dashboard', doctor_path(current_doctor), :class => 'nav-links' %>
-           <%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'},:class => 'nav-links-1' %>
-        <% end %>
-        <% if current_patient %>
-          <%= link_to 'Edit My Account', edit_patient_registration_path(@patient),:class => 'nav-links' %>
-          <span class="text-muted"></span>
-          <%= link_to 'Dashboard', patient_path(current_patient), :class => 'nav-links' %>
-          <%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' }, :class => 'nav-links-1' %>
-        <% end %>
-
-      </div>
-    </div>
-    <nav class="navbar navbar-dark bg-dark">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </nav>
+  
+  <body>
+  <div class="nav-container"
+  <header>
+    <% if current_doctor || current_patient %>
+      <h1 class="logo">DocSays!</h1>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <nav>
+        <ul>
+          <% if current_doctor %>
+            <li class="top-nav-link"><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
+            <li class="second-nav-link"><%= link_to 'Add Patient', new_patient_registration_path %></li>
+            <li class="dashboard-nav-link"><%= link_to 'Dashboard', doctor_path(current_doctor) %></li>
+            <li class="logout-nav-link"><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
+          <% end %>
+          <% if current_patient %>
+            <li class="top-nav-link"><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></li>
+            <li class="dashboard-nav-link"><%= link_to 'Dashboard', patient_path(current_patient) %></li>
+            <li class="logout-nav-link"><%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %></li>
+          <% end %>
+        </ul>
+      </nav>
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
+    <% end %>
+  </header>
   </div>
-
-  <% end %>
 
     <div class="alert-container">
       <% flash.each do |key, value| %>
@@ -57,9 +52,8 @@
 
           <%= value %>
         </div>
-    </div>
-
       <% end %>
+    </div>
 
     <%= yield :top_content %>
 
