@@ -27,13 +27,13 @@
       <nav>
         <ul>
           <% if current_doctor %>
-            <li class="top-nav-link"><%= link_to 'Edit My Account', edit_doctor_registration_path(@doctor) %></li>
-            <li class="second-nav-link"><%= link_to 'Add New Patient', new_patient_registration_path %></li>
+            <li class="top-nav-link"><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
+            <li class="second-nav-link"><%= link_to 'Add Patient', new_patient_registration_path %></li>
             <li class="dashboard-nav-link"><%= link_to 'Dashboard', doctor_path(current_doctor) %></li>
             <li class="logout-nav-link"><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
           <% end %>
           <% if current_patient %>
-            <li class="top-nav-link"><%= link_to 'Edit My Account', edit_patient_registration_path(@patient) %></li>
+            <li class="top-nav-link"><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></li>
             <li class="dashboard-nav-link"><%= link_to 'Dashboard', patient_path(current_patient) %></li>
             <li class="logout-nav-link"><%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %></li>
           <% end %>

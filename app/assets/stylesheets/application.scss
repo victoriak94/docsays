@@ -388,7 +388,7 @@ a:link {
   .nav-container {
     background: #f1f1f1;
     display: grid;
-    grid-template-columns: 30px auto 1fr 1fr minmax(300px, 2fr);
+    grid-template-columns: 30px auto minmax(300px, 4fr) 1fr;
   }
 
   .logo {
@@ -405,7 +405,7 @@ a:link {
     background: none;
     top: initial;
     left: initial;
-    grid-column: 5 / 6;
+    grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
