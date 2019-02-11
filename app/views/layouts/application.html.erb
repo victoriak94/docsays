@@ -22,9 +22,9 @@
   <body>
 
   <header>
-    <% if current_doctor || current_patient%>
+    <% if current_doctor || current_patient %>
       <h1 class="logo">DocSays!</h1>
-
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
       <nav>
         <ul>
           <% if current_doctor %>
@@ -40,7 +40,9 @@
           <% end %>
         </ul>
       </nav>
-
+      <label for="nav-toggle" class="nav-toggle-label">
+        <span></span>
+      </label>
     <% end %>
   </header>
 
