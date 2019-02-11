@@ -16,7 +16,7 @@
   font-family: 'Barlow', sans-serif;
 }
 
-header {
+.nav-container {
   background: #f1f1f1;
   text-align: center;
   position: fixed;
@@ -25,6 +25,7 @@ header {
 }
 
 .logo {
+  text-align: center;
   margin-top: 2px;
   padding-bottom: 2px;
 }
