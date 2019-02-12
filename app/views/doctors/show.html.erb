@@ -4,10 +4,19 @@
   <h1 class='user-name-header'><%= @doctor.name %></h1>
   <h3 class='doctor-specialization'><%= @doctor.specialization %></h3>
 
+  <div class="search-bar">
+    <input type="text" id="filterInput" placeholder="Search patients...">
+  </div>
+
   <div class='patients-container'>
-        <% @patients.each do |patient| %>
+      <% @patients.each do |patient| %>
+        <li class="patient">
           <%= image_tag patient.image.url(:thumb), :class => 'avatar-1' %>
-          <li class='patient-name'><%= link_to patient.name, patient_path(patient) %></li>
-        <% end %>
+          <%= link_to patient.name, patient_path(patient) %>
+        </li>
+      <% end %>
   </div>
 </div>
+
+<script type="text/javascript" src="assets/javascripts/patient.js">
+</script>
