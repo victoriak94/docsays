@@ -1,7 +1,7 @@
 <div class='users-show'>
   <%= image_tag @doctor.image.url(:thumb), :class => 'avatar' %>
 
-  <h1 class='user-name-header'><%= @doctor.name %></h1>
+  <h1 class='user-name-header'>Dr. <%= @doctor.name %></h1>
   <h3 class='doctor-specialization'><%= @doctor.specialization %></h3>
 
   <div class="search-bar">
