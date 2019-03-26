@@ -10,10 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
- @import "bootstrap";
+@import "bootstrap";
 
-*{
-  font-family: 'Barlow', sans-serif;
+* {
+  font-family: "Barlow", sans-serif;
 }
 
 .nav-container {
@@ -45,7 +45,7 @@
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
-  outline: 3px solid rgba(lightblue, .75);
+  outline: 3px solid rgba(lightblue, 0.75);
 }
 
 .nav-toggle-label {
@@ -71,7 +71,7 @@
 
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
-  content: '';
+  content: "";
   position: absolute;
 }
 
@@ -129,91 +129,91 @@ nav a:hover {
   transition: opacity 250ms ease-in-out 250ms;
 }
 
-.doc-says-header{
-  font-family: 'Major Mono Display', monospace;
+.doc-says-header {
+  font-family: "Major Mono Display", monospace;
   font-size: 50px;
   padding-bottom: 25px;
 }
 
-.home{
+.home {
   padding: 150px;
   text-align: center;
   font-size: 30px;
 }
 
-.home-query{
-  font-family: 'Archivo Narrow', sans-serif;
+.home-query {
+  font-family: "Archivo Narrow", sans-serif;
   letter-spacing: 2px;
 }
 
-.alert-container{
+.alert-container {
   text-align: center;
 }
 
-.users-show{
+.users-show {
   margin-top: 100px;
   text-align: center;
 }
 
-.user-name-header{
+.user-name-header {
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.doctor-specialization{
+.doctor-specialization {
   padding-bottom: 20px;
 }
 
-.patient-diagnosis{
+.patient-diagnosis {
   font-size: 15px;
 }
 
-#form-control-bar{
+#form-control-bar {
   align: center;
   width: 150px;
   font-size: 13px;
 }
 
-.diagnosis-diet-link{
+.diagnosis-diet-link {
   font-size: 18px;
 }
 
-#search-submit-button{
+#search-submit-button {
   width: 60px;
   font-size: 13px;
 }
 
-.diagnosis-index-container{
+.diagnosis-index-container {
   text-align: center;
 }
 
-.diagnoses-header{
+.diagnoses-header {
   font-size: 35px;
 }
 
-.diagnoses-list{
+.diagnoses-list {
   padding-top: 10px;
   padding-left: 440px;
   font-size: 20px;
   width: 100px;
 }
 
-.diagnoses-list-index{
+.diagnoses-list-index {
   font-size: 20px;
 }
 
-.diet-header{
+.diet-header {
   font-size: 35px;
   text-align: center;
 }
 
-.doc-says-header{
+.doc-says-header {
   text-align: center;
   font-size: 25px;
   padding-top: 20px;
 }
 
-.doc-says-container{
+.doc-says-container {
   display: grid;
   justify-content: center;
   grid-template-columns: 200px 250px;
@@ -221,15 +221,15 @@ nav a:hover {
   padding-top: 5px;
 }
 
-.recipe-search-header{
+.recipe-search-header {
   padding-bottom: 10px;
 }
 
-.new-diet-container{
+.new-diet-container {
   text-align: center;
 }
 
-.diet-avoid{
+.diet-avoid {
   display: flex;
   justify-content: center;
   font-size: 20px;
@@ -238,7 +238,7 @@ nav a:hover {
   grid-row-start: 1;
 }
 
-.diet-eat{
+.diet-eat {
   display: flex;
   justify-content: center;
   font-size: 20px;
@@ -248,38 +248,38 @@ nav a:hover {
   align-self: center;
 }
 
-.ul-diet-avoid{
+.ul-diet-avoid {
   font-size: 18px;
   grid-column-start: 1;
   grid-row-start: 2;
   align-self: center;
 }
 
-.ul-diet-eat{
+.ul-diet-eat {
   font-size: 18px;
   grid-column-start: 2;
   grid-row-start: 2;
   align-self: center;
 }
 
-.recipes-header{
+.recipes-header {
   font-size: 35px;
   text-align: center;
   padding-bottom: 13px;
 }
 
-.recipe-container{
+.recipe-container {
   display: grid;
   justify-content: center;
   grid-template-columns: 500px;
 }
 
-.recipe-image{
+.recipe-image {
   height: 100px;
   width: 100px;
 }
 
-.recipe{
+.recipe {
   display: flex;
   justify-content: left;
   grid-column-start: 1;
@@ -293,23 +293,23 @@ nav a:hover {
   margin-right: 30px;
 }
 
-li{
-  list-style-type:none;
-}
-
-.nav-item{
+li {
   list-style-type: none;
 }
-.avatar{
-   border-radius: 50%;
-   border: 1px solid #5C6690;
+
+.nav-item {
+  list-style-type: none;
+}
+.avatar {
+  border-radius: 50%;
+  border: 1px solid #5c6690;
 }
 
-.avatar-1{
+.avatar-1 {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  border: 1px solid #5C6690;
+  border: 1px solid #5c6690;
   grid-row-start: 1fr;
   align-self: end;
 }
@@ -319,14 +319,14 @@ li{
   grid-row-start: 1;
 }
 
-.patient-list{
+.patient-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 30px;
   padding: 50px;
 }
 
-.patients-container{
+.patients-container {
   padding: 10px;
   display: grid;
   grid-template-rows: 1fr;
@@ -334,50 +334,49 @@ li{
   align-items: center;
 }
 
-
-.patient-name{
+.patient-name {
   padding-top: 10px;
   padding-bottom: 30px;
   font-size: 16px;
 }
 
-.patient-1{
+.patient-1 {
   font-size: 20px;
   grid-row-start: 2;
   align-self: center;
   // justify-item: center;
 }
 
-.nav-item{
+.nav-item {
   text-align: right;
 }
 
-.nav-links{
-  color:  white;
+.nav-links {
+  color: white;
   font-size: 15px;
   padding: 10 px;
   padding-right: 15px;
 }
 
 a:link {
-  text-decoration: none; }
+  text-decoration: none;
+}
 
-.nav-links-1{
-  color:  white;
+.nav-links-1 {
+  color: white;
   font-size: 15px;
   float: right;
   text-decoration: none;
-
 }
 
-.bar{
+.bar {
   width: 100px;
 }
 
-#doctor_remember_me{
+#doctor_remember_me {
   margin-left: -12px;
 }
-#patient_remember_me{
+#patient_remember_me {
   margin-left: -12px;
 }
 
@@ -431,14 +430,14 @@ a:link {
   }
 
   nav a::before {
-    content: '';
+    content: "";
     display: block;
     height: 2px;
     background: black;
     position: absolute;
-    bottom: -.75em;
+    bottom: -0.75em;
     left: 0;
-    right: 0; 
+    right: 0;
     transform: scale(0, 1);
     transform-origin: right;
     transition: transform ease-in-out 250ms;
