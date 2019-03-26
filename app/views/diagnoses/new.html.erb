@@ -2,15 +2,17 @@
 
 <div class="new-diagnosis-container">
   <%= image_tag("examination.svg", :alt => "stethoscope", class: "stethoscope") %>
-  <h2>Add Diagnosis</h2>
+  <h2 class="add-diagnosis-header">Add Diagnosis</h2>
 
   <%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
-    <div class = "field">
-      <%= f.label :name %>
+    <div class="field">
+      <%= f.label :name, class: "diagnosis-name" %>
       <%= f.text_field :name %>
     </div>
 
-  <%= f.submit %>
+    <div class="field">
+      <%= f.submit %>
+    </div>
   <% end %>
 
   <p><%= link_to 'Back', patient_path(@patient) %></p>

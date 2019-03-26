@@ -24,9 +24,44 @@
 
 .new-diagnosis-container {
   margin-top: 65px;
+  text-align: center;
 }
 
 .stethoscope {
-  height: 10%;
-  width: 10%;
+  height: 25%;
+  width: 25%;
+  margin-bottom: 15px;
+}
+
+.add-diagnosis-header {
+  margin-bottom: 10px;
+}
+
+.diagnosis-name {
+  font-size: 15px;
+  margin-bottom: 0;
+  margin-top: 4px;
+  padding-right: 2px;
+}
+
+#diagnosis_name {
+  background: #fff;
+  border: 2px solid #000;
+  padding: 3px;
+  border-radius: 3px;
+}
+
+.field {
+  margin: 5px 0;
+  padding: 3px;
+}
+
+input {
+  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  width: 150px;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
 }
