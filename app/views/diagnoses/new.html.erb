@@ -1,12 +1,16 @@
-<h2>Add Diagnosis</h2>
+<link rel="stylesheet" href="../assets/stylesheets/diagnosis.scss">
 
-<%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
-  <div class = "field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
+<div class="new-diagnosis-container">
+  <h2>Add Diagnosis</h2>
 
-<%= f.submit %>
-<% end %>
+  <%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
+    <div class = "field">
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </div>
 
-<p><%= link_to 'Back', patient_path(@patient) %></p>
+  <%= f.submit %>
+  <% end %>
+
+  <p><%= link_to 'Back', patient_path(@patient) %></p>
+</div>
