@@ -19,9 +19,9 @@
   </head>
   
   <body>
+  <% if current_doctor || current_patient %>
   <div class="nav-container"
   <header>
-    <% if current_doctor || current_patient %>
       <h1 class="logo">
         <% if current_doctor %>
         <%= link_to 'DocSays!', doctor_path(current_doctor) %>
@@ -47,9 +47,9 @@
       <label for="nav-toggle" class="nav-toggle-label">
         <span></span>
       </label>
-    <% end %>
   </header>
   </div>
+  <% end %>
 
     <div class="alert-container">
       <% flash.each do |key, value| %>

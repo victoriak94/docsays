@@ -1,6 +1,7 @@
-<link rel="stylesheet" href="../assets/stylesheets/diagnosis.scss">
+<%= stylesheet_link_tag "diagnosis" %>
 
 <div class="new-diagnosis-container">
+  <%= image_tag("examination.svg", :alt => "stethoscope", class: "stethoscope") %>
   <h2>Add Diagnosis</h2>
 
   <%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
