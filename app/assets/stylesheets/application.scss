@@ -17,7 +17,7 @@
 }
 
 .nav-container {
-  background: #f1f1f1;
+  background: linear-gradient(to right, #438ff2, #65d2f7);
   text-align: center;
   position: fixed;
   z-index: 999;
@@ -29,6 +29,14 @@
   text-align: center;
   margin-top: 7px;
   margin-bottom: 7px;
+}
+
+.logo a {
+  color: #fff;
+}
+
+.logo a:hover {
+  text-decoration: none;
 }
 
 .top-nav-link {
@@ -117,7 +125,6 @@ nav a {
 }
 
 nav a:hover {
-  color: #444;
   text-decoration: none;
 }
 
@@ -395,7 +402,6 @@ a:link {
   }
 
   .nav-container {
-    background: #f1f1f1;
     display: grid;
     grid-template-columns: 30px auto minmax(300px, 4fr) 1fr;
   }
