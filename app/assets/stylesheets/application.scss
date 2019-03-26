@@ -22,12 +22,13 @@
   position: fixed;
   z-index: 999;
   width: 100%;
+  height: 45px;
 }
 
 .logo {
   text-align: center;
-  margin-top: 2px;
-  padding-bottom: 2px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 .top-nav-link {
@@ -151,7 +152,7 @@ nav a:hover {
 }
 
 .users-show {
-  margin-top: 100px;
+  margin-top: 65px;
   text-align: center;
 }
 
@@ -421,6 +422,7 @@ a:link {
 
   nav ul {
     display: flex;
+    margin-top: 0.35em;
   }
 
   nav li {
