@@ -13,7 +13,7 @@
 @import "bootstrap";
 
 * {
-  font-family: "Barlow", sans-serif;
+  font-family: "Helvetica Neue", sans-serif;
 }
 
 .nav-container {
@@ -156,8 +156,8 @@ nav a:hover {
 }
 
 .user-name-header {
-  padding-top: 10px;
-  padding-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .doctor-specialization {
@@ -176,6 +176,14 @@ nav a:hover {
 
 .diagnosis-diet-link {
   font-size: 18px;
+}
+
+#filterInput {
+  padding: 5px;
+  width: 175px;
+  font-size: 14px;
+  margin-bottom: 15px;
+  border: 2px solid #000;
 }
 
 #search-submit-button {
