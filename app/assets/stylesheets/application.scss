@@ -21,10 +21,22 @@
 
 nav {
   background: linear-gradient(to right, #377ad3, #8de0fc);
-  display: block-flex;
-  justify-content: space-around;
-  align-items: center;
+  display: inline-grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
   height: 10vh;
+}
+
+h1 {
+  margin: 0;
+}
+
+.logo {
+  margin: 0;
+  width: auto;
+  grid-column: 1/2;
+  grid-row: 1/2;
 }
 
 .logo a {
@@ -36,6 +48,8 @@ nav {
 }
 
 .nav-links {
+  margin: 0;
+  grid-column: 2/2;
   display: flex;
   justify-content: space-around;
   width: 40%;
@@ -229,11 +243,13 @@ li {
 
 .avatar {
   border-radius: 50%;
+  height: 115px;
+  width: 115px;
 }
 
 .avatar-1 {
-  width: 100px;
-  height: 100px;
+  width: 70px;
+  height: 70px;
   border-radius: 50%;
   grid-row-start: 1fr;
   align-self: end;
@@ -302,7 +318,7 @@ a:link {
     position: absolute;
     right: 0;
     height: 92vh;
-    top: 8vh;
+    top: 10vh;
     background: linear-gradient(to right, #377ad3, #8de0fc);
     display: flex;
     flex-direction: column;
@@ -313,6 +329,7 @@ a:link {
   }
 
   .nav-links li {
+    text-transform: uppercase;
     opacity: 0;
   }
 
