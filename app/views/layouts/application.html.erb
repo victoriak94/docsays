@@ -20,37 +20,36 @@
   
   <body>
   <% if current_doctor || current_patient %>
-  <div class="nav-container"
   <header>
-      <h1 class="logo">
+    <nav>
+      <div class="logo">
         <% if current_doctor %>
-        <%= link_to 'DocSays!', doctor_path(current_doctor) %>
+        <h1><%= link_to 'DocSays!', doctor_path(current_doctor) %></h1>
         <% end %>
         <% if current_patient %>
-        <%= link_to 'DocSays!', patient_path(current_patient) %>
+        <h1><%= link_to 'DocSays!', patient_path(current_patient) %>
         <% end %>
-      </h1>
-      <input type="checkbox" id="nav-toggle" class="nav-toggle">
-      <nav>
-        <ul>
-          <% if current_doctor %>
-            <li class="top-nav-link"><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
-            <li><%= link_to 'Add Patient', new_patient_registration_path %></li>
-            <li class="logout-nav-link"><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
-          <% end %>
-          <% if current_patient %>
-            <li class="top-nav-link"><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></li>
-            <li class="logout-nav-link"><%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %></li>
-          <% end %>
-        </ul>
-      </nav>
-      <label for="nav-toggle" class="nav-toggle-label">
-        <span></span>
-      </label>
-  </header>
-  </div>
-  <% end %>
+      </div>
+      <ul class='nav-links'>
+        <% if current_doctor %>
+          <li><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
+          <li><%= link_to 'Add Patient', new_patient_registration_path %></li>
+          <li><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
+        <% end %>
+        <% if current_patient %>
+          <li><%= link_to 'Edit Account', edit_patient_registration_path(@patient) %></li>
+          <li><%= link_to "Logout", destroy_patient_session_path, method: :delete, data: { confirm: 'Are you sure you want to logout?' } %></li>
+        <% end %>
+      </ul>
 
+      <div class='burger'>
+        <div class="line1"></div>
+        <div class="line2"></div>
+        <div class="line3"></div>
+      </div>
+    </nav>
+  </header>
+  <% end %>
     <div class="alert-container">
       <% flash.each do |key, value| %>
         <div class="alert alert-info-<%= key %>">
@@ -67,5 +66,6 @@
       <%= yield %>
 
     </div>
+    <script type="text/javascript" src="assets/javascripts/navslide.js">
   </body>
 </html>
