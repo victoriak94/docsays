@@ -21,14 +21,14 @@
 
 nav {
   background: linear-gradient(to right, #377ad3, #8de0fc);
-  display: flex;
+  display: block-flex;
   justify-content: space-around;
   align-items: center;
-  min-height: 8vh;
+  height: 10vh;
 }
 
 .logo a {
-  color: #fff;
+  color: rgb(226, 226, 226);
 }
 
 .logo a:hover {
