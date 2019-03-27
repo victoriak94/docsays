@@ -248,8 +248,8 @@ li {
 }
 
 .avatar-1 {
-  width: 70px;
-  height: 70px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   grid-row-start: 1fr;
   align-self: end;
@@ -271,14 +271,30 @@ li {
   padding: 10px;
   display: grid;
   grid-template-rows: 1fr;
-  justify-items: center;
+}
+
+.patient {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: center;
   align-items: center;
+  margin-bottom: 5px;
+  border: 1px solid #ebebeb;
+  border-radius: 10px;
+}
+
+.patient-img {
+  padding: 5px;
+  margin: 0;
+  grid-column: 1/2;
 }
 
 .patient-name {
+  grid-column: 2/3;
   padding-top: 10px;
   padding-bottom: 10px;
-  font-size: 16px;
+  font-size: 20px;
+  margin: 0;
 }
 
 .patient-1 {
