@@ -1,10 +1,15 @@
 <%= stylesheet_link_tag "diagnosis" %>
 <div class='diagnosis-index-container'>
-
+    <%= image_tag("medical-record.svg", :alt => "medical record board", class: "img-medical-record") %>
     <h1 class='diagnoses-header'>Diagnoses</h1>
 
+    <div class='diagnoses-list-container'>
     <% @diagnoses.each do |diagnosis| %>
-        <p class='diagnoses-list'><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id) %></p>
+        <ul class='diagnoses-list'>
+            <li class='diagnosis'><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id) %></p>
+            <li class='arrow'><%= image_tag("arrow-point-to-right.svg", :alt => "arrow pointing to right", class: "img-arrow-right") %></p>
+        </ul>
     <% end %>
+    </div>
 
 </div>

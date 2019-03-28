@@ -104,7 +104,7 @@ h1 {
 }
 
 .users-show {
-  margin-top: 65px;
+  margin-top: 30px;
   text-align: center;
 }
 
@@ -251,11 +251,6 @@ li {
   align-self: end;
 }
 
-.picture {
-  text-align: center;
-  grid-row-start: 1;
-}
-
 .patient-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -291,13 +286,6 @@ li {
   padding-bottom: 10px;
   font-size: 20px;
   margin: 0;
-}
-
-.patient-1 {
-  font-size: 20px;
-  grid-row-start: 2;
-  align-self: center;
-  // justify-item: center;
 }
 
 a:link {

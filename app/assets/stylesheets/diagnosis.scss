@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .diagnosis-index-container {
-  margin-top: 65px;
+  margin-top: 35px;
   text-align: center;
 }
 
@@ -64,4 +64,36 @@ input {
   border-radius: 5px;
   font-size: 15px;
   color: #fff;
+}
+
+.img-medical-record {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+.diagnoses-list-container {
+  padding: 10px;
+  display: grid;
+  grid-template-rows: 1fr;
+}
+
+.diagnoses-list {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  justify-content: center;
+  align-items: center;
+}
+
+.diagnosis {
+  grid-column: 1/2;
+}
+
+.arrow {
+  grid-column: 2/3;
+}
+
+.img-arrow-right {
+  width: 40px;
+  margin: 0;
+  padding: 5px;
 }
