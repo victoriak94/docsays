@@ -5,3 +5,22 @@
 body {
   background-image: linear-gradient(#19769f, #35d8a6);
 }
+
+.home {
+  padding: 150px;
+  text-align: center;
+  font-size: 30px;
+  height: 100%;
+  width: 100%;
+}
+
+.doc-says-header {
+  font-family: "Major Mono Display", monospace;
+  font-size: 50px;
+  padding-bottom: 25px;
+}
+
+.home-query {
+  font-family: "Archivo Narrow", sans-serif;
+  letter-spacing: 2px;
+}
