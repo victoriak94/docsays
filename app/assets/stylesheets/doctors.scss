@@ -2,6 +2,11 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.doctor-specialization {
+  color: #777777;
+  padding-bottom: 20px;
+}
+
 .patient-list {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -39,7 +44,6 @@
   margin: 0;
 }
 
-.doctor-specialization {
-  color: #777777;
-  padding-bottom: 20px;
+.patient-name a:hover {
+  text-decoration: none;
 }

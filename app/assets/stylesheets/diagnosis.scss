@@ -91,6 +91,10 @@ input {
   grid-column: 1/2;
 }
 
+.diagnosis a:hover {
+  text-decoration: none;
+}
+
 .arrow {
   grid-column: 2/3;
 }
