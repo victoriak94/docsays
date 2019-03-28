@@ -21,26 +21,22 @@
 
 nav {
   background: linear-gradient(to right, #377ad3, #8de0fc);
-  display: inline-grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  justify-items: center;
-  height: 10vh;
-}
-
-h1 {
-  margin: 0;
+  position: relative;
+  left: initial;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
 }
 
 .logo {
-  margin: 0;
-  width: auto;
-  grid-column: 1/2;
-  grid-row: 1/2;
+  padding: 7px;
 }
 
 .logo a {
   color: rgb(226, 226, 226);
+  position: absolute;
+  width: auto;
 }
 
 .logo a:hover {
@@ -48,11 +44,10 @@ h1 {
 }
 
 .nav-links {
-  margin: 0;
-  grid-column: 2/2;
   display: flex;
   justify-content: space-around;
-  width: 40%;
+  margin: 0;
+  top: 0;
 }
 
 .nav-links li {
