@@ -1,15 +1,18 @@
 <%= stylesheet_link_tag 'diets' %>
-<h1 class='diet-header'><%= @diet.name %></h1>
+<div class='diet-container'>
+  <%= image_tag("dish.svg", :alt => "dish", class: "img-dish") %>
+  <h1 class='diet-header'><%= @diet.name %></h1>
 
-<h2 class='doc-says-header'>Doc Says...</h2>
-  <div class='doc-says-container'>
-    <p class='diet-avoid'>Avoid these foods:</p>
-      <ul class='ul-diet-avoid'>
-        <li><%= @diet.avoid %></li>
-      </ul>
+  <h2 class='doc-says-header'>Doc Says...</h2>
+    <div class='doc-says-container'>
+      <p class='diet-avoid'>Avoid these foods:</p>
+        <ul class='ul-diet-avoid'>
+          <li><%= @diet.avoid %></li>
+        </ul>
 
-    <p class='diet-eat'>And eat these:</p>
-      <ul class='ul-diet-eat'>
-        <li><%= @diet.eat %></li>
-      </ul>
-  </div>
+      <p class='diet-eat'>And eat these:</p>
+        <ul class='ul-diet-eat'>
+          <li><%= @diet.eat %></li>
+        </ul>
+    </div>
+</div>

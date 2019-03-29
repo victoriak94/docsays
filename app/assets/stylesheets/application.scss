@@ -23,20 +23,23 @@ nav {
   background: linear-gradient(to right, #377ad3, #8de0fc);
   position: relative;
   left: initial;
-  display: flex;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: 30px auto 1fr;
+  grid-template-rows: 1fr;
+  justify-content: center;
   align-items: center;
   min-height: 8vh;
 }
 
 .logo {
+  position: absolute;
   padding: 7px;
+  grid-column-start: 2;
 }
 
 .logo a {
   color: rgb(226, 226, 226);
   position: absolute;
-  width: auto;
 }
 
 .logo a:hover {
@@ -44,6 +47,8 @@ nav {
 }
 
 .nav-links {
+  grid-column-start: 3;
+  position: absolute;
   display: flex;
   justify-content: space-around;
   margin: 0;

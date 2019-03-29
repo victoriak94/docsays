@@ -2,6 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.diet-container {
+  text-align: center;
+}
+
+.img-dish {
+  width: 15vh;
+  margin: 2vh;
+}
+
 .diet-header {
   font-size: 35px;
   text-align: center;
@@ -19,6 +28,7 @@
   grid-template-columns: 1fr;
   grid-template-rows: auto 1fr;
   padding-top: 5px;
+  align-items: center;
 }
 
 .new-diet-container {
@@ -41,10 +51,11 @@
   color: rgb(50, 133, 247);
   grid-column-start: 1;
   grid-row-start: 3;
-  align-self: center;
+  align-items: center;
 }
 
 .ul-diet-avoid {
+  display: flex;
   font-size: 18px;
   grid-column-start: 1;
   grid-row-start: 2;
@@ -53,6 +64,7 @@
 }
 
 .ul-diet-eat {
+  display: flex;
   font-size: 18px;
   grid-column-start: 1;
   grid-row-start: 4;
