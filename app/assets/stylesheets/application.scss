@@ -240,6 +240,16 @@ li {
     overflow-x: hidden;
   }
 
+  nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+  }
+
+  .logo {
+    grid-column: 2/3;
+  }
+
   .nav-links {
     position: absolute;
     right: 0;
@@ -261,6 +271,7 @@ li {
 
   .burger {
     display: block;
+    grid-column: 3/4;
   }
 }
 

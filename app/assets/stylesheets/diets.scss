@@ -1,3 +1,63 @@
 // Place all the styles related to the diets controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.diet-header {
+  font-size: 35px;
+  text-align: center;
+}
+
+.doc-says-header {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 20px;
+}
+
+.doc-says-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 200px 250px;
+  grid-template-rows: 50px 50px;
+  padding-top: 5px;
+}
+
+.recipe-search-header {
+  padding-bottom: 10px;
+}
+
+.new-diet-container {
+  text-align: center;
+}
+
+.diet-avoid {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: rgb(50, 133, 247);
+  grid-column-start: 1;
+  grid-row-start: 1;
+}
+
+.diet-eat {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  color: rgb(50, 133, 247);
+  grid-column-start: 2;
+  grid-row-start: 1;
+  align-self: center;
+}
+
+.ul-diet-avoid {
+  font-size: 18px;
+  grid-column-start: 1;
+  grid-row-start: 2;
+  align-self: center;
+}
+
+.ul-diet-eat {
+  font-size: 18px;
+  grid-column-start: 2;
+  grid-row-start: 2;
+  align-self: center;
+}
