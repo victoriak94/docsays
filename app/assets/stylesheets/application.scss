@@ -95,6 +95,26 @@ nav {
   margin-bottom: 5px;
 }
 
+input .btn {
+  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+}
+
+.form-button {
+  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+}
+
 #form-control-bar {
   align: center;
   width: 150px;
