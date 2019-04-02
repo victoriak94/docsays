@@ -95,7 +95,14 @@ nav {
   margin-bottom: 5px;
 }
 
-input .btn {
+#patient_image {
+  background-image: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input {
   background-image: linear-gradient(to right, #377ad3, #8de0fc);
   width: 100%;
   padding: 12px;

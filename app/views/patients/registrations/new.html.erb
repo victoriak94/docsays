@@ -8,14 +8,14 @@
 
            </div>
 
-      <div class="form-group">
+      <div>
         <%= f.label :name, :required => false %>
         <%= f.text_field :name, autofocus: true, autocomplete: 'full name', class: 'form-control' %>
 
         <small class="form-text text-muted"> <%= resource.errors[:name].first if resource.errors[:name].present?%></small>
       </div>
 
-      <div class="form-group">
+      <div>
         <%= f.label :age ,:required => false%>
         <%= f.email_field :age, autofocus: true, autocomplete: 'age', class: 'form-control' %>
 
@@ -25,7 +25,7 @@
 
       </div>
 
-      <div class="form-group">
+      <div>
         <%= f.label :sex ,:required => false%>
         <%= f.email_field :sex, autofocus: true, autocomplete: 'sex', class: 'form-control' %>
 
@@ -34,7 +34,7 @@
           </small>
       </div>
 
-      <div class="form-group">
+      <div>
         <%= f.label :email ,:required => false%>
         <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
 
@@ -43,7 +43,7 @@
          </small>
 
       </div>
-      <div class="form-group">
+      <div>
         <%= f.label :password, :require => true%>
         <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
 
@@ -57,18 +57,18 @@
 
       </div>
 
-      <div class="form-group">
+      <div>
         <%= f.label :password_confirmation, :require => true %>
         <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
 
         <small class="form-text text-muted" style="color: red;"> <%= resource.errors[:password_confirmation].first if resource.errors[:password_confirmation].present?%> </small>
         </div>
 
-        <div class="form-group">
-        <%= f.button :submit, "Sign up", class: 'form-button' %>
+        <div>
+        <%= f.button :submit, "Sign up", class: "form-button" %>
         </div>
       <% end %>
 
-      <div class="form-group">
+      <div>
       <%= link_to 'Back', doctor_path(current_doctor), class: 'form-button' %>
       </div>
