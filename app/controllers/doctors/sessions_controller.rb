@@ -29,7 +29,11 @@ class Doctors::SessionsController < Devise::SessionsController
   # end
 
   def after_sign_in_path_for(doctor)
-    doctor_path(doctor)
+    if Patient.length == 0
+      redirect to new_patient_path
+    else
+      redirect to doctor_path(doctor)
+    end
   end
 
 end

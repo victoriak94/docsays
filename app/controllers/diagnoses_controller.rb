@@ -18,7 +18,6 @@ class DiagnosesController < ApplicationController
 
   def index
     @diagnoses = @patient.diagnoses
-    puts ".........................#{@diagnoses.inspect}"
   end
 
   def new
