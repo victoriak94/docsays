@@ -84,50 +84,90 @@ nav {
 }
 
 .users-show {
-  margin-top: 30px;
+  margin-top: 1.2em;
   text-align: center;
 }
 
 .user-name-header {
+  font-size: 2em;
   color: #377ad3;
-  margin-top: 15px;
-  margin-bottom: 5px;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
 label {
-  margin-top: 10px;
-}
-
-#patient_image {
-  padding: 5px;
-  border: none;
-  border-radius: 5px;
+  margin-top: 0.8em;
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding: 0.5em;
   border: 1px solid #ebebeb;
-  border-radius: 5px;
-  font-size: 15px;
+  border-radius: 0.2em;
+  font-size: 1em;
   color: #fff;
+}
+
+#patient_image {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+  padding: 0.2em;
+  border: none;
+  border-radius: 0.2em;
+}
+
+#patient_name {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#patient_age {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#patient_sex {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#patient_email {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#patient_password {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#patient_password_confirmation {
+  margin-bottom: 0.4em;
+  font-size: 1em;
 }
 
 .form-button {
   background-image: linear-gradient(to right, #377ad3, #8de0fc);
   width: 100%;
-  padding: 10px;
+  padding: 0.5em;
   border: none;
-  border-radius: 5px;
-  font-size: 15px;
+  border-radius: 0.2em;
+  font-size: 0.8em;
   color: #fff;
-  margin: 10px 0;
 }
 
 #form-control-bar {
   align: center;
-  width: 150px;
-  font-size: 13px;
+  width: 80%;
+  font-size: 1em;
+}
+
+.form-field-wrapper {
+  font-size: 1em;
+}
+
+.form-field-error-msg {
+  color: red;
 }
 
 .diagnosis-diet-link {
@@ -143,12 +183,14 @@ input {
 }
 
 #search-submit-button {
-  width: 60px;
-  font-size: 13px;
+  width: 15%;
+  font-size: 1em;
+  background-image: linear-gradient(to right, #377ad3, #8de0fc);
 }
 
 .recipe-search-header {
-  padding-bottom: 10px;
+  font-size: 1.5em;
+  padding-bottom: 1em;
 }
 
 .recipes-header {

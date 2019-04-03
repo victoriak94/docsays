@@ -3,64 +3,58 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-      <div class="custom-file">
+      <div class='form-field-wrapper'>
         <%= f.input :image, as: :file, :class => "choose-file-input", :id => "choose-file-input"%>
       </div>
 
-      <div>
-        <%= f.label :name, :required => false %>
-        <%= f.text_field :name, autofocus: true, autocomplete: 'full name', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.text_field :name, autofocus: true, autocomplete: 'full name', placeholder: "Full Name", :require => true %>
 
-        <small class="form-text text-muted"> <%= resource.errors[:name].first if resource.errors[:name].present?%></small>
+        <small class='form-field-error-msg'> <%= resource.errors[:name].first if resource.errors[:name].present?%></small>
       </div>
 
-      <div>
-        <%= f.label :age ,:required => false%>
-        <%= f.email_field :age, autofocus: true, autocomplete: 'age', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.text_field :age, autofocus: true, autocomplete: 'age', placeholder: "Age", :required => false %>
 
-         <small class="form-text text-muted">
+         <small class='form-field-error-msg'>
            <%= resource.errors[:age].first if resource.errors[:age].present?%>
          </small>
 
       </div>
 
-      <div>
-        <%= f.label :sex ,:required => false%>
-        <%= f.email_field :sex, autofocus: true, autocomplete: 'sex', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.text_field :sex, autofocus: true, autocomplete: 'sex', placeholder: "Sex", :require => true %>
 
-          <small class="form-text text-muted">
+          <small class='form-field-error-msg'>
             <%= resource.errors[:sex].first if resource.errors[:sex].present?%>
           </small>
       </div>
 
-      <div>
-        <%= f.label :email ,:required => false%>
-        <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: "Email", :require => true %>
 
-         <small class="form-text text-muted">
+         <small class='form-field-error-msg'>
            <%= resource.errors[:email].first if resource.errors[:email].present?%>
          </small>
 
       </div>
-      <div>
-        <%= f.label :password, :require => true%>
-        <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.password_field :password, autocomplete: 'current-password', placeholder: "Password (min 6 characters)", :require => true %>
 
         <% if @minimum_password_length %>
-          <small class="form-text text-muted"><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
+          <small class='min-password-length'><% t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
 
-          <small class="form-text text-muted"><%= resource.errors[:password].first if resource.errors[:password].present?%> </small>
+          <small class='form-field-error-msg'><%= resource.errors[:password].first if resource.errors[:password].present?%> </small>
 
         <% end %>
 
 
       </div>
 
-      <div>
-        <%= f.label :password_confirmation, :require => true %>
-        <%= f.password_field :password_confirmation, autocomplete: 'current-password', class: 'form-control' %>
+      <div class='form-field-wrapper'>
+        <%= f.password_field :password_confirmation, autocomplete: 'current-password', placeholder: 'Confirm Password', :require => true %>
 
-        <small class="form-text text-muted" style="color: red;"> <%= resource.errors[:password_confirmation].first if resource.errors[:password_confirmation].present?%> </small>
+        <small class='form-field-error-msg' style="color: red;"> <%= resource.errors[:password_confirmation].first if resource.errors[:password_confirmation].present?%> </small>
         </div>
 
         <div>
