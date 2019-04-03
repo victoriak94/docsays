@@ -3,10 +3,9 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
-  <div class="custom-file">
-      <%= f.input :image, as: :file, :class=> "custom-file-input", :id=> "customFile"%>
-
-           </div>
+      <div class="custom-file">
+        <%= f.input :image, as: :file, :class => "choose-file-input", :id => "choose-file-input"%>
+      </div>
 
       <div>
         <%= f.label :name, :required => false %>
@@ -70,5 +69,5 @@
       <% end %>
 
       <div>
-      <%= link_to 'Back', doctor_path(current_doctor), class: 'form-button' %>
+      <%= link_to 'Back', doctor_path(current_doctor) %>
       </div>

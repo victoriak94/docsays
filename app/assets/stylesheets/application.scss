@@ -10,7 +10,6 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  */
-@import "bootstrap";
 
 * {
   margin: 0;
@@ -95,18 +94,20 @@ nav {
   margin-bottom: 5px;
 }
 
+label {
+  margin-top: 10px;
+}
+
 #patient_image {
-  background-image: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
 }
 
 input {
-  background-image: linear-gradient(to right, #377ad3, #8de0fc);
   width: 100%;
-  padding: 12px;
-  border: none;
+  padding: 10px;
+  border: 1px solid #ebebeb;
   border-radius: 5px;
   font-size: 15px;
   color: #fff;
@@ -115,11 +116,12 @@ input {
 .form-button {
   background-image: linear-gradient(to right, #377ad3, #8de0fc);
   width: 100%;
-  padding: 12px;
+  padding: 10px;
   border: none;
   border-radius: 5px;
   font-size: 15px;
   color: #fff;
+  margin: 10px 0;
 }
 
 #form-control-bar {
