@@ -5,3 +5,66 @@ body {
 .container {
   height: 99vh;
 }
+
+h1 {
+  color: #5c3f78;
+}
+
+a {
+  color: #fcfcfc;
+}
+
+p {
+  color: #5c3f78;
+  margin: 0;
+}
+
+#doctor_email {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+  color: #cdc6ff;
+}
+
+#doctor_password {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+  color: #cdc6ff;
+}
+
+#doctor_remember_me {
+  width: auto;
+  margin: 0.75vh 0.75vh 0.75vh 0;
+}
+
+.remember-me {
+  margin: 0;
+  color: #5c3f78;
+}
+
+.remember-me-forgot-password-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.remember-me-wrapper {
+  display: flex;
+  margin: 0.4em 0.8em 0 0;
+}
+
+.forgot-password-wrapper {
+  margin-top: 0.4em;
+  text-align: right;
+}
+
+.form-button {
+  background: #5c3f78;
+}
+
+.form-button:hover {
+  background: #fcfcfc;
+  color: #5c3f78;
+}
+
+.link-wrapper {
+  margin-top: 3vh;
+}

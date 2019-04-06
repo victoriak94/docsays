@@ -29,21 +29,20 @@
   <%= f.button :submit, "Sign In", class: 'form-button' %>
   </div>
 
-  <div>
-    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
-      <p>Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name)%></p>
-    <% end -%>
-  </div>
+  <div class='link-wrapper'>
+    <div>
+      <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+        <p>Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name)%></p>
+      <% end -%>
+    </div>
 
-  <div>
-    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
-      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
-    <% end -%>
+    <div>
+      <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+        <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+      <% end -%>
+    </div>
   </div>
-
 <% end %>
-
-
 
 <div>
 <%= link_to 'Back', root_path %>
