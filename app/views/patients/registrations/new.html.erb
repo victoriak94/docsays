@@ -39,7 +39,7 @@
 
       </div>
       <div class='form-field-wrapper'>
-        <%= f.password_field :password, autocomplete: 'current-password', placeholder: "Password (min 6 characters)", :require => true %>
+        <%= f.password_field :password, autocomplete: 'current-password', placeholder: "Password (minimum 6 characters)", :require => true %>
 
         <% if @minimum_password_length %>
           <small class='min-password-length'><% t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>

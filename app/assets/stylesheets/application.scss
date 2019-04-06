@@ -140,6 +140,25 @@ input {
   font-size: 1em;
 }
 
+#doctor_email {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#doctor_password {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#doctor_remember_me {
+  width: auto;
+  margin: 0.75vh;
+}
+
+.remember-me {
+  margin: 0;
+}
+
 .form-button {
   background-image: linear-gradient(to right, #377ad3, #8de0fc);
   width: 100%;
@@ -148,6 +167,7 @@ input {
   border-radius: 0.2em;
   font-size: 0.8em;
   color: #fff;
+  margin-top: 0.4em;
 }
 
 #form-control-bar {
@@ -162,6 +182,21 @@ input {
 
 .form-field-error-msg {
   color: red;
+}
+
+.remember-me-forgot-password-wrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.remember-me-wrapper {
+  display: flex;
+  margin: 0.4em 0.8em 0 13px;
+}
+
+.forgot-password-wrapper {
+  margin-top: 0.4em;
+  text-align: right;
 }
 
 .diagnosis-diet-link {

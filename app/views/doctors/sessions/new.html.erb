@@ -1,34 +1,50 @@
+<%= stylesheet_link_tag "form" %>
 <h1><%= t('.sign_in') %></h1>
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-group">
-    <%= f.label :email, :required=> false %>
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+  <div class="form-field-wrapper">
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "Email" %>
   </div>
 
-  <div class="form-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
+  <div class="form-field-wrapper">
+    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: "Password" %>
   </div>
 
-  <% if devise_mapping.rememberable? %>
-    <div class="form-group form-check">
-      <%= f.check_box :remember_me, class: 'form-check-input' %>
-      <%= f.label :remember_me, class: 'form-check-label' do %>
-        <%= resource.class.human_attribute_name('remember_me') %>
-      <% end %>
+  <div class='remember-me-forgot-password-wrapper'>
+    <% if devise_mapping.rememberable? %>
+      <div class="remember-me-wrapper">
+        <%= f.check_box :remember_me %><%= f.label :remember_me, class: 'remember-me' do %>
+          <%= resource.class.human_attribute_name('remember_me') %>
+        <% end %>
+      </div>
+    <% end %>
+    <div class='forgot-password-wrapper'>
+    <%- if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations' %>
+      <%= link_to "Forgot your password?", new_password_path(resource_name)%><br />
+    <% end -%>
     </div>
-  <% end %>
-
-  <div class="form-group">
-  <%= f.button :submit, "Sign In", class: 'btn btn-primary' %>
   </div>
 
-  <%= render "doctors/shared/links" %>
+  <div class="form-field-wrapper">
+  <%= f.button :submit, "Sign In", class: 'form-button' %>
+  </div>
+
+  <div>
+    <%- if devise_mapping.registerable? && controller_name != 'registrations' %>
+      <p>Don't have an account? <%= link_to "Sign up", new_registration_path(resource_name)%></p>
+    <% end -%>
+  </div>
+
+  <div>
+    <%- if devise_mapping.confirmable? && controller_name != 'confirmations' %>
+      <%= link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name) %><br />
+    <% end -%>
+  </div>
+
 <% end %>
 
 
 
-<div class="form-group">
-<%= link_to 'Back', root_path, class: 'btn btn-primary' %>
+<div>
+<%= link_to 'Back', root_path %>
 </div>
