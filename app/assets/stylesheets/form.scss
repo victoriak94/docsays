@@ -19,16 +19,22 @@ p {
   margin: 0;
 }
 
+input {
+  border: 1px solid #fcfcfc;
+}
+
 #doctor_email {
   margin-bottom: 0.4em;
   font-size: 1em;
   color: #cdc6ff;
+  border: 1px solid #fcfcfc;
 }
 
 #doctor_password {
   margin-bottom: 0.4em;
   font-size: 1em;
   color: #cdc6ff;
+  border: 1px solid #fcfcfc;
 }
 
 #doctor_remember_me {
