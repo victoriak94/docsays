@@ -1,10 +1,12 @@
 <%= stylesheet_link_tag "home" %>
 <div class="home">
 
-<h1 class='doc-says-header'>DocSays!</h1>
+    <h1 class='doc-says-header'>DocSays!</h1>
 
-<h3 class='home-query'>Are you a Doctor or a Patient?</h3>
+    <h3 class='home-query'>Are you a Doctor or a Patient?</h3>
 
-<p><%= link_to 'Doctor', new_doctor_session_path, class: 'btn btn-primary btn-lg' %>  <%= link_to 'Patient', new_patient_session_path, class: 'btn btn-primary btn-lg' %></p>
+    <div class='btn-wrapper'>
+        <%= link_to 'Doctor', new_doctor_session_path, class: 'btn-home' %>  <%= link_to 'Patient', new_patient_session_path, class: 'btn-home' %>
+    </div>
 
 </div>

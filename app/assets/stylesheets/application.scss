@@ -19,26 +19,22 @@
 }
 
 nav {
-  background: linear-gradient(to right, #377ad3, #8de0fc);
+  background: linear-gradient(to right, #cdc6ff, #5c3f78);
   position: relative;
-  left: initial;
-  display: grid;
-  grid-template-columns: 30px auto 1fr;
-  grid-template-rows: 1fr;
-  justify-content: center;
+  // left: initial;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   min-height: 8vh;
 }
 
 .logo {
-  position: absolute;
+  width: auto;
   padding: 7px;
-  grid-column-start: 2;
 }
 
 .logo a {
   color: rgb(226, 226, 226);
-  position: absolute;
 }
 
 .logo a:hover {
@@ -46,8 +42,6 @@ nav {
 }
 
 .nav-links {
-  grid-column-start: 3;
-  position: absolute;
   display: flex;
   justify-content: space-around;
   margin: 0;
