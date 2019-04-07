@@ -26,20 +26,27 @@ input {
 #doctor_email {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #cdc6ff;
   border: 1px solid #fcfcfc;
+}
+
+#doctor_email::placeholder {
+  color: #bda8d1;
 }
 
 #doctor_password {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #cdc6ff;
   border: 1px solid #fcfcfc;
+}
+
+#doctor_password::placeholder {
+  color: #bda8d1;
 }
 
 #doctor_remember_me {
   width: auto;
-  margin: 0.75vh 0.75vh 0.75vh 0;
+  margin: 0.5vh 0.75vh 0.75vh 0;
+  border: 1px solid #fcfcfc;
 }
 
 .remember-me {
