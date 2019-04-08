@@ -71,10 +71,11 @@ nav {
 }
 
 .burger div {
-  width: 25px;
+  width: 22.5px;
   height: 3px;
   background-color: rgb(226, 226, 226);
-  margin: 3px;
+  margin: 2px;
+  border-radius: 3px;
   transition: all 0.3s ease;
 }
 
