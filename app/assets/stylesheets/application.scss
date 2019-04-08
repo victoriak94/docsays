@@ -142,7 +142,7 @@ input {
 }
 
 .form-button {
-  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  background-image: linear-gradient(to right, #cdc6ff, #5c3f78);
   width: 100%;
   padding: 0.5em;
   border: none;
@@ -181,7 +181,7 @@ input {
 #search-submit-button {
   width: 15%;
   font-size: 1em;
-  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  background-image: linear-gradient(to right, #cdc6ff, #5c3f78);
 }
 
 .recipe-search-header {
@@ -257,14 +257,14 @@ li {
   }
 
   nav {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+    display: inline-block;
+    // grid-template-columns: 1fr 1fr 1fr;
+    // justify-content: center;
   }
 
   .logo {
-    display: block;
-    grid-column: 2/3;
+    display: inline-block;
+    // grid-column: 2/3;
   }
 
   .nav-links {
@@ -272,7 +272,7 @@ li {
     right: 0;
     height: 92vh;
     top: 10vh;
-    background: linear-gradient(to right, #377ad3, #8de0fc);
+    background: linear-gradient(to right, #cdc6ff, #5c3f78);
     display: flex;
     flex-direction: column;
     align-items: center;
