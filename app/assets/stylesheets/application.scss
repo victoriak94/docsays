@@ -23,8 +23,10 @@ nav {
   // position: relative;
   // left: initial;
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
+  align-content: center;
   min-height: 8vh;
 }
 
@@ -46,7 +48,7 @@ nav {
   display: flex;
   justify-content: space-around;
   margin: 0;
-  top: 0;
+  padding: 2vh 0;
 }
 
 .nav-links li {
@@ -59,6 +61,10 @@ nav {
   letter-spacing: 3px;
   font-weight: bold;
   font-size: 14px;
+}
+
+.nav-links a:hover {
+  text-decoration: none;
 }
 
 .mobile-nav {
