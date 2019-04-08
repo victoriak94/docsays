@@ -14,7 +14,8 @@
 }
 
 .diagnoses-header {
-  font-size: 35px;
+  font-size: 2em;
+  color: #5c3f78;
 }
 
 .diagnoses-list {
@@ -22,6 +23,7 @@
   text-align: center;
   font-size: 20px;
   width: 100px;
+  margin-bottom: 5px;
 }
 
 .diagnoses-list-index {
@@ -56,7 +58,7 @@
 }
 
 input {
-  background-image: linear-gradient(to right, #377ad3, #8de0fc);
+  background-image: linear-gradient(to right, #cdc6ff, #4d3861);
   width: 100%;
   padding: 12px;
   border: none;
@@ -75,19 +77,32 @@ input {
   display: grid;
   grid-template-rows: 1fr;
   margin-top: 20px;
+  align-items: center;
 }
 
 .diagnoses-list {
+  background-image: linear-gradient(to right, #4d3861, #cdc6ff);
   display: grid;
   grid-template-columns: 1fr auto;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   width: 100%;
   border: 1px solid #ebebeb;
+  padding: 0;
 }
 
 .diagnosis {
   grid-column: 1/2;
+}
+
+.diagnosis a {
+  color: rgb(226, 226, 226);
+}
+
+.diagnosis-name {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
 }
 
 .diagnosis a:hover {
