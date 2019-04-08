@@ -61,6 +61,10 @@ nav {
   font-size: 14px;
 }
 
+.mobile-nav {
+  display: none;
+}
+
 .burger {
   display: none;
   cursor: pointer;
@@ -259,6 +263,18 @@ li {
   .mobile-nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .back-btn {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 3vh;
+  }
+
+  .img-back-arrow {
+    width: 2.5vh;
   }
 
   .logo {
