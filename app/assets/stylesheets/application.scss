@@ -19,7 +19,7 @@
 }
 
 nav {
-  background: linear-gradient(to right, #cdc6ff, #5c3f78);
+  background: linear-gradient(to right, #cdc6ff, #4d3861);
   // position: relative;
   // left: initial;
   display: flex;
@@ -89,10 +89,10 @@ nav {
 }
 
 .user-name-header {
-  font-size: 2em;
-  color: #377ad3;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  font-size: 1.75em;
+  color: #5c3f78;
+  margin-top: 0.5em;
+  margin-bottom: 0.3em;
 }
 
 label {
@@ -147,7 +147,7 @@ input {
 }
 
 .form-button {
-  background-image: linear-gradient(to right, #cdc6ff, #5c3f78);
+  background-image: linear-gradient(to right, #cdc6ff, #4d3861);
   width: 100%;
   padding: 0.5em;
   border: none;
@@ -173,14 +173,6 @@ input {
 
 .diagnosis-diet-link {
   font-size: 18px;
-}
-
-#filterInput {
-  padding: 5px;
-  width: 175px;
-  font-size: 14px;
-  margin-bottom: 15px;
-  border: 1px solid #ebebeb;
 }
 
 #search-submit-button {
@@ -292,7 +284,7 @@ li {
     right: 0;
     height: 92vh;
     top: 8vh;
-    background: linear-gradient(to right, #cdc6ff, #5c3f78);
+    background: linear-gradient(to right, #cdc6ff, #4d3861);
     display: flex;
     flex-direction: column;
     align-items: center;
