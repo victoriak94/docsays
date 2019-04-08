@@ -10,7 +10,7 @@
 .img-heart-rate {
   height: 25%;
   width: 25%;
-  margin-bottom: 15px;
+  margin-bottom: 1vh;
 }
 
 .diagnoses-header {
@@ -36,7 +36,8 @@
 }
 
 .add-diagnosis-header {
-  margin-bottom: 10px;
+  color: #5c3f78;
+  margin-bottom: 2.5vh;
 }
 
 .diagnosis-name {
@@ -48,8 +49,8 @@
 #diagnosis_name {
   background: #fff;
   border: 2px solid #ebebeb;
-  padding: 5px;
-  border-radius: 3px;
+  padding: 0.5em;
+  border-radius: 0.4vh;
 }
 
 .field {
@@ -62,8 +63,8 @@ input {
   width: 100%;
   padding: 12px;
   border: none;
-  border-radius: 5px;
-  font-size: 15px;
+  border-radius: 0.4vh;
+  font-size: 1em;
   color: #fff;
 }
 
@@ -107,6 +108,7 @@ input {
 
 .diagnosis a:hover {
   text-decoration: none;
+  color: #5c3f78;
 }
 
 .arrow {

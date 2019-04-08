@@ -7,7 +7,7 @@
     <% @diagnoses.each do |diagnosis| %>
         <ul class='diagnoses-list'>
             <li class='diagnosis'><%= link_to diagnosis.name, patient_diagnosis_path(id: diagnosis.id), class: 'diagnosis-name' %></p>
-            <li class='arrow'><%= image_tag("arrow-point-to-right.png", :alt => "arrow pointing to right", class: "img-arrow-right") %></p>
+            <li class='arrow'><%= link_to image_tag("arrow-point-to-right.png", :alt => "arrow pointing to right", class: "img-arrow-right"), patient_diagnosis_path(id: diagnosis.id) %></p>
         </ul>
     <% end %>
     </div>

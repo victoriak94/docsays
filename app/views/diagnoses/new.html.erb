@@ -6,14 +6,11 @@
 
   <%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
     <div class="field">
-      <%= f.label :name, class: "diagnosis-name" %>
-      <%= f.text_field :name %>
+      <%= f.text_field :name, placeholder: 'Name' %>
     </div>
 
     <div class="field">
       <%= f.submit %>
     </div>
   <% end %>
-
-  <p><%= link_to 'Back', patient_path(@patient) %></p>
 </div>

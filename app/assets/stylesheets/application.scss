@@ -42,6 +42,7 @@ nav {
 
 .logo a:hover {
   text-decoration: none;
+  color: #5c3f78;
 }
 
 .nav-links {
@@ -259,6 +260,10 @@ li {
     overflow-x: hidden;
   }
 
+  nav {
+    min-height: 7vh;
+  }
+
   .mobile-nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -290,7 +295,7 @@ li {
     position: absolute;
     right: 0;
     height: 92vh;
-    top: 8vh;
+    top: 7vh;
     background: linear-gradient(to right, #cdc6ff, #4d3861);
     display: flex;
     flex-direction: column;
