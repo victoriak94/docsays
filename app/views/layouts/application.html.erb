@@ -22,9 +22,6 @@
   <% if current_doctor || current_patient %>
   <header>
     <nav>
-        <div class='logo'>
-          <h1>Docsays</h1>
-        </div>
         <ul class='nav-links'>
         <% if current_doctor %>
           <li><%= link_to 'DocSays', doctor_path(current_doctor) %></li>
@@ -39,10 +36,21 @@
         <% end %>
         </ul>
 
-      <div class='burger'>
-        <div class="line1"></div>
-        <div class="line2"></div>
-        <div class="line3"></div>
+      <div class='mobile-menu'>
+        <div class='back-btn'>
+          <div class="line1"></div>
+          <div class="line2"></div>
+        </div>
+
+        <div class='logo'>
+          <h2 id='logo'>Docsays</h1>
+        </div>
+
+        <div class='burger'>
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
       </div>
     </nav>
   </header>
