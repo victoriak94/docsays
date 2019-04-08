@@ -20,7 +20,7 @@
 
 nav {
   background: linear-gradient(to right, #cdc6ff, #5c3f78);
-  position: relative;
+  // position: relative;
   // left: initial;
   display: flex;
   justify-content: space-around;
@@ -29,6 +29,7 @@ nav {
 }
 
 .logo {
+  display: none;
   width: auto;
   padding: 7px;
 }
@@ -244,11 +245,11 @@ li {
   margin-left: -12px;
 }
 
-@media screen and (max-width: 1024px) {
-  .nav-links {
-    width: 60%;
-  }
-}
+// @media screen and (max-width: 1024px) {
+//   .nav-links {
+//     width: 60%;
+//   }
+// }
 
 @media screen and (max-width: 768px) {
   body {
@@ -262,6 +263,7 @@ li {
   }
 
   .logo {
+    display: block;
     grid-column: 2/3;
   }
 
