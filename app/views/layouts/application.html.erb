@@ -36,14 +36,19 @@
         <% end %>
         </ul>
 
-      <div class='mobile-menu'>
+      <div class='mobile-nav'>
         <div class='back-btn'>
-          <div class="line1"></div>
-          <div class="line2"></div>
+          <div class="back-line1"></div>
+          <div class="back-line2"></div>
         </div>
 
         <div class='logo'>
-          <h2 id='logo'>Docsays</h1>
+        <% if current_doctor %>
+          <h2 id='logo'><%= link_to 'DocSays', doctor_path(current_doctor) %></h2>
+        <% end %>
+        <% if current_patient %>
+          <h2 id='logo'><%= link_to 'DocSays', patient_path(current_patient) %></h2>
+        <% end %>
         </div>
 
         <div class='burger'>
