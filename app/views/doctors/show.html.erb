@@ -15,6 +15,7 @@
         <li class="patient">
           <p class="patient-img"><%= image_tag patient.image.url(:thumb), :class => 'avatar-1' %></p>
           <p class="patient-name"><%= link_to patient.name, patient_path(patient) %></p>
+          <p class="phone"><%= image_tag("lavendergradientphone.png", :alt => "phone", class: "img-phone") %></p>
         </li>
       <% end %>
   </div>

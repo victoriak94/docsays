@@ -4,7 +4,7 @@
 
 .doctor-specialization {
   color: #cdc6ff;
-  margin-bottom: 0.6em;
+  margin-bottom: 1em;
   font-size: 1.5em;
 }
 
@@ -33,7 +33,7 @@
 
 .patient {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: auto 1fr 70px;
   justify-content: center;
   align-items: center;
   margin-bottom: 5px;
@@ -61,4 +61,15 @@
 
 .patient-name a:hover {
   text-decoration: none;
+}
+
+.phone {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+}
+
+.img-phone {
+  width: 40px;
 }
