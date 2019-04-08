@@ -78,6 +78,7 @@ input {
   display: grid;
   grid-template-rows: 1fr;
   margin-top: 20px;
+  align-content: center;
   align-items: center;
 }
 
@@ -86,6 +87,7 @@ input {
   display: grid;
   grid-template-columns: 1fr auto;
   justify-content: space-around;
+  align-content: center;
   align-items: center;
   width: 100%;
   border: 1px solid #ebebeb;
