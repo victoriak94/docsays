@@ -4,15 +4,15 @@
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
-  <div>
+  <div class='form-field-wrapper'>
     <%= f.input :image, as: :file %>
   </div>
 
-  <div>
+  <div class='form-field-wrapper'>
     <%= f.text_field :name, autofocus: true, autocomplete: 'name', placeholder: 'Name' %>
   </div>
 
-  <div>
+  <div class='form-field-wrapper'>
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: 'Email' %>
   </div>
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -22,28 +22,27 @@
     <%= f.text_field :specialization, autofocus: true, autocomplete: 'specialization', placeholder: 'Specialization' %>
     </div>
 
-    <div>
+    <div class='form-field-wrapper'>
       <%= f.password_field :password, autocomplete: 'new-password', placeholder: 'New Password', id: 'doctor_new_password' %>
       <small class="form-input-msg"><%= t('.leave_blank_if_you_dont_want_to_change_it') %></small>
     </div>
 
-   <div>
+   <div class='form-field-wrapper'>
      <%= f.password_field :password_confirmation, autocomplete: 'new-password', placeholder: 'Confirm New Password'  %>
    </div>
 
-   <div>
+   <div class='form-field-wrapper'>
      <%= f.password_field :current_password, autocomplete: 'current-password', placeholder: 'Current Password' %>
 
      <small>
        <%= t('.we_need_your_current_password_to_confirm_your_changes') %></small>
-
    </div>
 
    <div>
-
      <%= f.button :submit, "Done!",class: 'form-button' %>
    </div>
  <% end %>
+
  <div class='cancel-acct'>
     <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: 'Are you sure?' }, method: :delete %>
  </div>

@@ -135,6 +135,12 @@ label {
   border: 1px solid #fcfcfc;
 }
 
+#patient_remember_me {
+  width: auto;
+  margin: 0.5vh 0.75vh 0.75vh 0;
+  border: 1px solid #fcfcfc;
+}
+
 .remember-me {
   margin: 0;
   color: #5c3f78;
@@ -225,5 +231,5 @@ label {
 }
 
 .back-btn {
-  margin-top: 0.4em;
+  margin: 0;
 }
