@@ -14,6 +14,10 @@ a {
   color: #fcfcfc;
 }
 
+a:hover {
+  text-decoration: none;
+}
+
 p {
   color: #5c3f78;
   margin: 0;
@@ -46,6 +50,18 @@ label {
 }
 
 #doctor_name::placeholder {
+  color: #bda8d1;
+  font-size: 1em;
+}
+
+#doctor_name_sign_up {
+  color: #666;
+  margin-top: 1.1em;
+  margin-bottom: 0.4em;
+  font-size: 1em;
+}
+
+#doctor_name_sign_up::placeholder {
   color: #bda8d1;
   font-size: 1em;
 }
@@ -205,5 +221,9 @@ label {
 }
 
 .cancel-acct {
+  margin-top: 0.4em;
+}
+
+.back-btn {
   margin-top: 0.4em;
 }
