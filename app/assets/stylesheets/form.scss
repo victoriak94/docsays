@@ -16,6 +16,7 @@ a {
 
 a:hover {
   text-decoration: none;
+  color: #5c3f78;
 }
 
 p {
@@ -26,6 +27,7 @@ p {
 input {
   border: 1px solid #fcfcfc;
   border-radius: 0.4vh;
+  background-color: rgba(235, 235, 235, 0.25);
 }
 
 // input:focus,
@@ -44,89 +46,89 @@ label {
 }
 
 #doctor_name {
-  color: #666;
+  color: #5c3f78;
   margin-bottom: 0.4em;
   font-size: 1em;
 }
 
 #doctor_name::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_name_sign_up {
-  color: #666;
+  color: #5c3f78;
   margin-top: 1.1em;
   margin-bottom: 0.4em;
   font-size: 1em;
 }
 
 #doctor_name_sign_up::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_email {
-  color: #666;
+  color: #5c3f78;
   margin-bottom: 0.4em;
   font-size: 1em;
 }
 
 #doctor_email::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_specialization {
-  color: #666;
+  color: #5c3f78;
   margin-bottom: 0.4em;
   font-size: 1em;
 }
 
 #doctor_specialization::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_password {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
 }
 
 #doctor_password::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_new_password {
-  color: #666;
+  color: #5c3f78;
   font-size: 1em;
 }
 
 #doctor_new_password::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_password_confirmation {
-  color: #666;
+  color: #5c3f78;
   margin-bottom: 0.4em;
   font-size: 1em;
 }
 
 #doctor_password_confirmation::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
 #doctor_current_password {
-  color: #666;
+  color: #5c3f78;
   font-size: 1em;
 }
 
 #doctor_current_password::placeholder {
-  color: #bda8d1;
+  color: #fcfcfc;
   font-size: 1em;
 }
 
@@ -160,45 +162,69 @@ label {
 #patient_image {
   margin-bottom: 0.4em;
   font-size: 1em;
-  padding: 0.2em;
-  border: none;
+  padding: 0.4em;
+  border: 1px solid #fcfcfc;
   border-radius: 0.2em;
 }
 
 #patient_name {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_name::placeholder {
+  color: #fcfcfc;
 }
 
 #patient_age {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_age::placeholder {
+  color: #fcfcfc;
 }
 
 #patient_sex {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_sex::placeholder {
+  color: #fcfcfc;
 }
 
 #patient_email {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_email::placeholder {
+  color: #fcfcfc;
 }
 
 #patient_password {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_password::placeholder {
+  color: #fcfcfc;
 }
 
 #patient_password_confirmation {
   margin-bottom: 0.4em;
   font-size: 1em;
-  color: #666;
+  color: #5c3f78;
+}
+
+#patient_password_confirmation::placeholder {
+  color: #fcfcfc;
 }
 
 #form-control-bar {
@@ -237,6 +263,6 @@ label {
   margin-top: 0.4em;
 }
 
-.back-btn {
+#back-btn {
   margin: 0;
 }

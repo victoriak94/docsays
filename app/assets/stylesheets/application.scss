@@ -226,6 +226,10 @@ li {
     min-height: 7vh;
   }
 
+  .nav-docsays {
+    display: none;
+  }
+
   .mobile-nav {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -272,6 +276,10 @@ li {
   .nav-links li {
     text-transform: uppercase;
     opacity: 0;
+  }
+
+  .nav-links a:hover {
+    color: #4d3861;
   }
 
   .burger {

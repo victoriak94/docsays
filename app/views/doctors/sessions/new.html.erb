@@ -3,11 +3,11 @@
 
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-field-wrapper">
-    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control', placeholder: "Email" %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: "Email" %>
   </div>
 
   <div class="form-field-wrapper">
-    <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control', placeholder: "Password" %>
+    <%= f.password_field :password, autocomplete: 'current-password', placeholder: "Password" %>
   </div>
 
   <div class='remember-me-forgot-password-wrapper'>
@@ -44,6 +44,6 @@
   </div>
 <% end %>
 
-<div>
+<div id='back-btn'>
 <%= link_to 'Back', root_path %>
 </div>
