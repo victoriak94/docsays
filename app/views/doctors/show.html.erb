@@ -11,16 +11,13 @@
   </div>
     <div class='patients-container'>
       <% @patients.each do |patient| %>
-        <%= link_to patient_path(patient), :action => 'go' do %>
           <li class="patient">
-            <p class="patient-img"><%= image_tag patient.image.url(:thumb), :class => 'avatar-1' %></p>
-            <p class="patient-name"><%= link_to patient.name, patient_path(patient) %></p>
-            <p class="phone"><%= image_tag("lavendergradientphone.png", :alt => "phone", class: "img-phone") %></p>
+            <p class="patient-img"><%= link_to image_tag(patient.image.url(:thumb), :class => 'avatar-1'), patient_path(patient) %></p>
+            <p class="patient-name"><%= link_to patient.name, patient_path(patient), :id => 'patientName' %></p>
+            <p class="phone"><%= link_to image_tag("lavendergradientphone.png", :alt => "phone", class: "img-phone"), patient_path(patient) %></p>
           </li>
-        <% end %>
       <% end %>
     </div>
-  
 </div>
 
 <script type="text/javascript" src="assets/javascripts/patient.js">
