@@ -5,12 +5,12 @@
 
   <h2 class='doc-says-header'>Doc Says...</h2>
     <div class='doc-says-container'>
-      <p class='diet-avoid'>Avoid these foods:</p>
+      <p class='diet-avoid'><%= image_tag("thumbsdown.png", :alt => "thumbs down", class: "img-avoid") %> Avoid these foods:</p>
         <ul class='ul-diet-avoid'>
           <li><%= @diet.avoid %></li>
         </ul>
 
-      <p class='diet-eat'>And eat these:</p>
+      <p class='diet-eat'>And eat these: <%= image_tag("thumbsup.png", :alt => "thumbs up", class: "img-eat") %></p>
         <ul class='ul-diet-eat'>
           <li><%= @diet.eat %></li>
         </ul>
