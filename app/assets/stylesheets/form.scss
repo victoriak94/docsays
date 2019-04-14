@@ -217,6 +217,16 @@ label {
   color: #fcfcfc;
 }
 
+#patient_new_password {
+  margin: 0;
+  font-size: 1em;
+  color: #5c3f78;
+}
+
+#patient_new_password::placeholder {
+  color: #fcfcfc;
+}
+
 #patient_password_confirmation {
   margin-bottom: 0.4em;
   font-size: 1em;
@@ -224,6 +234,16 @@ label {
 }
 
 #patient_password_confirmation::placeholder {
+  color: #fcfcfc;
+}
+
+#patient_current_password {
+  margin: 0;
+  font-size: 1em;
+  color: #5c3f78;
+}
+
+#patient_current_password::placeholder {
   color: #fcfcfc;
 }
 
