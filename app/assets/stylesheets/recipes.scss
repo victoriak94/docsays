@@ -1,3 +1,48 @@
 // Place all the styles related to the recipes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.recipes-header {
+  font-size: 2em;
+  text-align: center;
+  padding: 3vh 0 1vh 0;
+}
+
+.recipe-container {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 100%;
+}
+
+.recipe-image {
+  grid-column-start: 1;
+  width: 15vh;
+  height: 15vh;
+}
+
+.recipe {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: auto 1fr;
+  border: 1px solid #999999;
+  margin: 0;
+  border-bottom: none;
+}
+
+.recipe-name {
+  grid-column-start: 2;
+  font-size: 1em;
+  margin: 0;
+  padding: 0 2vh;
+}
+
+li {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.container {
+  padding: 0;
+}
