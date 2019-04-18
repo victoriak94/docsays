@@ -5,13 +5,11 @@
 <h1 class='user-name-header'><%= @patient.name %></h1>
 
 <% if current_patient %>
-  <p><%= link_to 'Diagnosis & Diet', patient_diagnoses_path(@patient), class: 'diagnosis-diet-link' %></p>
-
     <div class='recipe-search-container'>
       <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
       <%= text_field_tag :search, params[:search], placeholder: "Search Recipes...", id: 'form-control-bar' %>  <%= submit_tag "Go", id: 'search-submit-button' %>
-    </div>
       <% end %>
+    </div>
 <% end %>
 
 <% if current_doctor %>

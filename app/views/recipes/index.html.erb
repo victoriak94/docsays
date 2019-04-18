@@ -6,9 +6,10 @@
       <% if recipe != nil %>
         <ul class='recipe'>
           <li><%= image_tag recipe.image, class: 'recipe-image' %></li> 
-          <li><p><%= link_to recipe.name, recipe.url, class: 'recipe-name' %></p>
-          <p><%= recipe.calories %> Calories</p>
-          </li>
+          <ul class='recipe-text'>
+            <li><%= link_to recipe.name, recipe.url, class: 'recipe-name' %></li>
+            <li class='calories'><%= recipe.calories %> Calories</li>
+          </ul>
         </ul>
       <% end %>
     <% end %>

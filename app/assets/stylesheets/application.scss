@@ -15,7 +15,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Questrial", sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
@@ -126,12 +126,6 @@ input {
   margin-top: 0.4em;
 }
 
-#form-control-bar {
-  align: center;
-  width: 80%;
-  font-size: 1em;
-}
-
 .form-field-wrapper {
   font-size: 1em;
 }
@@ -148,42 +142,6 @@ input {
   width: 15%;
   font-size: 1em;
   background-image: linear-gradient(to right, #cdc6ff, #5c3f78);
-}
-
-.recipe-search-header {
-  font-size: 1.5em;
-  padding-bottom: 1em;
-}
-
-.recipes-header {
-  font-size: 35px;
-  text-align: center;
-  padding-bottom: 13px;
-}
-
-.recipe-container {
-  display: grid;
-  justify-content: center;
-  grid-template-columns: 500px;
-}
-
-.recipe-image {
-  height: 100px;
-  width: 100px;
-}
-
-.recipe {
-  display: flex;
-  justify-content: left;
-  grid-column-start: 1;
-  border: 1px solid #999999;
-}
-
-.recipe-name {
-  font-size: 20px;
-  margin-top: 20px;
-  margin-left: 30px;
-  margin-right: 30px;
 }
 
 li {
