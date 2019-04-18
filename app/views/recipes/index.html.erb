@@ -10,6 +10,7 @@
             <li><%= link_to recipe.name, recipe.url, class: 'recipe-name' %></li>
             <li class='calories'><%= recipe.calories %> Calories</li>
           </ul>
+          <li class='like-btn'><%= image_tag("heart.png", :alt => "heart outline", class: "img-heart") %></li>
         </ul>
       <% end %>
     <% end %>

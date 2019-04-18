@@ -24,10 +24,9 @@
 .recipe {
   display: grid;
   justify-content: center;
-  grid-template-columns: auto 1fr;
-  border: 1px solid #999999;
-  margin: 0;
-  border-bottom: none;
+  grid-template-columns: auto 1fr 15%;
+  border: 1px solid #4d3861;
+  margin: 0.5vh;
 }
 
 .recipe-text {
@@ -36,21 +35,39 @@
   flex-direction: column;
   align-items: start;
   justify-content: center;
+  padding: 0 2vh;
 }
 
 .recipe-name {
   align-self: start;
   font-size: 1em;
   margin: 0;
-  padding: 0 2vh;
 }
 
 .calories {
   font-size: 0.8em;
   margin-top: 1vh;
-  padding: 0 2vh;
+}
+
+.like-btn {
+  grid-column-start: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-heart {
+  width: 2vh;
 }
 
 .container {
   padding: 0;
+}
+
+a {
+  color: #4d3861;
+}
+
+a:hover {
+  text-decoration: none;
 }
