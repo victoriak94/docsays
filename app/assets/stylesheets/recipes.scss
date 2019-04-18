@@ -19,6 +19,7 @@
   width: 13vh;
   height: 13vh;
   padding: 1.75vh;
+  border-radius: 0.2em;
 }
 
 .recipe {
@@ -27,6 +28,11 @@
   grid-template-columns: auto 1fr 15%;
   border: 1px solid #4d3861;
   margin: 0.5vh;
+  border-radius: 0.2em;
+}
+
+img {
+  border-radius: 0.2em;
 }
 
 .recipe-text {
@@ -40,7 +46,7 @@
 
 .recipe-name {
   align-self: start;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0;
 }
 

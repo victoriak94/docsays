@@ -1,11 +1,10 @@
 <%= stylesheet_link_tag "recipes" %>
-<h1 class='recipes-header'>Recipes!</h1>
 
   <div class='recipe-container'>
     <% @myList.each do |recipe| %>
       <% if recipe != nil %>
         <ul class='recipe'>
-          <li><%= image_tag recipe.image, class: 'recipe-image' %></li> 
+          <li><%= image_tag recipe.image, class: 'recipe-image', :alt => 'recipe image' %></li> 
           <ul class='recipe-text'>
             <li><%= link_to recipe.name, recipe.url, class: 'recipe-name' %></li>
             <li class='calories'><%= recipe.calories %> Calories</li>
