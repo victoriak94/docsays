@@ -16,6 +16,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 nav {
@@ -198,13 +199,11 @@ li {
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    align-content: center;
     margin-left: 3vh;
   }
 
   .img-back-arrow {
     width: 2vh;
-    align-self: center;
   }
 
   .logo {

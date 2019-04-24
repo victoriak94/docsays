@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Abel|Roboto:300,400,500,700" rel="stylesheet">
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -25,8 +25,8 @@
         <ul class='nav-links'>
         <% if current_doctor %>
           <li class='nav-docsays'><%= link_to 'DocSays', doctor_path(current_doctor) %></li>
-          <li><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
           <li><%= link_to 'Add Patient', new_patient_registration_path %></li>
+          <li><%= link_to 'Edit Account', edit_doctor_registration_path(@doctor) %></li>
           <li><%= link_to "Logout", destroy_doctor_session_path, method: :delete, data: {confirm: 'Are you sure you want to logout?'} %></li>
         <% end %>
         <% if current_patient %>

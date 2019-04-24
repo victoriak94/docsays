@@ -100,6 +100,7 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
 .diagnosis a {
@@ -125,8 +126,4 @@ input {
   width: 40px;
   margin: 0;
   padding: 5px;
-}
-
-a {
-  align-self: center;
 }

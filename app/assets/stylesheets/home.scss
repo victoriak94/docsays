@@ -20,14 +20,16 @@ body {
 }
 
 .doc-says-header {
-  font-family: "Major Mono Display", monospace;
+  font-family: "Abel", sans-serif;
   font-size: 3em;
   color: #fcfcfc;
   margin-bottom: 2vh;
 }
 
 .home-query {
-  font-family: "Archivo Narrow", sans-serif;
+  font-family: "Abel", sans-serif;
+  // font-weight: 300;
+  font-size: 1.1em;
   letter-spacing: 0.1em;
   color: #fcfcfc;
 }
