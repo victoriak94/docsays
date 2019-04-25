@@ -5,8 +5,9 @@
 .doctor-specialization {
   color: #777777;
   margin-bottom: 1em;
-  font-size: 1.5em;
-  font-family: "Roboto:700", sans-serif;
+  font-size: 1.2em;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 #filterInput {
@@ -57,7 +58,7 @@
 }
 
 .patient-name a {
-  color: #5c3f78;
+  color: #53475e;
 }
 
 .patient-name a:hover {
@@ -72,5 +73,5 @@
 }
 
 .img-phone {
-  width: 40px;
+  width: 4vh;
 }

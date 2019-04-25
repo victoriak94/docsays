@@ -1,5 +1,5 @@
 body {
-  background: linear-gradient(#fcfcfc, #4d3861);
+  background: linear-gradient(#655a76, #fcfcfc 20%);
 }
 
 .container {
@@ -25,9 +25,10 @@ p {
 }
 
 input {
-  border: 1px solid #fcfcfc;
-  border-radius: 0.4vh;
-  background-color: rgba(235, 235, 235, 0.25);
+  border: none;
+  border-bottom: 0.15vh solid #655a76;
+  background-color: rgba(92, 63, 120, 0);
+  border-radius: 0;
 }
 
 // input:focus,
@@ -43,6 +44,7 @@ label {
 
 #doctor_image {
   margin-bottom: 0.4em;
+  border-bottom: none;
 }
 
 #doctor_name {
@@ -52,7 +54,7 @@ label {
 }
 
 #doctor_name::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -64,7 +66,7 @@ label {
 }
 
 #doctor_name_sign_up::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -75,7 +77,7 @@ label {
 }
 
 #doctor_email::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -86,7 +88,7 @@ label {
 }
 
 #doctor_specialization::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -97,7 +99,7 @@ label {
 }
 
 #doctor_password::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -107,7 +109,7 @@ label {
 }
 
 #doctor_new_password::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -118,7 +120,7 @@ label {
 }
 
 #doctor_password_confirmation::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -128,7 +130,7 @@ label {
 }
 
 #doctor_current_password::placeholder {
-  color: #fcfcfc;
+  color: #4d3861;
   font-size: 1em;
 }
 
@@ -267,7 +269,8 @@ label {
 }
 
 .form-button {
-  background: #4d3861;
+  background: #655a76;
+  border-radius: 0;
 }
 
 .form-button:hover {
@@ -277,6 +280,7 @@ label {
 
 .link-wrapper {
   margin-top: 2vh;
+  text-align: center;
 }
 
 .cancel-acct {
@@ -285,4 +289,5 @@ label {
 
 #back-btn {
   margin: 0;
+  text-align: center;
 }

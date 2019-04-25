@@ -19,10 +19,13 @@
   font-weight: 300;
 }
 
+body {
+  background: linear-gradient(#9288a3, #fcfcfc 33%);
+  height: 100vh;
+}
+
 nav {
-  background: linear-gradient(to right, #cdc6ff, #4d3861);
-  // position: relative;
-  // left: initial;
+  background: #9288a3;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -58,11 +61,12 @@ nav {
 }
 
 .nav-links a {
-  color: rgb(226, 226, 226);
+  color: #4d3861;
   text-decoration: none;
   letter-spacing: 3px;
-  font-weight: bold;
   font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
 }
 
 .nav-links a:hover {
@@ -94,11 +98,14 @@ nav {
 .users-show {
   margin-top: 1.2em;
   text-align: center;
+  width: 100%;
 }
 
 .user-name-header {
   font-size: 1.75em;
-  color: #5c3f78;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  color: #53475e;
   margin-top: 0.5em;
   margin-bottom: 0.3em;
 }
@@ -121,7 +128,7 @@ input {
   width: 100%;
   padding: 0.5em;
   border: none;
-  border-radius: 0.2em;
+  border-radius: 0;
   font-size: 0.8em;
   color: #fff;
   margin-top: 0.4em;
@@ -142,7 +149,7 @@ input {
 #search-submit-button {
   width: 15%;
   font-size: 1em;
-  background-image: linear-gradient(to right, #cdc6ff, #5c3f78);
+  background-image: #9288a3;
 }
 
 li {
@@ -169,12 +176,6 @@ li {
 #patient_remember_me {
   margin-left: -12px;
 }
-
-// @media screen and (max-width: 1024px) {
-//   .nav-links {
-//     width: 60%;
-//   }
-// }
 
 @media screen and (max-width: 768px) {
   body {
@@ -221,7 +222,7 @@ li {
     right: 0;
     height: 92vh;
     top: 7vh;
-    background: linear-gradient(to right, #cdc6ff, #4d3861);
+    background: linear-gradient(#9288a3, #fcfcfc 50%);
     display: flex;
     flex-direction: column;
     align-items: center;
