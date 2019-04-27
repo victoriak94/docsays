@@ -1,5 +1,13 @@
 body {
-  background: linear-gradient(#655a76, #fcfcfc 20%);
+  background: #fcfcfc;
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2vh;
 }
 
 .container {
@@ -165,8 +173,12 @@ label {
   margin-bottom: 0.4em;
   font-size: 1em;
   padding: 0.4em;
-  border: 1px solid #fcfcfc;
-  border-radius: 0.2em;
+  border-bottom: none;
+}
+
+#choose-file-input {
+  height: 5vh;
+  border-radius: 50%;
 }
 
 #patient_name {
@@ -176,7 +188,7 @@ label {
 }
 
 #patient_name::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_age {
@@ -186,7 +198,7 @@ label {
 }
 
 #patient_age::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_sex {
@@ -196,7 +208,7 @@ label {
 }
 
 #patient_sex::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_email {
@@ -206,7 +218,7 @@ label {
 }
 
 #patient_email::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_password {
@@ -216,7 +228,7 @@ label {
 }
 
 #patient_password::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_new_password {
@@ -226,7 +238,7 @@ label {
 }
 
 #patient_new_password::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_password_confirmation {
@@ -236,7 +248,7 @@ label {
 }
 
 #patient_password_confirmation::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #patient_current_password {
@@ -246,7 +258,7 @@ label {
 }
 
 #patient_current_password::placeholder {
-  color: #fcfcfc;
+  color: #53475e;
 }
 
 #form-control-bar {
