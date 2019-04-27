@@ -113,6 +113,7 @@ label {
 #doctor_new_password {
   color: #53475e;
   font-size: 1em;
+  margin-bottom: 0.4em;
 }
 
 #doctor_new_password::placeholder {
@@ -134,6 +135,7 @@ label {
 #doctor_current_password {
   color: #53475e;
   font-size: 1em;
+  margin-bottom: 0.8em;
 }
 
 #doctor_current_password::placeholder {
@@ -274,6 +276,11 @@ label {
   color: red;
 }
 
+.error_notification {
+  text-align: center;
+  color: red;
+}
+
 .forgot-password-wrapper {
   margin-top: 0.4em;
   text-align: right;
@@ -295,7 +302,7 @@ label {
 }
 
 .cancel-acct {
-  margin-top: 0.4em;
+  margin-top: 0.8em;
 }
 
 #back-btn {

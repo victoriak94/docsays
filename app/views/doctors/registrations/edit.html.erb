@@ -25,7 +25,6 @@
 
     <div class='form-field-wrapper'>
       <%= f.password_field :password, autocomplete: 'new-password', placeholder: 'New Password', id: 'doctor_new_password' %>
-      <small class="form-input-msg"><%= t('.(leave_blank_if_you_dont_want_to_change_it)') %></small>
     </div>
 
    <div class='form-field-wrapper'>
@@ -34,9 +33,6 @@
 
    <div class='form-field-wrapper'>
      <%= f.password_field :current_password, autocomplete: 'current-password', placeholder: 'Current Password' %>
-
-     <small>
-       <%= t('.(we_need_your_current_password_to_confirm_your_changes)') %></small>
    </div>
 
    <div>
