@@ -39,11 +39,10 @@ input {
   border-radius: 0;
 }
 
-// input:focus,
-// textarea:focus {
-//   box-shadow: 0 0 5px #bda8d1;
-//   border: 1px solid #bda8d1;
-// }
+input:focus {
+  background: #fcfcfc;
+  outline: none;
+}
 
 label {
   color: #53475e;
