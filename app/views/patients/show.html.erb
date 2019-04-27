@@ -16,11 +16,11 @@
   <div class='diagnosis-diet-container'>
     <li class='patient-diagnosis-diet'>
       <p><%= link_to image_tag("medical-record.png", :alt => "medical record board", class: "medical-record"), patient_diagnoses_path(@patient) %></p>
-      <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient) %></p>
+      <p><%= link_to 'Diagnoses & Diet', patient_diagnoses_path(@patient), class: 'diagnosis-label' %></p>
     </li>
     <li class='add-diagnosis-diet'>
       <p><%= link_to image_tag("health.png", :alt => "heart with addition symbol", class: "add-button"), new_patient_diagnosis_path(@patient) %></p>
-      <p><%= link_to 'Add Diagnosis', new_patient_diagnosis_path(@patient) %></p>
+      <p><%= link_to 'Add Diagnosis', new_patient_diagnosis_path(@patient), class: 'add-diagnosis-label' %></p>
     </li>
   </div>
 <% end %>
