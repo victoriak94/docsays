@@ -24,13 +24,6 @@
   outline: 0.05vh solid #9288a3;
 }
 
-.patient-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  padding: 50px;
-}
-
 .patients-container {
   padding: 10px;
   display: grid;

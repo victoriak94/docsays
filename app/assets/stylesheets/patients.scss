@@ -9,60 +9,47 @@
   margin-top: 2vh;
 }
 
-.diagnosis-diet-container {
+.diagnoses-list-container {
+  padding: 10px;
   display: grid;
-  grid-template-columns: 40% 40%;
-  grid-column-gap: 10px;
-  margin-top: 25px;
+  grid-template-rows: 1fr;
+  margin-top: 20px;
+}
+
+.diagnoses-list {
+  background-color: rgba(235, 235, 235, 0.5);
+  display: grid;
+  grid-template-columns: 1fr auto;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  padding: 0;
+  margin-bottom: 1vh;
 }
 
-.patient-diagnosis-diet {
-  background-color: rgba(146, 136, 163, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9em;
-  padding: 10px;
-  border: none;
-  border-radius: 0.4vh;
-}
-
-.add-diagnosis-diet {
-  background-color: rgba(146, 136, 163, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9em;
-  padding: 10px;
-  border: none;
-  border-radius: 0.4vh;
-}
-
-.medical-record {
-  width: 4.5vh;
-  margin-top: 1vh;
-  margin-bottom: 2.5vh;
-}
-
-.add-button {
-  width: 6.5vh;
-  margin-top: 1.65vh;
-  margin-bottom: 2.5vh;
-}
-
-p {
+.diagnosis {
+  grid-column: 1/2;
   margin: 0;
 }
 
-a {
-  color: #4d3861;
+.diagnosis-name {
+  font-size: 1.2em;
+  margin: 0;
+  padding: 0;
+  color: #53475e;
 }
 
-a:hover {
+.diagnosis a:hover {
   text-decoration: none;
   color: #9288a3;
+}
+
+.arrow {
+  grid-column: 2/3;
+}
+
+.img-arrow-right {
+  width: 40px;
+  margin: 0;
+  padding: 5px;
 }
