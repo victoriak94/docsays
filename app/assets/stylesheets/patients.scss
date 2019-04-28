@@ -2,73 +2,21 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#form-control-bar {
+#search-recipes-bar {
   align: center;
   width: 80%;
   font-size: 1em;
   margin-top: 2vh;
+  border: 0.1vh solid #9288a3;
+  border-radius: 0.1em;
 }
 
-.diagnoses-list-container {
-  padding: 10px;
-  display: grid;
-  grid-template-rows: 1fr;
-  margin-top: 20px;
-}
-
-.diagnoses-list {
-  background-color: rgba(235, 235, 235, 0.5);
-  display: grid;
-  grid-template-columns: 6vh 1fr 6vh;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 0;
-  margin-bottom: 1vh;
-}
-
-.diagnosis {
-  grid-column: 2/3;
-  margin: 0;
-}
-
-.diagnosis-name {
-  font-size: 1.4em;
-  margin: 0;
-  padding: 1.5vh 0;
-  color: #53475e;
-}
-
-.diagnosis a:hover {
-  text-decoration: none;
-  color: #9288a3;
-}
-
-.arrow {
-  grid-column: 3/4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0;
-  padding: 1.5vh 0;
-}
-
-.img-arrow-right {
-  width: 2vh;
-  margin: 0;
-  padding: 0;
-}
-
-.add-diagnosis {
-  background-color: rgba(235, 235, 235, 0.5);
-  padding: 1.5vh 0;
-}
-
-.add-diagnosis-label {
-  font-size: 1.4em;
-  color: #53475e;
-}
-
-.img-add {
-  width: 4vh;
+#search-submit-button {
+  width: 15%;
+  font-size: 1em;
+  background: #9288a3;
+  border: 1px solid #9288a3;
+  border-radius: 0.1em;
+  font-size: 1em;
+  color: #fcfcfc;
 }

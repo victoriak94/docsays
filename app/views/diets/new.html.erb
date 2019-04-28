@@ -3,15 +3,15 @@
 <h2>Add Diet</h2>
 <%= form_for(@diets, url: patient_diagnosis_diets_path) do |f| %>
   <div class='form-field-wrapper">
-    <%= f.text_field :name, placeholder: 'Name' %>
+    <%= f.text_field :name, autocomplete: "name", placeholder: 'Name', require: false; %>
   </div>
 
   <div class="form-field-wrapper">
-    <%= f.text_field :avoid, placeholder: 'Avoid' %>
+    <%= f.text_field :avoid, autocomplete: 'avoid', placeholder: 'Avoid', require: true; %>
   </div>
 
   <div class="form-field-wrapper">
-    <%= f.text_field :eat, placeholder: 'Eat' %>
+    <%= f.text_field :eat, autcomplete: 'eat', placeholder: 'Eat', require: true; %>
   </div>
 
   <div class='form-button'

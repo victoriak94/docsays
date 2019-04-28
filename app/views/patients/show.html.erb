@@ -7,7 +7,7 @@
 <% if current_patient %>
     <div class='recipe-search-container'>
       <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes...", id: 'form-control-bar' %>  <%= submit_tag "Go", id: 'search-submit-button' %>
+      <%= text_field_tag :search, params[:search], placeholder: "Search recipes...", id: 'search-recipes-bar' %>  <%= submit_tag "Go", id: 'search-submit-button' %>
       <% end %>
     </div>
 <% end %>
