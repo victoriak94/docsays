@@ -4,15 +4,6 @@
 <%= image_tag @patient.image.url(:thumb), :class => 'avatar' %>
 <h1 class='user-name-header'><%= @patient.name %></h1>
 
-<% if current_patient %>
-    <div class='recipe-search-container'>
-      <%= form_tag(recipes_path, :method => "get", id: "search-form") do %>
-      <%= text_field_tag :search, params[:search], placeholder: "Search Recipes...", id: 'form-control-bar' %>  <%= submit_tag "Go", id: 'search-submit-button' %>
-      <% end %>
-    </div>
-<% end %>
-
-<% if current_doctor %>
 <div class='diagnoses-list-container'>
     <% @diagnoses.each do |diagnosis| %>
         <li class='diagnoses-list'>
@@ -20,6 +11,7 @@
             <p class='arrow'><%= link_to image_tag("arrow-point-to-right.png", :alt => "arrow pointing to right", class: "img-arrow-right"), patient_diagnosis_path(id: diagnosis.id) %></p>
         </li>
     <% end %>
+<% if current_doctor %>
     <div class='add-diagnosis'>
     <%= link_to image_tag("add.png", :alt => "addition symbol", class: "img-add"), new_patient_diagnosis_path(@patient), class: 'add-diagnosis-label' %>
     </div>
