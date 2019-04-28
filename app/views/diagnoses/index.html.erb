@@ -21,7 +21,7 @@
         </li>
     <% end %>
     <div class='add-diagnosis'>
-    <%= link_to 'Add Diagnosis', new_patient_diagnosis_path(@patient), class: 'add-diagnosis-label' %>
+    <%= link_to image_tag("add.png", :alt => "addition symbol", class: "img-add"), new_patient_diagnosis_path(@patient), class: 'add-diagnosis-label' %>
     </div>
 </div>
 <% end %>
