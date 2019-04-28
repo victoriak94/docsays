@@ -1,22 +1,21 @@
-<%= stylesheet_link_tag 'diets' %>
+<%= stylesheet_link_tag 'form' %>
 <div class='new-diet-container'>
-<h2>Add Diet Suggestions</h2>
+<h2>Add Diet</h2>
 <%= form_for(@diets, url: patient_diagnosis_diets_path) do |f| %>
-  <div class = "field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
+  <div class='form-field-wrapper">
+    <%= f.text_field :name, placeholder: 'Name' %>
   </div>
 
-  <div class = "field">
-    <%= f.label :avoid %>
-    <%= f.text_field :avoid %>
+  <div class="form-field-wrapper">
+    <%= f.text_field :avoid, placeholder: 'Avoid' %>
   </div>
 
-  <div class = "field">
-    <%= f.label :eat %>
-    <%= f.text_field :eat %>
+  <div class="form-field-wrapper">
+    <%= f.text_field :eat, placeholder: 'Eat' %>
   </div>
 
-<%= f.submit %>
+  <div class='form-button'
+    <%= f.submit %>
+  </div>
 <% end %>
 </div>

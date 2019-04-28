@@ -1,7 +1,7 @@
 <%= stylesheet_link_tag "diagnosis" %>
 
 <div class="new-diagnosis-container">
-  <%= image_tag("heart-rate.svg", :alt => "heart with heart rate", class: "img-heart-rate") %>
+  <%= image_tag("health.png", :alt => "heart with addition symbol", class: "img-heart") %>
   <h2 class="add-diagnosis-header">Add Diagnosis</h2>
 
   <%= form_for(@diagnoses, url: patient_diagnoses_path) do |f| %>
