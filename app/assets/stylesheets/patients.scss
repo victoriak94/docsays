@@ -19,7 +19,7 @@
 .diagnoses-list {
   background-color: rgba(235, 235, 235, 0.5);
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 6vh;
   justify-content: center;
   align-items: center;
   width: 100%;
@@ -33,9 +33,9 @@
 }
 
 .diagnosis-name {
-  font-size: 1.2em;
+  font-size: 1.4em;
   margin: 0;
-  padding: 0;
+  padding: 1.5vh 0;
   color: #53475e;
 }
 
@@ -46,10 +46,21 @@
 
 .arrow {
   grid-column: 2/3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 1.5vh 0;
 }
 
 .img-arrow-right {
-  width: 40px;
+  width: 2vh;
   margin: 0;
-  padding: 5px;
+  padding: 0;
+}
+
+.add-diagnosis-label {
+  font-size: 1.4em;
+  color: #53475e;
+  padding: 1.5vh 0;
 }
