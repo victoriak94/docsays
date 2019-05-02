@@ -45,7 +45,7 @@ class DiagnosesController < ApplicationController
 
   def destroy
     @diagnosis.destroy
-    redirect_to patient_path(@patient)
+    redirect_to patient_diagnoses_path(@patient)
     flash[:notice] = "Diagnosis deleted"
   end
 

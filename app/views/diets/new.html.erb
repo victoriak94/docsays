@@ -1,20 +1,20 @@
 <%= stylesheet_link_tag 'form' %>
 <div class='new-diet-container'>
-<h2>Add Diet</h2>
+<h2 class='add-diet-header'>Add Diet</h2>
 <%= form_for(@diets, url: patient_diagnosis_diets_path) do |f| %>
-  <div class='form-field-wrapper">
-    <%= f.text_field :name, autocomplete: "name", placeholder: 'Name', require: false; %>
+  <div class="form-field-wrapper">
+    <%= f.text_field :name, placeholder: 'Name' %>
   </div>
 
   <div class="form-field-wrapper">
-    <%= f.text_field :avoid, autocomplete: 'avoid', placeholder: 'Avoid', require: true; %>
+    <%= f.text_field :avoid, placeholder: 'Avoid' %>
   </div>
 
   <div class="form-field-wrapper">
-    <%= f.text_field :eat, autcomplete: 'eat', placeholder: 'Eat', require: true; %>
+    <%= f.text_field :eat, placeholder: 'Eat' %>
   </div>
 
-  <div class='form-button'
+  <div class='form-button'>
     <%= f.submit %>
   </div>
 <% end %>

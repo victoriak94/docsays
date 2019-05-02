@@ -264,6 +264,42 @@ label {
   color: #53475e;
 }
 
+.add-diet-header {
+  color: #53475e;
+  margin-top: 5vh;
+  text-align: center;
+}
+
+#diet_name {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+  color: #53475e;
+}
+
+#diet_name::placeholder {
+  color: #53475e;
+}
+
+#diet_avoid {
+  margin-bottom: 0.4em;
+  font-size: 1em;
+  color: #53475e;
+}
+
+#diet_avoid::placeholder {
+  color: #53475e;
+}
+
+#diet_eat {
+  margin-bottom: 0.8em;
+  font-size: 1em;
+  color: #53475e;
+}
+
+#diet_eat::placeholder {
+  color: #53475e;
+}
+
 #form-control-bar {
   align: center;
   width: 80%;
