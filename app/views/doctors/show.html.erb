@@ -1,13 +1,14 @@
 <%= stylesheet_link_tag "doctors" %>
 
 <div class='users-show'>
+<div class='doctor-profile-container'>
   <%= image_tag @doctor.image.url(:thumb), :class => 'avatar' %>
 
   <h1 class='user-name-header'>Dr. <%= @doctor.name %></h1>
   <h3 class='doctor-specialization'><%= @doctor.specialization %></h3>
-
   <div class="search-bar">
     <input type="text" id="filterInput" placeholder="Search patients...">
+  </div>
   </div>
     <div class='patients-container'>
       <% @patients.each do |patient| %>

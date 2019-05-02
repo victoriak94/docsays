@@ -72,3 +72,25 @@
 .img-phone {
   width: 4vh;
 }
+
+@media screen and (min-width: 800px) {
+  body {
+    height: 100vh;
+  }
+
+  .users-show {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+  }
+
+  .doctor-profile-container {
+    grid-column: 1/2;
+  }
+
+  .patients-container {
+    grid-column: 2/3;
+  }
+}
