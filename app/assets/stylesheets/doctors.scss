@@ -75,6 +75,7 @@
 
 @media screen and (min-width: 800px) {
   body {
+    background: #fcfcfc;
     height: 100vh;
   }
 
@@ -82,12 +83,16 @@
     display: grid;
     grid-template-columns: 50% 50%;
     justify-content: center;
-    height: 100%;
     align-items: center;
+    margin-top: 25vh;
   }
 
   .doctor-profile-container {
     grid-column: 1/2;
+  }
+
+  #filterInput {
+    width: 30vh;
   }
 
   .patients-container {

@@ -88,3 +88,27 @@ a:hover {
 .delete {
   grid-column: 1/2;
 }
+
+@media screen and (min-width: 800px) {
+  body {
+    background: #fcfcfc;
+    height: 100vh;
+  }
+
+  .users-show {
+    margin-top: 10vh;
+  }
+
+  .diagnoses-list-container {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .diagnoses-list {
+    width: 100%;
+  }
+
+  .add-diagnosis {
+    width: 100%;
+  }
+}
