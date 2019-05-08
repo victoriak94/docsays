@@ -89,7 +89,7 @@ a:hover {
   grid-column: 1/2;
 }
 
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   body {
     background: #fcfcfc;
     height: 100vh;
@@ -100,15 +100,15 @@ a:hover {
   }
 
   .diagnoses-list-container {
-    align-items: center;
+    // align-items: center;
     justify-content: center;
   }
 
-  .diagnoses-list {
-    width: 100%;
-  }
+  // .diagnoses-list {
+  //   width: 50%;
+  // }
 
-  .add-diagnosis {
-    width: 100%;
-  }
+  // .add-diagnosis {
+  //   width: 50%;
+  // }
 }

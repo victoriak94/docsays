@@ -73,29 +73,29 @@
   width: 4vh;
 }
 
-@media screen and (min-width: 800px) {
-  body {
-    background: #fcfcfc;
-    height: 100vh;
-  }
+// @media screen and (min-width: 800px) {
+//   body {
+//     background: #fcfcfc;
+//     height: 100vh;
+//   }
 
-  .users-show {
-    display: grid;
-    grid-template-columns: 50% 50%;
-    justify-content: center;
-    align-items: center;
-    margin-top: 25vh;
-  }
+//   .users-show {
+//     display: grid;
+//     grid-template-columns: 50% 50%;
+//     justify-content: center;
+//     align-items: center;
+//     margin-top: 25vh;
+//   }
 
-  .doctor-profile-container {
-    grid-column: 1/2;
-  }
+//   .doctor-profile-container {
+//     grid-column: 1/2;
+//   }
 
-  #filterInput {
-    width: 30vh;
-  }
+//   #filterInput {
+//     width: 30vh;
+//   }
 
-  .patients-container {
-    grid-column: 2/3;
-  }
-}
+//   .patients-container {
+//     grid-column: 2/3;
+//   }
+// }
