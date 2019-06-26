@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag "form" %>
-
+<div class='form-wrapper'>
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
   <div class="form-field-wrapper">
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: "Email" %>
@@ -45,4 +45,5 @@
 
 <div id='back-btn'>
 <%= link_to 'Back', root_path %>
+</div>
 </div>
