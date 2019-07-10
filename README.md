@@ -1,24 +1,27 @@
-# README
+DOCSAYS
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Front end and back end client for DocSays app.
 
-Things you may want to cover:
+Table of Contents
 
-* Ruby version
+Motivation
 
-* System dependencies
+Run DocSays Locally:
+1. Clone this repository
+2. In the repository's directory, install gems: 
+bundle install
+3. In the repository's directory, run migration, seeds, and update task:
+rails update
+rails db:migrate
+rails db:seed
+4. In the repository's directory, start the server:
+rails s
 
-* Configuration
+Back-end:
+Ruby on Rails
+PostgreSQL
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Developer Team
+Victoria Kamila - website - github - linkedin
+Maryna Synko - website - github - linkedin
+Dave Podgorski - github - linkedin
