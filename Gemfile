@@ -66,7 +66,7 @@ end
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
-gem 'devise',           '~> 4.2'
+gem 'devise',           '~> 4.7'
 gem 'devise_invitable', '~> 1.7.0'
 gem 'httparty', '~> 0.16.3'
 gem 'gravatar_image_tag', github: 'mdeering/gravatar_image_tag'
